@@ -1,0 +1,90 @@
+\section{Proof of \cref{thm:kernel}}\label{sec:proof}
+\begin{proof}
+\subsection{Spectral gap and a positive-exponential family}\label{subsec:gap}
+
+The abstract hypotheses are precisely \eqref{eq:2-1}. In the modal application in \cref{sec:model}, the positive root of \(b_n-d/b_n=A_n-\mu\) has the form \(b_n=\alpha n^2+\beta+O(n^{-2})\), \(\alpha>0\), and is strictly increasing; hence its square-root gaps tend to \(\sqrt\alpha>0\), and their global infimum is positive.
+
+Choose \(a,\ell,\varepsilon>0\) with \([a,a+\ell+\varepsilon]\subset I\), and \(\eta>0\) with \(a+\varepsilon<T-\eta\). For any \(\ell>0\), \cite[Theorem~2.1]{Cannarsa2020} supplies real \(\sigma_n\in L^2(0,\ell)\) such that
+\begin{equation}\label{eq:3-1}
+\begin{aligned}
+&\int_0^\ell e^{b_m u}\sigma_n(u)du=\delta_{mn},\\
+&
+\|\sigma_n\|_2\le C e^{-\ell b_n+C\sqrt{b_n}}.
+\end{aligned}
+\end{equation}
+Indeed, if \(g_0\) is the lower gap in \eqref{eq:2-1}, take the source's global gap parameter \(g_0/2\), asymptotic parameter \(g_0\), and \(N_*=1\). Here \(\delta_{mn}\) is the Kronecker symbol. Its \(M_*=0\), and its remaining factor is uniformly bounded because \(b_1>0\). Real parts may be taken if necessary.
+
+\subsection{Reverse, shift, smooth, and interpolate}
+
+Let \(p_n(u)=e^{\ell b_n}\sigma_n(\ell-u)\) on \((0,\ell)\), extended by zero. Substitution shows
+\begin{equation}\label{eq:3-2}
+\begin{aligned}
+&\int e^{-b_m u}p_n(u)du=\delta_{mn},\\
+& \|p_n\|_2\le C e^{C\sqrt{b_n}}.
+\end{aligned}
+\end{equation}
+Choose nonzero \(\rho\in C_c^\infty(0,\varepsilon)\), \(\rho\ge0\), and put \(\rho_n=\int e^{-b_nu}\rho(u)du\). Define
+\begin{equation}\label{eq:3-3}
+\psi_n(t)=\frac{e^{ab_n}}{t\rho_n}\,[p_n(\cdot-a)*\rho](t).
+\end{equation}
+All \(\psi_n\) have a common compact support in I. Laplace convolution and \eqref{eq:3-2} give
+\begin{equation}\label{eq:3-4}
+\int_I t e^{-b_mt}\psi_n(t)dt=\delta_{mn}.
+\end{equation}
+Also \(\rho_n\ge e^{-\varepsilon b_n}\int\rho>0\); Cauchy--Schwarz for convolution and Leibniz' rule give, for each j,
+\begin{equation}\label{eq:3-5}
+\|\psi_n\|_{C^j}\le C_j e^{(a+\varepsilon)b_n+C\sqrt{b_n}}.
+\end{equation}
+Let \(X=L^2(I,t\,dt)\), extend its elements by zero to H, and let
+\begin{equation}\label{eq:3-6}
+\begin{aligned}
+&Y=\{y:\|y\|_Y^2=\sum_n e^{2(T-\eta)b_n}|y_n|^2<\infty\},\\
+&
+(Ex)_n=\int_I t e^{-b_nt}x(t)dt.
+\end{aligned}
+\end{equation}
+\(E\) is bounded \(X\to\ell^2\). For \(y\in Y\) set \(Sy=\sum_n y_n\psi_n\). By \eqref{eq:3-5} and Cauchy--Schwarz, the j-th derivative series is absolutely uniformly convergent, since
+\begin{equation}\label{eq:3-7}
+\sum_ne^{-2(T-\eta-a-\varepsilon)b_n+2C\sqrt{b_n}}<\infty.
+\end{equation}
+Thus \(S:Y\to X\) is bounded and \(Sy\in C_c^\infty(I)\), with convergence in every \(C^j\). Equation \eqref{eq:3-4} gives \(ESy=y\) coordinatewise. This is a right inverse only on Y, not a claim about arbitrary \(\ell^2\) data.
+
+\subsection{Tail compactness}
+
+For \(x\in X\), define
+\begin{equation}\label{eq:3-8}
+(Rx)_n=\int_T^\infty t e^{-b_nt}(\mathsf TQx)(t)dt.
+\end{equation}
+The Bessel series gives, for \(t\ge T\),
+\begin{equation}\label{eq:3-9}
+|(\mathsf TQx)(t)|\le C e^{2\sqrt{dTt}}\|x\|_X.
+\end{equation}
+Since \(b_n\ge b_1>0\), \(|(Rx)_n|\le C e^{-Tb_n}\|x\|_X\). The squared norms of the weighted coordinate functionals are bounded by \(C^2e^{-2\eta b_n}\), a summable sequence. Hence \(R:X\to Y\) is Hilbert--Schmidt, \(SR:X\to X\) is compact, and
+\begin{equation}\label{eq:3-10}
+A=I_X+SR
+\end{equation}
+is Fredholm with closed finite-codimension range \cite{Howard2020}. No invertibility or Neumann-series assumption on A is made.
+
+\subsection{Fast-null seeds and exact preimages}
+
+Because \(\sum 1/b_n<\infty\), \cite[Theorem~29]{Almira2007} and \(x=e^{-t}\) show that \(\{e^{-b_nt}\}\) is not dense in C on any interval strictly inside I. Hahn--Banach and the Riesz representation theorem \cite{RieszNotes} give a nonzero finite real signed measure annihilating the entire family. Convolution with a nonzero compact smooth bump preserves all moments and is nonzero: the Fourier transforms of the two compactly supported factors are nonzero entire functions, so their product cannot vanish identically. Dividing by t is smooth on I. Repeating on pairwise disjoint subintervals gives infinitely many independent elements of
+\begin{equation}\label{eq:3-11}
+N=\{h\in C_c^\infty(I):Eh=0\}.
+\end{equation}
+Since \(\operatorname{ran}A\) is closed and has finite codimension, \(N\cap\operatorname{ran}A\) is infinite-dimensional. Select independent \(h_i\) in this intersection, and solve \(Ax_i=h_i\). Then
+\begin{equation}\label{eq:3-12}
+\begin{aligned}
+&x_i=h_i-SRx_i\in C_c^\infty(I),\\
+& Ex_i=-ESRx_i=-Rx_i.
+\end{aligned}
+\end{equation}
+The first identity is in X and gives a smooth representative because the right side is smooth; the series converges in every \(C^j\). The second holds for every n, because \(Rx_i\in Y\) and \(ES=I_Y\). The \(x_i\) are independent since their A-images are independent. No truncated system is used.
+
+\subsection{Endpoint constraint}
+
+For arbitrary \(x\in X\), ordinary point evaluation in H is not defined. Since x is zero a.e. near T, \(Qx=-\mathsf TQx\) there in the canonical smooth representative. Define
+\begin{equation}\label{eq:3-13}
+L(x)=-d\int_0^T H_d(T,s)(Qx)(s)s\,ds.
+\end{equation}
+The kernel row belongs to H, so L is bounded on X. For smooth x, \(L(x)=(Qx)(T)\). Restriction of one linear functional to the infinite-dimensional span of the \(x_i\) has a kernel of codimension at most one. Every element of that kernel satisfies all equations in \eqref{eq:2-6}. This proves \cref{thm:kernel}.
+\end{proof}

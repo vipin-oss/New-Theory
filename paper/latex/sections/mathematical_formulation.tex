@@ -1,0 +1,26 @@
+\section{Formulation and main theorem}\label{sec:formulation}
+Fix \(T,d,\mu>0\), and a strictly increasing positive sequence \((b_n)\) satisfying
+\begin{equation}\label{eq:2-1}
+b_n\asymp n^2,\qquad \inf_n(\sqrt{b_{n+1}}-\sqrt{b_n})>0.
+\end{equation}
+The second assumption is separate: the asymptotic order alone does not exclude clustered pairs. Set \(\delta_n=d/b_n\) and \(H=L^2((0,T),t\,dt)\), over the reals. Define
+\begin{equation}\label{eq:2-2}
+\begin{aligned}
+&H_d(t,s)=\sum_{j=0}^\infty\frac{(dts)^j}{j!(j+1)!},\\
+&
+(\mathsf Tv)(t)=d\int_0^T H_d(t,s)v(s)s\,ds.
+\end{aligned}
+\end{equation}
+The series is entire in t and bounded on \([0,T]^2\). Thus \(\mathsf T\) is compact and self-adjoint. Moreover
+\begin{equation}\label{eq:2-3}
+\langle\mathsf Tv,v\rangle_H=d\sum_{j=0}^\infty\frac{d^j}{j!(j+1)!}\left(\int_0^T s^{j+1}v(s)ds\right)^2\ge0.
+\end{equation}
+Consequently \(Q=(I+\mathsf T)^{-1}\) exists on H, with \(\|Q\|\le1\). The extension \(\mathsf Tv\) in \eqref{eq:2-2} is entire for every \(v\in H\). For smooth k, \(v=Qk=k-\mathsf Tv\) is smooth on \([0,T]\). The correction map is
+\begin{equation}\label{eq:2-4}
+(\mathsf Bk)_n=\int_0^T t e^{-b_nt}k(t)dt+
+\int_T^\infty t e^{-b_nt}(\mathsf TQk)(t)dt.
+\end{equation}
+The second term is a dependent tail; it is not free interpolation data. Define
+\begin{equation}\label{eq:2-5}
+\mathcal K_{\rm adm}=\{k\in C^\infty[0,T]:k^{(j)}(0)=0\ (j\ge0),\ (Qk)(T)=0\}.
+\end{equation}

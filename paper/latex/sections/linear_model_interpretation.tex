@@ -1,0 +1,36 @@
+\section{Conditional linear odd-model interpretation}\label{sec:model}
+Assume a frozen linear odd heat--memory system with \(M,\kappa,L,\mu>0\), \(d=\gamma S/M>0\), zero initial odd fields at time \(-T\), opposite boundary inputs \(Y(0,s)=a(s)\), \(Y(L,s)=-a(s)\), and smooth compatible boundary lift. Let \(f(t)=a(-t)\). On odd modes \(\phi_n=\sqrt{2/L}\sin(q_nx)\), \(q_n=2\pi n/L\), write
+\begin{equation}\label{eq:4-1}
+\begin{aligned}
+&D_n=\begin{pmatrix}-A_n&S/M\\\gamma&-\mu\end{pmatrix},\\
+&
+A_n=(\kappa q_n^2-B_0)/M,\quad C_n=2\kappa\sqrt{2/L}\,q_n/M.
+\end{aligned}
+\end{equation}
+Here the frozen PDE is \(M Y_s=\kappa Y_{xx}+B_0Y+SP\), \(P_s=-\mu P+\gamma Y\). Integration by parts gives boundary input \(C_na(s)\). Its eigenvalues are \(-\mu+\delta_n\), \(-\mu-b_n\), with \(\delta_nb_n=d\), and the positive branch b satisfies \eqref{eq:2-1}, as noted in \cref{subsec:gap}. The physical relation \(\mu B_0+\gamma S=0\) ensures negative roots; the abstract theorem does not require this extra relation.
+
+For \(F(z)=\int_0^T e^{zt}f(t)dt\), zero-start Duhamel and the spectral projectors yield
+\begin{equation}\label{eq:4-2}
+\begin{aligned}
+&Y_n(0)=\frac{C_n}{b_n+\delta_n}[\delta_nF(-\mu+\delta_n)+b_nF(-\mu-b_n)],\\
+&
+P_n(0)=\frac{C_n\gamma}{b_n+\delta_n}[F(-\mu+\delta_n)-F(-\mu-b_n)].
+\end{aligned}
+\end{equation}
+If \(v=Qk\) and \(f=e^{\mu t}t v\), direct termwise integration of \eqref{eq:2-2} gives
+\begin{equation}\label{eq:4-3}
+\int_0^\infty t e^{-bt}H_d(t,s)dt=b^{-2}e^{ds/b},\quad b>0.
+\end{equation}
+It follows that
+\begin{equation}\label{eq:4-4}
+\begin{aligned}
+&(\mathsf Bk)_n=\int_0^T t v(t)\left[e^{-b_nt}+d b_n^{-2}e^{\delta_nt}\right]dt,\\
+&
+Y_n(0)=\frac{C_n b_n}{b_n+\delta_n}(\mathsf Bk)_n.
+\end{aligned}
+\end{equation}
+All integral interchanges follow from the factorial kernel series and the bound \eqref{eq:3-9}. Thus each k in \eqref{eq:2-6} has zero odd terminal-temperature coefficients and \(f(0)=f(T)=0\). Under the smooth boundary-lift solution framework these coefficients represent the terminal odd \(L^2\) field. Under nulling, \eqref{eq:4-2} reduces to the separate memory formula
+\begin{equation}\label{eq:4-5}
+P_n(0)=\frac{C_n\gamma}{b_n}\int_0^T t e^{\delta_nt}v(t)dt.
+\end{equation}
+The framework does not assert terminal \(L^2\) temperature for arbitrary \(L^2\) boundary inputs.

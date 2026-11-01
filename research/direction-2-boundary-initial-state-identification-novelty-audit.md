@@ -177,7 +177,7 @@ P_t=-\mu P+\lambda\beta QY,\quad V(t)=e^{-\lambda t}\overline{z_{0,1}-z_{0,2}},\
 W=-V-\alpha P+\beta QY,
 \]
 \[
-M_{\theta_1}Y_t-\kappa Y_{xx}=-bY\varepsilon_{2t}-b\theta_1rP_t+k\lambda(w_1+w_2)W.
+M_{\theta_1}Y_t-\kappa Y_{xx}=-dYQ(y_2)_t-bY\varepsilon_{2t}-b\theta_1rP_t+k\lambda(w_1+w_2)W.
 \tag{7.1}
 \]
 

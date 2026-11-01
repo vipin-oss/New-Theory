@@ -1,0 +1,23 @@
+# Cycle 6: full signed injectivity of the constant comparison
+
+**Reference: PROVED under the stated positive constants. Actual nonzero-load graph: OPEN.** This independently checks the earlier comparison proof in `direction-2-infinite-mode-reference-and-perturbation-barrier.md`; it is not a new result for the frozen active coefficients or an independent human certification.
+
+For \(H_o=L^2_o(0,L)\), \(\phi_n=c_L\sin(q_nx)\), \(q_n=2\pi n/L\), write \(h=\sum h_n\phi_n\), \((Y,P)(0)=(0,h)\), and constant \(M_0,\kappa,\mu>0\), \(S_0\gamma>0\), \(A_0\ne0\), \(B_0<0\), with the physical reference relation \(\mu B_0+\gamma S_0=0\). Let \(a_n=(\kappa q_n^2-B_0)/M_0\), \(d_0=\gamma S_0/M_0>0\), \(\Delta_n=\sqrt{(a_n-\mu)^2+4d_0}\), \(\lambda_{n,\pm}=-(a_n+\mu)/2\pm\Delta_n/2\). Then \(\lambda_{n,-}<-\mu<\lambda_{n,+}<0\): the characteristic polynomial at \(-\mu\) equals \(-d_0\), and the root product \(\mu\kappa q_n^2/M_0\) and root sum have the stated signs. Both branches are strictly decreasing functions of \(a_n\); cross-branch coincidence is impossible. Further \(\Delta_n\asymp q_n^2\), \(\lambda_{n,+}+\mu=O(q_n^{-2})\), and \(\lambda_{n,-}\to-\infty\).
+
+The exact output on \(t>0\) is
+\[\mathcal T_0h(t)=C_0\sum_{n\ge1}\frac{h_nq_n}{\Delta_n}(e^{\lambda_{n,+}t}-e^{\lambda_{n,-}t}),\quad C_0=2A_0\kappa c_L S_0/M_0\ne0.\tag{1}\]
+Because \(\sum|h_n|/q_n\le\|h\|_2(\sum q_n^{-2})^{1/2}\), both sums converge absolutely and locally uniformly on \(\Re t>0\). The limit is holomorphic there. The actual comparison flux is this limit by finite-sine density and the bounded forward boundary-trace map. If its restriction to any nonempty open \(J\subset(0,\infty)\) is zero almost everywhere, continuity and the identity theorem give zero for every positive time.
+
+For \(\Re z>0\), Fubini is justified by absolute summability and negative roots, yielding
+\[\widehat{\mathcal T_0h}(z)=C_0\sum_{n\ge1}\frac{h_nq_n}{(z-\lambda_{n,+})(z-\lambda_{n,-})}.\tag{2}\]
+On a compact subset of \(\mathbb C\setminus(\{-\mu\}\cup\{\lambda_{n,\pm}\})\), large-\(n\) denominators are bounded below by \(c_Kq_n^2\); the tail is dominated by \(\sum |h_n|/q_n\). Thus (2) extends holomorphically there. The excluded set is closed and countable with the sole finite accumulation point \(-\mu\), and its complement is path-connected: a polygonal path can be perturbed to avoid a countable set. Analytic continuation from \(\Re z>0\) makes (2) zero on the complement. Every \(\lambda_{n,-}\) is isolated from the remaining spectrum; the residue there is \(-C_0h_nq_n/\Delta_n\), so \(h_n=0\) for every \(n\). This is an infinite signed \(\ell^2\) proof, not a finite Gram inference.
+
+The reference delay map \(D_\delta^0\) is the bounded diagonal isomorphism established in `direction-2-independent-audit-pre-delay-isomorphism.md`. Thus \(O_0=\mathcal T_0(D_\delta^0)^{-1}\) is injective on the exact reference graph. The slow branch's finite accumulation prevents the usual *globally ordered increasing-to-infinity* Dirichlet exponent hypothesis: see [arXiv:2506.07892](https://arxiv.org/html/2506.07892), Corollary 2. It does not block this separately justified isolated-pole argument.
+
+## New quantitative obstruction even for the reference
+
+For any integer \(r\ge1\), expand \(e^{(\lambda_{n,+}+\mu)t}\) through degree \(r-1\) uniformly on fixed \(J\subset(0,T)\). For \(n>N\), the slow-tail residual columns have norm \(\le C_rq_n^{-1-2r}\), and the fast tail is \(\le Cq_n^{-1}e^{-c\delta q_n^2}\) for large \(n\). The first \(N\) columns plus the \(r\) output functions \(t^ke^{-\mu t}\), \(0\le k<r\), form a rank-\(N+r\) approximant. Its tail Hilbert–Schmidt error is \(O_r(N^{-2r-1/2})+O(e^{-c'N^2})\). Hence
+\[s_{N+r+1}(\mathcal T_0)\le C_rN^{-2r-1/2}+Ce^{-c'N^2},\quad \mathcal T_0, O_0\in\bigcap_{p>0}\mathcal S_p.\tag{3}\]
+Bounded composition by \((D_\delta^0)^{-1}\) preserves this super-polynomial upper bound. Thus, for the reference, **no** negative Sobolev observability bound with finite exponent holds, despite exact injectivity; see the spectral-obstruction report for the approximation-number comparison. This does not prove the same super-polynomial rate for the active system.
+
+The actual coefficient perturbation mixes spatial modes and lacks an established holomorphic time continuation or meromorphic Laplace resolvent. Injectivity of a compact comparison is not stable under small operator perturbation: the explicit infinite-support rank-one construction in the earlier comparison report preserves all finite-sine-span injectivity while creating an abstract kernel. It is not an actual physical counterexample.

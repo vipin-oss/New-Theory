@@ -107,8 +107,8 @@ def galerkin(data, n, rtol=1e-8, atol=1e-10):
     """
     t,x = data['t'],data['x']; L=float(data['L']); kap=float(data['kappa'])
     gamma=float(data['gamma']); mu=float(data['mu']); A0=float(data['A0'])
-    if len(x)<2*n+1:
-        raise ValueError('spatial grid must resolve at least 2*N+1 points')
+    if n < 1 or len(x)<2*n+2:
+        raise ValueError('need N>=1 and more than 2*N spatial cells to avoid sine aliasing')
     w=trapezoid_weights(x); q=2*np.pi*np.arange(1,n+1)/L
     Phi=np.sqrt(2/L)*np.sin(np.outer(x,q))
     ip={key:RegularGridInterpolator((t,x), data[key],bounds_error=True) for key in ('M','B','S')}
@@ -179,9 +179,12 @@ def run_physical(args):
     K=np.sqrt(kw)[:,None]*flux[mask,:]; a=np.sqrt(kw)*lead
     dist,control,rank=distance_and_control(K,a,args.target-1)
     singular=np.linalg.svd(K,compute_uv=False)
+    aug_singular=np.linalg.svd(np.column_stack((K,a)),compute_uv=False)
+    cond=float(aug_singular[0]/aug_singular[-1]) if aug_singular[-1]>0 else float('inf')
     print(json.dumps({'label':'supplied coefficients, diagnostic only','N':args.modes,
                       'target':args.target,'distance':dist,'control_norm':control,
-                      'others_rank':rank,'singular_values':singular.tolist()},indent=2))
+                      'others_rank':rank,'singular_values':singular.tolist(),
+                      'augmented_singular_values':aug_singular.tolist(),'augmented_condition':cond},indent=2))
 
 
 def main():

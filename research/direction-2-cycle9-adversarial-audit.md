@@ -1,0 +1,18 @@
+# Cycle 9: adversarial audit and decision
+
+Arena is Research Scholar / Builder / Literature Investigator; Dr. Vipin Gupta is Principal Researcher and final decision-maker; ChatGPT is the designated Independent Scientific Supervisor and Auditor. This is Arena's self-audit, not an independent human certification.
+
+| Challenge | Audit outcome |
+|---|---|
+| Frozen experiment | The scalar preparation occurs only on \([-T_p,0]\); the post-zero nonzero sinusoidal loading, original constants, baths and equations remain unchanged. Endpoint displacement is zero only at \(s=0\), not throughout the later experiment. |
+| Preparation class and nonemptiness | Full relaxed initial data, scalar smooth compactly supported displacement, equal baths, unique positive strong-class solution, and exact final uniform temperature are stated. The zero control explicitly works; existence of a nonzero terminal-compatible loop is not asserted. |
+| Symmetry argument | The displacement transforms as \(g_p-u(L-x)\), not simply \(Ru\); this preserves the physical endpoints and makes strain reflect without a sign. PDE, ODE, initial data, stress equilibrium and baths all transform correctly. Uniqueness is essential and explicitly assumed. |
+| Scope of obstruction | Any admissible terminal memory is even; hence odd projection and intersection with \(V_N\) are exactly zero. The proof does not claim \(z=0\) for every control, does not show that any nonzero even final state is attainable, and does not cover asymmetric preparation or nonunique solutions. |
+| Approximation | Orthogonality gives a positive \(L^2\) distance to each fixed nonzero odd target; this also excludes \(H^2\) convergence. It does not exclude sequences whose odd targets themselves shrink to zero. |
+| Linearized control map | Its odd range and finite-prior projection are zero; the full control-to-memory derivative need not be zero. The endpoint-compatible control subset is not assumed open or a manifold. |
+| Prior prehistory | The old construction is a correct isolated ODE/initial-slice calculation. The explicitly computed equilibrium and thermal residuals show its full coupled failure; the stronger no-temperature conclusion is limited to the exponential construction, sine prior, fixed baths and regularity. No universal no-preparation conclusion follows. |
+| Thermodynamics | Entropy production formula is nonnegative for positive \(\theta\), with nonzero possible bath entropy flux. It is not used as a positivity or controllability theorem; positive nontrivial histories have not been constructed. |
+| Inverse transfer | Even data give an identically zero nonlinear flux difference in the unique-solution class, not merely a zero derivative. A stable inverse for any alternative family requires a new derivative lower bound; no false inference from the odd theorem, nor claim that other measurements cannot help. |
+| Numerical diagnostics | Algebra tests check formulae and parity on artificial examples; no PDE proof, actual parameter run, physical validation or independent certification. |
+
+**Final decision: PRECISE PREPARATION OBSTRUCTION PROVED**, conditional on the selected protocol's unique solution class. Specifically, scalar displacement and equal baths from a symmetric relaxed state cannot produce or approximate a fixed nonzero odd memory. Full coupled-past reachability under other protocols remains OPEN. Direction 2 remains REFORMULATE as a foundational-theory proposal; Direction 1 remains REJECTED AS A NEW FOUNDATIONAL CONTINUUM THEORY. This standard symmetry mechanism is not claimed as a new general continuum theory.

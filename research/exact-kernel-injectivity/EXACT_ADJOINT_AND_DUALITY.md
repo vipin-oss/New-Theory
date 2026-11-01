@@ -1,0 +1,11 @@
+# Exact adjoint and duality
+
+In \(H=L^2((0,T),t\,dt)\), for the bounded extensions of the previous report, \(\mathsf B=\mathsf D(I+\mathsf T)^{-1}\) and
+\[\mathsf B^*c=(I+\mathsf T)^{-1}\sum_{n\ge1}c_n\left(e^{-b_nt}+\frac d{b_n^2}e^{dt/b_n}\right),\quad c\in\ell^2.\tag{1}\]
+The series converges in H because the row norms are square-summable. For t>0 the fast sum and its derivatives converge locally uniformly; the slow sum is entire. The earlier residue argument proves \(\ker\mathsf D^*=\ker\mathsf B^*=\{0\}\): after Laplace transformation, isolated poles at \(-b_n\) have residues c_n, while positive slow poles \(d/b_n\) accumulate only at zero. The analytic continuation domain excludes zero and these poles and is connected. This shows \(\operatorname{ran}\mathsf B\) is dense in \(\ell^2\).
+
+The new construction proves the distinct statement \(\ker\mathsf B\ne0\), even after restriction to smooth flat endpoint-compatible corrections. Consequently \(\overline{\operatorname{ran}\mathsf B^*}=(\ker\mathsf B)^\perp\ne H\); its codimension is infinite. Thus adjoint injectivity and direct injectivity demonstrably differ for this operator. The slow-pole accumulation does not produce an adjoint null vector; conversely the fast-pole residue argument does not establish row completeness.
+
+A different biorthogonal family is used in the construction: it is biorthogonal only to the **fast** exponentials. Its norm grows on shifting away from 0, but the analytic tail decays at t=T, creating the strict exponential margin \(a+\epsilon<T-\eta\). The resulting right inverse acts on a weighted sequence space of tail data, not all \(\ell^2\). Fredholm theory is applied only to the concrete operator \(I_X+SR\), where \(SR\) is compact on the fixed interior-support space X. This is not an assertion that \(\mathsf B\) itself is Fredholm.
+
+For endpoint conditions, the bounded full-H adjoint alone has no point evaluation functional. On interior X, however, \(L(k)= -[\mathsf T(I+\mathsf T)^{-1}k](T)\) is bounded because the integral kernel at T is in H. The construction imposes \(L(k)=0\) as one additional real linear constraint on an infinite-dimensional exact-kernel space. No unproved dual separator or exact-range-from-density step is used.

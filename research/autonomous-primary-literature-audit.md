@@ -148,3 +148,6 @@ See `direction-2-cycle10-literature-and-novelty-audit.md`: Halanay–Pandolfi sc
 ## Sign-changing no-gap investigation
 
 See `sign-changing-nogap-investigation/LITERATURE_PRIORITY.md`: inspected Guerrero–Imanuvilov's spectral branch proof and original theorem, Halanay–Pandolfi's terminal-trace distinction and Allal et al.'s explicit separated-eigenvalue hypotheses. Ivanov–Pandolfi's original Paley–Wiener paper remained inaccessible. The analytic-input uniqueness mechanism may overlap prior work; no priority claim.
+
+### Fast biorthogonal estimate used in exact paired-moment kernel construction
+Cannarsa, Martinez and Vancostenoble, [arXiv:1706.02435](https://arxiv.org/html/1706.02435), Theorem 2.1, gives a biorthogonal family for positive exponentials with a quantified \(e^{-\lambda_n T+O(\sqrt{\lambda_n})}\) L² bound, under a positive square-root gap. The present construction reverses time, shifts support, and mollifies; the actual \(b_n\) satisfy the gap. This theorem is used as an explicit mathematical input, not as an asserted theorem about the coupled rows or priority of the construction. Independent proof audit and comparison with the inaccessible original Ivanov–Pandolfi paper remain necessary.

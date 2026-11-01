@@ -140,3 +140,7 @@ Martin–Rosier–Rouchon [arXiv:1509.09072](https://arxiv.org/html/1509.09072) 
 ## Cycle 10 — boundary preparation sources
 
 See `direction-2-cycle10-literature-and-novelty-audit.md`: Halanay–Pandolfi scalar memory control and endpoint caveat; Allal et al. transposition for two diffusive weighted equations; Avalos–Lasiecka thermoelastic plate exact-mechanical/approximate-thermal steering with geometry and Robin controls; moving-interior memory preprint retrieved only through its incomplete model setup. Model mismatches preclude direct transfer. No priority or exhaustive novelty conclusion, no independent human audit.
+
+## Integrated investigation — interim primary-source additions
+
+`10-hour-integrated-investigation/13_PRIMARY_SOURCE_LITERATURE_AND_NOVELTY.md` compares Guerrero–Imanuvilov's primary paper and theorem statements, Halanay–Pandolfi's endpoint/transposition caveat, a finite-dimensional ODE–heat boundary-control theorem, and the two-diffusion boundary moment theorem. Distinct initial states, memory operators and control geometries prevent direct transfer. No exhaustive review or priority determination was achieved.

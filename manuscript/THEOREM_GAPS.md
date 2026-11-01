@@ -1,0 +1,3 @@
+# Theorem and manuscript gaps
+
+The terminal-flat linear obstruction has an explicit proof in research/10-hour-integrated-investigation/05_NO_GAP_CONTROL_THEOREMS.md; it needs an independently reviewed solution-space realization and literature-priority audit. No theorem of nonlinear physical preparation, all-class no-gap impossibility, full joint-control reachability or reachable-prior inverse recovery has been established. The manuscript lacks complete function-space details, independently reviewed full proofs, systematic literature review, verified bibliography and reproducible figures. It must not be represented as a completed submission.

@@ -1,0 +1,11 @@
+# Candidate 5: matrix relaxation and port observability
+
+**PROVED finite-atomic case; standard systems theory, novelty not asserted.** Let distinct \(r_j>0\) and symmetric positive semidefinite \(R_j\in\mathbb R^{m\times m}\), \(j=1,\dots,N\). Set \(E_j=\operatorname{ran}R_j\), \(B_j=R_j^{1/2}:\mathbb R^m\to E_j\), and \(E=\bigoplus_jE_j\). Consider
+\[\dot z_j=-r_jz_j+B_jv,\quad y=\sum_jB_j^*z_j.\]
+The transfer kernel is \(K(t)=\sum_je^{-r_jt}R_j\), irrespective of whether the residues commute. Energy \(\tfrac12\sum_j|z_j|^2\) satisfies \(\dot E=-\sum_jr_j|z_j|^2+v\cdot y\).
+
+**Minimality proof.** Let \(A=\operatorname{diag}(-r_jI_{E_j})\), \(B=(B_j)_j\), \(C=B^*\). For each \(j\), a polynomial \(p_j\) satisfies \(p_j(-r_k)=\delta_{jk}\). Hence \(p_j(A)Bv\) has only the \(j\)-component, and \(\operatorname{ran}B_j=E_j\). The controllable span is all \(E\); by \(A=A^*\), \(C=B^*\), the observable subspace is also all \(E\). Thus the realization is finite-dimensional minimal, of dimension \(\sum_j\operatorname{rank}R_j\). No simultaneous diagonalization of \(R_j\) is needed.
+
+**PROVED restricted output-port kernel.** For a linear output selector \(P\), zero-input output is \(P\sum_je^{-r_jt}B_j^*z_j(0)\). Distinct exponentials are linearly independent on every nonempty time interval, so the unobservable subspace is exactly \(\bigoplus_j\ker(PB_j^*|_{E_j})\). This concerns a finite-dimensional constitutive port with full initial-state access, not a boundary-observed coupled PDE; it proves neither history reachability nor uniqueness for a continuous matrix measure. If \(P\) also changes the driving input, the controllable subspace must be recomputed.
+
+**Prior overlap and OPEN:** [Chaffey–van Waarde–Sepulchre, arXiv:2312.03389](https://arxiv.org/html/2312.03389), introduction, treats MIMO relaxation, minimal state-space representation and Hankel-based intrinsic storage. The finite spectral realization and observability computation above are standard; no theory claim is justified. Continuous matrix measures, operator-valued minimal states, compatible histories and spatial boundary ports remain unproved, and require a direct-integral treatment and further primary-source comparison.

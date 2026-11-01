@@ -120,3 +120,7 @@ for t in (0.4,1.1):
     right=sum(math.exp(-r*t)*k[i]*dr for i,r in enumerate(x))
     print(t,left,right,abs(left-right))
 ```
+
+## Cycle 4 partial checkpoint
+
+The independent recalculation, exact Hardy-space common-history range, noncompactness correction for infinite-dimensional spatial fibers, and stronger separated-ansatz exclusion are in `candidate-1-invisible-state-independent-proof-audit.md` and `candidate-1-physical-history-reachability-theorem.md`. General reachable-state injectivity remains open. The interface density proof is audited in `candidate-2-interface-density-independent-audit.md`. `candidate-2-partial-data-shape-identifiability.md` derives a separate disjoint-patch-to-full-DtN qualitative reduction using collar unique continuation and reciprocity, conditional on ideal operator data; shape derivative and full primary-theorem hypotheses remain unfinished. None of these is a novelty clearance or human certification. Candidates 3–5 and the original Direction 2 remain to be pursued.

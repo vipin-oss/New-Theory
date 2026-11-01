@@ -40,3 +40,7 @@ These additional passages were checked in the accessible primary full texts; the
 - [arXiv:2604.11464](https://arxiv.org/html/2604.11464), §§2–4: scalar positive-real/Stieltjes memory realization. This is close to the scalar building blocks in the alternative distributed-state example but does not settle that example's initial-history range or hidden-state theorem. Operator-valued minimal-state literature needs targeted primary inspection.
 
 The complete five-candidate screening and the proof attempts and limitations are in `autonomous-five-candidate-discovery-audit.md`; this is not an exhaustive literature or novelty audit.
+
+## Cycle 4 partial comparison
+
+[arXiv:2509.15171](https://arxiv.org/html/2509.15171), Theorem 3.2 and discussion, explicitly highlights the fourth-order surface operator's constant nullspace and noncoercivity on the full space; Theorem 3.3 imposes a threshold on the shear ratio for mean-zero coercivity, and Theorem 5.3 gives a full-DtN shape reconstruction criterion using an interior anchor. The partial-to-full reduction in `candidate-2-partial-data-shape-identifiability.md` is a qualitative UCP/reciprocity transfer, not that paper's shape theorem itself. Complete checking of the relevant hypotheses and partial-data prior art remains necessary; no novelty conclusion. The required three primary comparisons per candidate have not been completed in this checkpoint.

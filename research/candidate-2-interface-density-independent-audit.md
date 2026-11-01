@@ -1,0 +1,17 @@
+# Candidate 2: independent interface-density audit
+
+Arena's recalculation, not independent human certification. This audits the precisely specified alternative model in `autonomous-five-candidate-discovery-audit.md` §8; it is not an assertion about the frozen Direction 2 system.
+
+## Graph space and boundary problem
+
+Let \(V=\{v\in H^1(\Omega):\operatorname{Tr}_\Gamma v\in H^2(\Gamma)\}\), norm \(\|v\|_{H^1(\Omega)}+\|\operatorname{Tr}_\Gamma v\|_{H^2(\Gamma)}\). It is complete: a Cauchy sequence converges in both components, and continuity of the ordinary \(H^1\to H^{1/2}(\Gamma)\) trace identifies the limits. The closed subspace \(V_0\) has zero exterior trace. The bulk and surface bilinear form in §8 is continuous. Its positive bulk gradient controls \(H^1\) by exterior Dirichlet Poincaré. The \(L^2(\Gamma)\) trace is then controlled by \(H^1\), while \(\beta>0\) controls the second tangential derivative; the standard closed-curve Fourier/coordinate inequality controls the remaining \(H^2\) norm. Hence coercivity holds even when \(\alpha=0\); a zeroth-order surface term is not needed.
+
+The trace \(V_0\to H^2(\Gamma)\) is onto: in a smooth tubular chart use \(v(s,n)=\chi(n)g(s)\), extended by zero away from the interface. This is \(H^1(\Omega)\), has trace \(g\), and vanishes near the outer boundary. For \(f\in C_c^\infty(\Gamma_c)\), a smooth exterior-boundary extension \(Ef\) can be supported away from \(\Gamma\). Lax–Milgram gives unique \(u_f-Ef\in V_0\); no assertion is needed about a full arbitrary \(H^{1/2}\) trace lifting here.
+
+## Duality and unique continuation
+
+For \(\ell\in(H^2(\Gamma))'\), solve \(a(v,w)=\ell(\operatorname{Tr}_\Gamma v)\) for \(v\in V_0\). This is bounded and Lax–Milgram applies. Then \(\ell(\operatorname{Tr}_\Gamma u_f)=-a(Ef,w)\) because \(Ef\) vanishes on \(\Gamma\) and \(a(u_f,w)=0\). The right side is the negative weak exterior conormal trace of \(w\) on the patch; its definition is independent of the chosen lifting because \(w\) is harmonic in an exterior collar. Annihilation for all \(f\) therefore yields zero conormal distribution on \(\Gamma_c\); \(w\) also has zero exterior Dirichlet trace.
+
+Across a smooth boundary patch in physical coordinates, the zero extension of \(w\) is distributionally harmonic: Green's formula cancels both potential boundary distributions using its zero trace and zero weak normal derivative. For the constant Laplacian, interior harmonic unique continuation then gives local vanishing, propagated through the connected exterior \(\Omega\setminus\bar D\). Continuity of the \(H^1\) trace gives zero trace on \(\Gamma\); inside \(D\), \(w\) is weakly harmonic and zero Dirichlet, so \(w=0\). Onto trace then implies \(\ell=0\); Hahn–Banach yields density in \(H^2(\Gamma)\).
+
+**Verdict:** the displayed proof is valid under the stated smoothness, connected exterior and constant-bulk-coefficient hypotheses. It is a single-agent audit, not external certification. Boundary flattening for a nonflat patch yields a uniformly elliptic transformed operator rather than literally the Laplacian; equivalently zero-extend in physical coordinates and use local distributional harmonicity across the smooth surface. No disjoint-observation shape conclusion follows from this density alone. Full-data paper [arXiv:2509.15171](https://arxiv.org/html/2509.15171) has different operator spaces, a surface constant nullspace and substantial existing factorization analysis; exact overlap of this density statement remains unchecked.

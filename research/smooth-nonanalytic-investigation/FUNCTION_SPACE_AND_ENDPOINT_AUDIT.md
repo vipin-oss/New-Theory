@@ -1,0 +1,9 @@
+# Function spaces, endpoint and memory audit
+
+* \(H=L^2(t\,dt)\) is useful for the **rescaled variable** \(v=e^{-\mu t}f(t)/t\), not identical to the physical control space. A smooth f with \(f(0)=0\) gives smooth v, but an arbitrary H-element need not yield a smooth or even \(H^1\) control. No inference from an H-kernel to the physical smooth kernel is permitted without regularity.
+* \(f(T)=0\) is \(v(T)=0\) only for smooth/trace-defined v. Point evaluation is not bounded on H. The explicit kernel characterization therefore uses \(C^\infty\) and does not attach a spurious H boundary trace.
+* Flat correction \(h=f-g\) is \(e^{\mu t}t k\). Flatness of h and k is equivalent when both are smooth. k flat is a necessary condition for an exact smooth solution, not for arbitrary f.
+* Exact moments imply \(f\ne0\Rightarrow\) no physical terminal gap, nonflatness, sign change, and nonanalyticity on the entire interval, using earlier proved class-specific results. Nonanalyticity at every point is not claimed.
+* For physically meaningful \(L^2\) boundary controls, terminal \(Y\in L^2\) is not automatic. Coefficient identities can be posed individually; every theorem about full temperature fields assumes an admissible trace class or a defined transposition space.
+* Under exact thermal nulling, earlier results show nonzero f implies infinitely many nonzero P coefficients and a nonzero memory, and no nonzero finite-sine target is possible. For a first nonzero smooth endpoint derivative of order j, the audited \(q_n^{-(2j-1)}\) coefficient asymptotic applies. It does not by itself characterize classical H² boundary traces.
+* The earlier compact-memory argument rules out bounded \(L^2\)-cost approximation to \((0,h)\) for nonzero h with infinitely many zero sine coefficients. Approximate joint density on a gap is inherited conditionally; no bound is proved for an arbitrary exact-reachable h or physical amplitude constraint.

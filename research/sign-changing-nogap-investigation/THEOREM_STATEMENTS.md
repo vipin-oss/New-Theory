@@ -1,0 +1,16 @@
+# Precisely scoped theorems and proof status
+
+All statements concern the frozen **linearized odd** heat–ODE system with zero initial state, \(M,\kappa,\mu>0\), \(d_0=\gamma S/M>0\), \(B=-d_0M/\mu<0\), and \(\gamma\ne0\). The full nonlinear and even/mean problems are not covered.
+
+1. **Analytic-control uniqueness (proved, same-agent audit).** If \(f(t)=a(-t)\) is real analytic on an open neighborhood of \([0,T]\), \(f(0)=f(T)=0\), and every exact terminal temperature moment vanishes, then \(f\equiv0\), hence terminal memory vanishes. The proof allows arbitrary sign changes, nonflat endpoint jets and no gap. It does not extend merely from \(C^\infty\) to analytic functions.
+2. **Jet identity and exponential jet bound (proved).** For \(f\in C^\infty([0,T])\), \(f(0)=0\), satisfying the moments, the ordinary generating function of the endpoint derivatives is the Taylor series of
+\[J(\xi)=-\frac{d_0\xi^2}{(1-\mu\xi)^2}F\left(-\mu+\frac{d_0\xi}{1-\mu\xi}\right),\qquad \sum_{j\ge0}f^{(j)}(0)\xi^{j+1}=J(\xi)\quad\text{as formal power series}.\]
+Consequently for each \(R<1/\mu\), \(|f^{(j)}(0)|\le C_R R^{-j-1}\). This says the **jet** is entire of exponential type at most \(\mu\); it does not say an arbitrary smooth f equals its Taylor series.
+3. **Memory tail and no finite-sine simultaneous target (proved).** For any \(f\in L^1(0,T)\) whose modal terminal equations hold, exact temperature nulling and \(P_n(0)=0\) for infinitely many n force \(f=0\). Thus every nonzero exact-null control, if one exists, has \(P_n(0)\ne0\) for all but finitely many n; in particular \(P\ne0\) and no nonzero finite-sine memory is exactly reachable with the temperature constraint. This is independent of flatness and sign.
+4. **Finite-order jet tail (proved).** Under theorem 2, if \(j\ge1\) is the first nonzero terminal derivative of f, then
+\[P_n(0)\sim -\frac{2\sqrt{2/L}\,\gamma f^{(j)}(0)}{d_0}\left(\frac{M}{\kappa}\right)^{j-1}q_n^{-(2j-1)}.\]
+The asymptotic uses the standard sine coefficients; it must not be confused with a failure of classical \(H^2\) for nonzero endpoint traces.
+5. **Bounded-cost obstruction for finite-sine targets (proved).** For any nonzero \(h\in V_N\), no uniformly \(L^2\)-bounded sequence of admissible no-gap controls can simultaneously send terminal temperature to zero and memory to h in \(L^2_o\). For any \(R<\infty\), the joint squared-error infimum over \(\|a\|_2\le R\) is strictly positive. The prior fixed-gap joint-density theorem gives infimum tending to zero as \(R\to\infty\), conditional on its stated signed-synthesis proof.
+
+None of these results decides whether a nonzero sign-changing nonflat **smooth nonanalytic** control exists. The analytic theorem is a restrictive class-dependent uniqueness result, not a nonlinear physical impossibility theorem; literature priority is unknown.
+6. **Jet hierarchy is not sufficient (proved).** There is an infinite-dimensional family of real smooth, sign-changing, nonflat histories with \(f(0)=f(T)=0\) that satisfy every formal jet identity in theorem 2, even though this does not assert the exact modal moments. In particular no uniqueness proof can rely on the full jet hierarchy alone. An explicit invertible positive compact integral operator constructs such histories; see the master report.

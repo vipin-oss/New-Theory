@@ -1,0 +1,4 @@
+N,family,dim,rank,smax,smin,condition,gram_norm,endpoint_fprime,partial_memory_norm,train_resid,unseen_y,quad_diff
+160,polynomial,328,27,7.588e+00,2.627e-16,2.888e+16,4.312e+00,-3.774e-01,1.268e+00,4.955e-12,1.392e-11,1.643e-11
+160,smooth-flat,328,25,2.965e+00,1.906e-16,1.556e+16,2.529e+03,0.000e+00,1.008e+00,5.225e-11,2.109e-12,9.817e-11
+160,oscillatory,328,14,2.670e+00,2.124e-16,1.257e+16,4.370e+00,-3.777e-01,1.268e+00,3.820e-11,1.580e-11,1.650e-11

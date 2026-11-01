@@ -144,3 +144,7 @@ See `direction-2-cycle10-literature-and-novelty-audit.md`: Halanay–Pandolfi sc
 ## Integrated investigation — interim primary-source additions
 
 `10-hour-integrated-investigation/13_PRIMARY_SOURCE_LITERATURE_AND_NOVELTY.md` compares Guerrero–Imanuvilov's primary paper and theorem statements, Halanay–Pandolfi's endpoint/transposition caveat, a finite-dimensional ODE–heat boundary-control theorem, and the two-diffusion boundary moment theorem. Distinct initial states, memory operators and control geometries prevent direct transfer. No exhaustive review or priority determination was achieved.
+
+## Sign-changing no-gap investigation
+
+See `sign-changing-nogap-investigation/LITERATURE_PRIORITY.md`: inspected Guerrero–Imanuvilov's spectral branch proof and original theorem, Halanay–Pandolfi's terminal-trace distinction and Allal et al.'s explicit separated-eigenvalue hypotheses. Ivanov–Pandolfi's original Paley–Wiener paper remained inaccessible. The analytic-input uniqueness mechanism may overlap prior work; no priority claim.

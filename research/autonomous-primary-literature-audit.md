@@ -71,3 +71,9 @@ The entries below record primary passages, not an exhaustive search or independe
 | Volkov, [arXiv:2309.00153](https://arxiv.org/html/2309.00153), Theorem 1.1 | Integral kernel in \(L^2(\Omega';H^p(\Omega))\), source dimension \(d\), gives \(\sum n^{2p/d}s_n^2<\infty\). | **Direct conditional operator-ideal consequence** if actual source-kernel \(H^1\) is proved; it does not prove that regularity or injectivity. |
 
 For the actual active base, a proof of the graph-sensitive boundary uniqueness target is still missing. Earlier source sections and their access limitations remain in force.
+
+## Infinite-mode comparison: spectral accumulation
+
+[arXiv:2606.18761](https://arxiv.org/html/2606.18761), Theorems 3.1 and 3.4 and §3.2, studies a **different** one-dimensional advection–diffusion/heat-flux-memory PDE–ODE system on \(L^2(0,1)\times H^1(0,1)\), with insulated boundaries and scalar internal actuation. Its explicit spectrum has three root branches and a finite accumulation point; the paper proves spectrum closure and analytic-semigroup properties and uses them for stabilizability. This is close primary work on accumulated memory spectra, not a theorem for initial-memory recovery from endpoint flux in the actual Direction 2 system. It reinforces that accumulation itself is established and that analytic semigroups may coexist with noncompact resolvent. Whether an exact residue proof of our comparison problem is already covered elsewhere remains unverified; no novelty claim.
+
+[Jha–George, arXiv:2506.22221](https://arxiv.org/html/2506.22221) Proposition 3.8 proof, (60)–(68), uses a moving interior observation and its ODE estimate leaves local memory terms and a short-time remainder before further bounds. This is not a boundary-only Carleman estimate for the specific reachable graph. In particular the displayed argument does not justify deleting the initial-memory term at the delayed time.

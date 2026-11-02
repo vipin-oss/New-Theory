@@ -1,0 +1,33 @@
+NO-GO
+
+**Decision rule:** condition (a) is not satisfied: no E1–E4 outcome is established as both new and non-tautological outside compactness/accumulation arguments. Condition (b) is also not cleared: several relevant full proofs and model-equivalence checks are unread. Condition (c) is not independently verified for the manuscript's existence theorem. These are failures of the requested GO threshold, not a proof that the theorem is false or that all publication is impossible.
+
+| Experiment | Status | One-line reason |
+|---|---|---|
+| E1 closure/density | **partial** | Exact dual question reduced but neither density nor a nonzero annihilator for the smooth zero-temperature memory image was proved; finite tests cannot decide it. |
+| E2 exact range | **partial** | The infinite-dimensional image is conditionally nonclosed by compactness; intrinsic range and closure remain unknown. |
+| E3 cost | **partial** | A two-coordinate L² lower bound follows by Cauchy–Schwarz; no target existence, matching upper bound or sharp dependence on T was proved. |
+| E4 generalization/sharpness | **partial** | The kernel is trivial on the subspace with a terminal switch-off gap, by an analytic accumulation argument; no general bounded-coupling dichotomy or gap/growth necessity was proved. |
+| E5 novelty | **partial** | Targeted source comparison identifies substantial overlap, including a 2016 partial-null-control paper; unexamined full proofs and E1–E4 overlap remain. |
+
+## Work limits, exact attempts and failures
+
+This was a bounded, targeted investigation, not a full research programme or exhaustive search. E1–E4 each received one focused analytical attempt and E5 one targeted source pass; **individual elapsed times were not recorded**, so no fabricated per-experiment timings are reported. The separately timed numerical diagnostic took 0.315 seconds in this run (100 and 160 decimal digits); machine-dependent times may vary. `finite_moment_diagnostic.py` imposes the first N paired zero-temperature equations plus three prescribed slow evaluations on a finite manufactured smooth basis, with T=d=1 and b_n=n². These are auxiliary values, not claimed physical parameters. For N=6/12, residuals were approximately 3.6e-91/5.8e-90 at 100 digits and 6.4e-151/5.1e-150 at 160 digits; coefficient Euclidean norms were about 1.39e6/5.44e6. The construction solves only finite constraints; omitted rows, infinite-dimensional convergence and conditioning in a physical norm remain open. It cannot establish E1 density. Reproduce with `PYTHONPATH=<mpmath installation> python finite_moment_diagnostic.py`.
+
+**E1 attempt:** `r_n=p_n/c_n` is the restriction of a single entire G, while the *same* G must satisfy `G(-b_n)+d b_n^-2 G(d/b_n)=0`. For the physical l² memory space, a candidate annihilator `a` must satisfy `sum a_n c_n G(delta_n)=0` on that constrained smooth class. The weighted slow evaluation series is well-defined by Cauchy–Schwarz. Neither existence of a nonzero annihilator nor its absence was shown. Density of polynomials for a finite atomic measure does not by itself show that the constrained transforms supply all polynomial data. This route stopped there.
+
+**E2 attempt:** `results.tex`, Proposition 2 gives nonclosedness of the exact smooth image, conditional on the previous infinite-dimensional kernel and its modal interpretation; it uses compactness plus Baire and is explicitly excluded by criterion (a). It does not identify the closure and does not follow merely by claiming a bounded inverse on an incomplete smooth domain. The implicit transform/interpolation characterization in the existing draft is not an intrinsic sequence-space description.
+
+**E3 attempt:** Proposition 3 supplies the two-coordinate lower bound and an exact factor `|delta_n-delta_m|^-1`. The apparent n³ factor for neighbouring modes multiplies the target-dependent difference, which for a fixed reachable entire trace tends to zero at the same order or faster. No lower bound growing as n³ for an actually reachable normalized target family and no upper bound were established. The FR fast-only `exp(C sqrt(b_n))` estimate is not a memory interpolation cost estimate.
+
+**E4 attempt:** Proposition 1 proves a trivial-kernel result when v vanishes near t=0, for any distinct b_n tending to infinity; this is the no-terminal-switch-off subspace of the reversed control and uses analytic accumulation. The constructed nonzero controls are not in that subspace. It neither shows the original lower gap is necessary nor proves a general self-adjoint/bounded-coupling dichotomy. No arbitrary sources, altered physical parameters or active-system extrapolation were used.
+
+**E5 attempt:** See `LITERATURE.md`. The 2016 Ammar Khodja–Chouly–Duprez paper has direct partial-control overlap. Shklyar's inspected framework requires no finite spectral accumulation; this mismatch alone is not a novelty proof. The Lissy full paper and Micu publisher PDF were not obtained, and many other full proofs were not checked. No priority claim.
+
+## Unverified and next publication step
+
+- The old infinite-dimensional kernel and the modal reconstruction have not been independently reviewed; Proposition 2 assumes them only where used. No separate human reviewer or separate independent certification was obtained; same-agent checks are not independent review.
+- Density, a genuine annihilator, exact intrinsic range, sharp/two-sided cost, arbitrary-initial-data partial control, general bounded coupling, and equivalence to the reviewed literature all remain open.
+- For the best achievable submission, first secure an expert review of the existing theorem, check complete source proofs and exact overlap, then either establish a substantive intrinsic range/cost theorem or honestly reframe as a short specialized mathematical note if the expert deems its contribution publishable. Do not submit on current evidence.
+- **Journal tier cannot be responsibly quantified from verified information here:** current primary quartile/ranking and acceptance standards were not established. The official [ESAIM: COCV scope](https://www.esaim-cocv.org/about-the-journal/aims-and-scope) includes infinite-dimensional controllability, but scope is not a tier, acceptance forecast, or submission recommendation. A specialist peer-reviewed control/evolution-equations venue is the broad realistic category to investigate only after review; no specific tier or journal is guaranteed.
+- No TeX compiler was available for `results.tex`; source is provided without a claimed build or page count. `mpmath` tests are diagnostics only.

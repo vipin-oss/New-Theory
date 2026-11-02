@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\title{Conditional observations for the Q1 decision}
+\author{}
+\date{}
+\begin{document}\maketitle
+\noindent These arguments are elementary same-agent derivations; no novelty, independent review, or publication readiness is asserted. The frozen odd-model identification is assumed where stated, not independently re-established here.
+
+\section{No-gap subspace: a trivial kernel}
+\begin{proposition}\label{prop:gap}
+Let \(T,d>0\), and let \(b_n>0\) be distinct with \(b_n\to\infty\). If \(v\in L^2((0,T),t\,dt)\) vanishes almost everywhere on \((0,a)\) for some \(a\in(0,T)\), and
+\[
+\int_0^T t v(t)\left(e^{-b_nt}+d b_n^{-2}e^{dt/b_n}\right)dt=0\quad(n\ge1),
+\]
+then \(v=0\). No quadratic growth or square-root gap is needed for this restricted conclusion.
+\end{proposition}
+\begin{proof}
+Define \(G(z)=\int_0^T t v(t)e^{zt}dt\). The finite weighted measure and Cauchy--Schwarz imply that G is entire. Put \(\delta_n=d/b_n\). The equations and the support restriction yield
+\[
+|G(\delta_n)|\le d^{-1}b_n^2 \|v\|_{L^2(tdt)}
+ \left(\int_a^T t e^{-2b_nt}dt\right)^{1/2}
+ \le C b_n^2 e^{-ab_n}.
+\]
+If G is not identically zero, let \(j\ge0\) be the order of its zero at zero (or j=0 if \(G(0)\ne0\)). Then \(|G(\delta_n)|\ge c\delta_n^j\) for sufficiently large n. This contradicts the displayed exponential upper bound. Thus \(G\equiv0\), so \(\int_0^T t^{j+1}v(t)dt=0\) for every integer \(j\ge0\). Polynomials are dense in \(L^2((0,T),t\,dt)\): continuous functions are dense for this finite Borel measure and the Weierstrass approximation theorem applies on \([0,T]\). Hence \(v=0\).
+\end{proof}
+This is a support-restricted kernel, not the unrestricted coupled kernel; it does not contradict the manuscript's constructed controls, for which \(v\) need not vanish near zero. It uses analyticity and fast-versus-slow accumulation, not a general spectral dichotomy.
+
+\section{A nonclosed physical memory image, conditional on the existing construction}
+Let \(U=L^2(0,T;\mathbb R)\). Assume \(\mu\in\mathbb R\), \(c=(c_n)\in\ell^2\), \(c_n\ne0\), and distinct positive \(\delta_n\to0\). Define \(M:U\to\ell^2\) by
+\[
+(Mf)_n=c_n\int_0^T e^{(\delta_n-\mu)t}f(t)dt.
+\]
+Let \(W\subset U\) be any linear space of smooth compatible controls whose zero-temperature terminal memory coefficients are \(Mf\). We explicitly assume the existing kernel construction supplies an infinite-dimensional subspace of W; the present note does not reprove it.
+\begin{proposition}\label{prop:nonclosed}
+Under those hypotheses \(M(W)\) is an infinite-dimensional, nonclosed linear subspace of \(\ell^2\). No conclusion on its density or closure follows.
+\end{proposition}
+\begin{proof}
+The squared norms of the coordinate functionals sum to at most
+\[
+\sum_n |c_n|^2\int_0^T e^{2(\delta_n-\mu)t}dt<\infty,
+\]
+so M is Hilbert--Schmidt and hence compact. If \(Mf=0\), then the entire function \(G(z)=\int_0^T e^{(z-\mu)t}f(t)dt\) vanishes at each distinct \(\delta_n\). By the identity theorem \(G\equiv0\); polynomial density in \(L^2(0,T)\) implies \(f=0\). Thus M is injective and \(M(W)\) is infinite-dimensional.
+
+Suppose \(M(W)\) were closed. It is then a complete infinite-dimensional normed space. Each element of \(M(W)\) lies in \(M(B_k)\) for some integer k, where \(B_k=\{f\in U:\|f\|_U\le k\}\). The Hilbert-space ball \(B_k\) is weakly compact; compact linear M maps it to a norm-compact set. Hence \(M(W)=\bigcup_k[M(W)\cap M(B_k)]\), a countable union of compact sets closed in \(M(W)\). Each has empty interior in an infinite-dimensional normed space, since no closed ball is compact (Riesz lemma). This contradicts the Baire category theorem. Therefore \(M(W)\) is not closed.
+\end{proof}
+This is a compactness corollary and relies on the assumed infinite-dimensional W. It neither proves density nor solves the exact range.
+
+\section{A two-coordinate cost lower bound}
+\begin{proposition}\label{prop:cost}
+For \(f\in U\), let \(G(z)=\int_0^T e^{(z-\mu)t}f(t)dt\), and \(r_n=G(\delta_n)\). If \(0<\delta_n,\delta_m\le D\), then
+\[
+\|f\|_U\ge \frac{|r_n-r_m|}{|\delta_n-\delta_m|\left(\int_0^T t^2 e^{2(D-\mu)t}dt\right)^{1/2}}.
+\]
+The same bound applies to every admissible zero-temperature control that reaches \(p\), with \(r_n=p_n/c_n\), and hence to the infimum of its L2 norm over such controls.
+\end{proposition}
+\begin{proof}
+For \(0\le x,y\le D\), the fundamental theorem of calculus gives \(|e^{xt}-e^{yt}|\le |x-y|t e^{Dt}\). Insert this into the difference of the integrals and apply Cauchy--Schwarz. Time reversal preserves the boundary control L2 norm. Taking the infimum over any nonempty admissible set retains the inequality.
+\end{proof}
+For the physical expansion \(b_n=\alpha n^2+\beta+O(n^{-2})\), \(\alpha>0\), one has \(|\delta_n-\delta_{n+1}|\sim2d/(\alpha n^3)\). The inequality gives an \(n^3\) factor multiplying the target-dependent difference \(|r_n-r_{n+1}|\); it is not a uniform \(n^3\) cost bound, because those differences also shrink for a fixed reachable entire trace. No matching upper bound or existence of arbitrary prescribed values is asserted.
+\end{document}

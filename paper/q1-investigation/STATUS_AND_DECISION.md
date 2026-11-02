@@ -1,5 +1,7 @@
 # Research status and publication decision
 
+> Historical snapshot: the latest source access and exploratory research are recorded in `CURRENT_PROGRESS.md` and `SOURCE_AUDIT_CONTINUED.md`; the gate remains not passed.
+
 - **Phase 1:** incomplete. See `PHASE_1_LITERATURE_GATE.md` for primary-source evidence levels and exact restart point. CMV final journal text and several requested original proofs are inaccessible through attempted routes; novelty remains unverified.
 - **Phase 2:** not started as a publication claim, in accordance with the requested literature-first gate. The existing same-agent infinite-dimensional result remains conditional on its stated external results and independent proof review. No strengthening is claimed here; no assertion is made that the existing paper is equivalent to prior work.
 - **Phase 3:** no separate-agent review, no new compilation, no PDF or page count. The existing Overleaf source was not modified. No numerical diagnostics are presented as proof.

@@ -1,5 +1,7 @@
 # Phase 1: literature and novelty gate
 
+> **Historical access snapshot:** The source availability statements in the table below describe the earlier investigation and have been superseded in part. The user-supplied archive and subsequent direct publisher PDF access are documented in `RECEIVED_SOURCE_AUDIT.md` and `SOURCE_AUDIT_CONTINUED.md`. The decision remains NOT PASSED.
+
 **Decision: NOT PASSED.** This is a targeted source investigation, not a complete search or an independent review. The full primary texts required by the mandate have not all been retrieved or read. We cannot decide whether the exact paired-moment result, an equivalent result, or a stronger memory-state characterization already exists. No novelty or priority claim is justified. Work on the frozen manuscript and its packaged project has not been altered.
 
 Baseline: branch `arena/5b089bbe-new-theory`, commit `deccd14d94c5bfadce531eac1d00a631c897a9e9`. Access was checked in this session; a metadata page, abstract, preprint, and published full text are distinct evidence levels below.

@@ -22,7 +22,7 @@ For *smooth* x in K with the prescribed boundary lift, the manuscript's terminal
 
 If Mx=0, then `G_x(delta_n)=0` for all n because `c_n !=0`. The entire function G_x has zeros accumulating at 0, so it vanishes identically. Its derivatives at 0 give `integral t^(j+1)(Qx)(t)dt=0` for every j. Polynomials are dense in H (the finite measure `t dt` on `[0,T]` has continuous functions dense in L² and Weierstrass applies), hence Qx=0 in H and x=0. Therefore M is injective on X and on K. In particular, conditional on dim K=infinity, `M(K)` is infinite-dimensional.
 
-More strongly, if Mx has only finitely many nonzero coordinates, `G_x(delta_n)=0` for all sufficiently large n. The same identity theorem yields x=0. Thus
+The existing manuscript already proves the stronger fact that every nonzero smooth constructed control has all but finitely many nonzero memory coefficients. The analytic argument extends that observation to all x in X: if Mx has only finitely many nonzero coordinates, `G_x(delta_n)=0` for all sufficiently large n. The same identity theorem yields x=0. Thus
 
 `M(K) intersect c_00 = {0}`.
 
@@ -46,11 +46,25 @@ The same bound applies to the restriction to K. Consequently, for Hilbert-space 
 
 `s_{m+1}(M|_K) <= C_c (T/sqrt(2)) exp(dT/b_1) (dT/b_1)^m/m!`,  `m=0,1,...`.
 
-The result is an **upper bound** based on low-rank approximation, not a matching asymptotic or sharp rate. It is valid for the memory coefficient map with domain norm `||x||_X`; it is not a computed control-cost estimate in the physical boundary-input norm. The constants also involve the physical coefficients through `C_c` and `b_1`; no uniformity in unknown material parameters is claimed.
+The result is an **upper bound** based on low-rank approximation, not a matching asymptotic or sharp rate. It is valid for the memory coefficient map with domain norm `||x||_X`; it is not a computed control-cost estimate. The constants also involve the physical coefficients through `C_c` and `b_1`; no uniformity in unknown material parameters is claimed.
 
 ## C. Nonclosed exact image and instability
 
 M|K is compact by the operator-norm convergence of M_m (or by the displayed factorial estimate). Since K is infinite-dimensional and M|K is injective, its image cannot be closed: if it were closed, the inverse from its range to K would be bounded by the bounded inverse theorem, making the identity on the infinite-dimensional K compact. Equivalently, there is no constant c>0 such that `||Mx||_l² >= c||x||_X` for all x in K. Thus exact reconstruction in the X-norm from this output has no uniform inverse bound. This does not say the range is all l², dense, physically reachable in a nonlinear system, or that the temperature-null map is noninjective for arbitrary physical histories.
+
+## D. Transfer of the instability to smooth physical boundary controls
+
+This part is still conditional on the frozen linear odd model, the existing theorem and the smooth-lift reconstruction; it does not apply to arbitrary prehistories or nonlinear dynamics. For a smooth x in K let `v=Qx`, `f(t)=exp(mu t)t v(t)` and `a(s)=f(-s)`. Write `alpha=inf I>0`. The forward bound is immediate:
+
+`||f||_L²(0,T) <= exp(mu T) sqrt(T) ||v||_H <= exp(mu T) sqrt(T) ||x||_X`.
+
+There is also a reverse bound for corrections supported in I, not for general v. On I, `||v||_X <= alpha^(-1/2)||f||_2`. Moreover, for `t in I`,
+
+`|(T_hat v)(t)| <= d sup_[0,T]^2 |H_d| integral_0^T s|v(s)|ds <= C ||f||_2`,
+
+because `s v(s)=exp(-mu s) f(s)` and the kernel is bounded on the compact square. Using `x=v+T_hat v` on I gives `||x||_X <= C_I ||f||_2`. Both constants depend on the frozen parameters and I, and no claimed estimate is uniform in them.
+
+Let V be the infinite-dimensional smooth correction subspace supplied by the existing theorem. Gram–Schmidt applied to a countable linearly independent sequence in V gives a sequence `x_j in V` orthonormal in X. Compactness of M yields `||M x_j||_l² -> 0`; the reverse bound gives `||f_j||_2 >= C_I^-1`. Normalize each control by its nonzero L² norm. The normalized controls are smooth and compatible, have unit L² boundary-input norm, and still produce exactly zero terminal temperature. Their terminal-memory norms tend to zero. Thus even restricted to these smooth constructed corrections, there is **no uniform lower estimate of boundary-input L² norm by terminal-memory L² norm**. It is not a nonzero control with exactly zero full terminal state; injection above rules that out for this family. It is not a cost of steering arbitrary initial data, nor an inverse assertion for the active nonlinear model. The manuscript's no-finite-support statement is already present, but this norm comparison and compactness consequence require independent verification and literature comparison before being advertised as new.
 
 ## Adversarial checklist and limitations
 

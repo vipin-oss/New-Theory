@@ -1,0 +1,42 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,bm}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype,booktabs,array}
+\usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\allowdisplaybreaks[1]
+\title{An Infinite-Dimensional Smooth Kernel for an Exact Coupled Exponential Moment Operator}
+\author{Author and affiliation to be confirmed}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study a coupled exponential moment operator whose rows combine a rapidly decaying exponential with a slowly accumulating exponential. A positive Bessel-kernel operator transforms these moments into a fast Laplace transform plus a dependent tail. For positive rates \(b_n\asymp n^2\) satisfying a separate uniform positive square-root gap, we construct on every compactly contained interior time interval an infinite-dimensional real space of smooth compactly supported corrections satisfying all coupled moments and an endpoint condition. The construction combines a positive-exponential biorthogonal estimate, M\"untz incompleteness, and a Fredholm finite-codimension argument. A conditional interpretation is given for a frozen linear odd heat--memory system; terminal temperature vanishes while all but finitely many terminal memory modes are nonzero for each nonzero constructed input. No nonlinear preparation or full-system inverse result follows.
+\end{abstract}
+\noindent\textbf{Keywords:} exponential moments; biorthogonal families; M\"untz theorem; compact operators; heat equations with memory.\\
+\textbf{MSC 2020:} 44A10, 30E05, 93B05, 35R09.
+\input{sections/introduction}
+\input{sections/governing_model}
+\input{sections/modal_moments}
+\input{sections/functional_setting}
+\input{sections/main_theorem}
+\input{sections/biorthogonal_construction}
+\input{sections/fredholm_argument}
+\input{sections/endpoint_condition}
+\input{sections/physical_interpretation}
+\input{sections/discussion}
+\input{sections/conclusion}
+\bibliographystyle{unsrt}
+\bibliography{references}
+\end{document}

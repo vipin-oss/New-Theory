@@ -1,0 +1,31 @@
+\section{Biorthogonal construction and smooth right inverse}\label{sec:biorth}
+Fix \(I\Subset(0,T)\). Choose \(a,\ell,\varepsilon,\eta>0\) such that \([a,a+\ell+\varepsilon]\subset I\) and \(a+\varepsilon<T-\eta\). Let \(X=L^2(I,t\,dt)\), embedded in \(H\) by zero extension, and define
+\begin{equation}\label{eq:EY}
+(Ex)_n=\int_I te^{-b_nt}x(t)dt,\qquad
+Y=\left\{y:\sum_n e^{2(T-\eta)b_n}|y_n|^2<\infty\right\}.
+\end{equation}
+The space \(Y\) has its indicated weighted \(\ell^2\) norm. The map \(E:X\to\ell^2\) is bounded: the sum of squares of its coordinate-functional norms is bounded by \(\sum_n\int_I te^{-2b_nt}dt<\infty\).
+
+\begin{proposition}\label{prop:rightinverse}
+There is a bounded linear \(S:Y\to X\) whose values have a common compact support in \(I\), belong to \(C_c^\infty(I)\), and satisfy \(ESy=y\) coordinatewise. Its defining series converges in every \(C^j\) norm.
+\end{proposition}
+\begin{proof}
+Let \(g_0>0\) be the infimum in \eqref{eq:growth}. Theorem 2.1 of \cite{Cannarsa2020} applies to positive exponentials \(e^{b_nu}\) on \((0,\ell)\): take its global gap \(g_0/2\), asymptotic gap \(g_0\), and \(N_*=1\). Then \(M_*=0\), and the remaining source factor is bounded in \(n\) because \(b_1>0\). After taking square roots and fixing the time and gaps, there are real \(\sigma_n\in L^2(0,\ell)\) with
+\begin{equation}\label{eq:sigma}
+\int_0^\ell e^{b_mu}\sigma_n(u)du=\delta_{mn},\qquad
+\|\sigma_n\|_2\le C e^{-\ell b_n+C\sqrt{b_n}}.
+\end{equation}
+Here \(\delta_{mn}\) is the Kronecker symbol, not the spectral parameter \(\delta_n\). Set \(p_n(u)=e^{\ell b_n}\sigma_n(\ell-u)\) on \((0,\ell)\), extended by zero. Changing variables gives
+\begin{equation}\label{eq:pn}
+\int_{\mathbb R}e^{-b_mu}p_n(u)du=\delta_{mn},\qquad \|p_n\|_2\le C e^{C\sqrt{b_n}}.
+\end{equation}
+Choose a nonzero nonnegative \(\rho\in C_c^\infty(0,\varepsilon)\), and put \(\rho_n=\int e^{-b_nu}\rho(u)du\). Then \(\rho_n\ge e^{-\varepsilon b_n}\int\rho>0\). Define
+\begin{equation}\label{eq:psi}
+\psi_n(t)=\frac{e^{ab_n}}{t\rho_n}[p_n(\cdot-a)*\rho](t).
+\end{equation}
+The convolution has a common compact support inside \(I\), where division by \(t\) is smooth. Factoring its Laplace transform gives \(\int_I te^{-b_mt}\psi_n(t)dt=\delta_{mn}\): on the diagonal the factors \(e^{ab_n}\), \(e^{-ab_m}\), \(\rho_m\) and \(\rho_n^{-1}\) cancel; off the diagonal \eqref{eq:pn} vanishes. By Cauchy--Schwarz on each convolution derivative and Leibniz' rule, for every \(j\ge0\),
+\begin{equation}\label{eq:psibound}
+\|\psi_n\|_{C^j}\le C_j e^{(a+\varepsilon)b_n+C\sqrt{b_n}}.
+\end{equation}
+Define \(Sy=\sum_n y_n\psi_n\). With \(c=T-\eta-a-\varepsilon>0\), Cauchy--Schwarz bounds the sum of \(C^j\) norms by \(C_j\|y\|_Y(\sum_n e^{-2cb_n+2C\sqrt{b_n}})^{1/2}\), which is finite using \(b_n\asymp n^2\). Hence the derivative series is uniformly absolutely convergent for every \(j\), with common compact support. Termwise integration proves \(ESy=y\). The right inverse is only asserted on \(Y\), not on all of \(\ell^2\).
+\end{proof}

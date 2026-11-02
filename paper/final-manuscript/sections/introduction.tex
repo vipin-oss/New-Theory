@@ -1,0 +1,26 @@
+\section{Introduction}\label{sec:intro}
+The moment method reduces certain control problems for evolution equations to interpolation against exponentials. In one-dimensional parabolic problems, eigenvalues typically grow quadratically, and a biorthogonal family can be used to solve a suitable sequence of moment equations. The classical work of Fattorini and Russell \cite{FattoriniRussell1971} is a starting point for this method; for the precise positive-exponential estimate needed here we use Cannarsa, Martinez and Vancostenoble \cite{Cannarsa2020}. The latter provide quantitative bounds under square-root gap hypotheses. Their estimate concerns one separated family, not the coupled rows considered below.
+
+Coupled evolution systems may exhibit a fast branch of eigenvalues and a second branch accumulating at a finite point. In the model below, after a time reversal the temperature-null condition pairs a fast Laplace value at \(-b_n\) with a slow value at \(d/b_n\). These values come from the same input. They are not independently selectable interpolation data, and the full family is not a single uniformly separated exponential family.
+
+M\"untz theory \cite{Almira2007} implies incompleteness of the fast exponentials because \(\sum_n b_n^{-1}<\infty\). This observation alone does not prove incompleteness of the paired rows: a perturbation, even a compact one, can change a kernel. Similarly, dense range of a moment map concerns the adjoint kernel and cannot be substituted for injectivity of the map itself. Our argument instead represents the slow contribution as a dependent tail beginning at the terminal time. The gap between that time and an interior support interval yields an exponentially weighted compact map. A smooth right inverse for the fast moments and a Fredholm range intersection then provide exact simultaneous solutions without a smallness or invertibility assumption for the perturbation.
+
+Heat equations with memory provide related, but not interchangeable, controllability questions. Guerrero and Imanuvilov \cite{Guerrero2013} use an observability argument to show failure of boundary null controllability for certain nonzero initial states in a different heat-memory equation. Halanay and Pandolfi \cite{HalanayPandolfi2015} study a Coleman--Gurtin equation, deriving approximate controllability and, under their stated hypotheses, failure of controllability to zero for some initial conditions. In particular, their treatment highlights the need to specify when terminal evaluation of a boundary-controlled solution is meaningful. Ivanov and Pandolfi \cite{IvanovPandolfi2009} study controllability to rest, a target stronger than vanishing temperature at one time; we have not inspected their original proof. None of these comparisons by itself identifies or excludes an earlier version of the present exact coupled-kernel result.
+
+We formulate a frozen linear odd model to motivate the rows, then prove an abstract theorem independently of that interpretation. The theorem constructs an infinite-dimensional space of interior-supported smooth corrections, imposes an endpoint condition on the transformed input, and solves every coupled equation exactly. The PDE consequence concerns smooth compatible boundary inputs in the stated linear model, not preparation of states in a nonlinear experiment. The literature comparison is targeted rather than exhaustive; independent proof and priority review remain necessary.
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{@{}p{.20\linewidth}p{.36\linewidth}p{.36\linewidth}@{}}
+\toprule
+Source & Problem and method & Relation to this paper \\
+\midrule
+\cite{Cannarsa2020} & Separated exponentials; quantitative biorthogonal estimates. & Supplies the fast right inverse, not coupled-row incompleteness. \\
+\cite{Almira2007} & Uniform approximation by powers; M\"untz criteria. & Supplies fast-only null seeds, not the dependent-tail conclusion. \\
+\cite{Guerrero2013} & Boundary null controllability from nonzero initial states; observability. & Different target and initial data from zero-start paired nulling. \\
+\cite{HalanayPandolfi2015} & Coleman--Gurtin reachability and non-null-controllability via heat-equation properties. & Different memory operator and reachability question. \\
+\cite{IvanovPandolfi2009} & Controllability to rest in a heat-memory equation. & Stronger target; original proof not inspected. \\
+\bottomrule
+\end{tabular}
+\caption{Targeted comparison; differences do not establish novelty or priority.}\label{tab:literature}
+\end{table}

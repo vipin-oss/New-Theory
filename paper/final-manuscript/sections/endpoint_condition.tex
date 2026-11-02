@@ -1,0 +1,14 @@
+\section{Endpoint constraint and proof of the theorem}\label{sec:endpoint}
+\begin{lemma}\label{lem:endpoint}
+The functional
+\begin{equation}\label{eq:endpoint}
+L(x)=-d\int_0^T H_d(T,s)(Qx)(s)s\,ds,\qquad x\in X,
+\end{equation}
+is bounded. If \(x\in C_c^\infty(I)\), then \(L(x)=(Qx)(T)\), with the smooth representative.
+\end{lemma}
+\begin{proof}
+The kernel row \(dH_d(T,\cdot)\) belongs to \(H\) and \(Q\) is bounded, so Cauchy--Schwarz gives \(|L(x)|\le C\|x\|_X\). Point evaluation is not defined for an arbitrary element of \(H\). However, the zero extension of \(x\in X\) vanishes almost everywhere near \(T\), and \(Qx=x-\mathsf TQx\) has the canonical representative \(-\mathsf TQx\) there. For smooth compactly supported \(x\), this agrees with the smooth representative on all of \([0,T]\), giving the claimed endpoint value.
+\end{proof}
+\begin{proof}[Proof of \cref{thm:main}]
+Let \(V\subset C_c^\infty(I)\) be the infinite-dimensional space from \cref{prop:fredholm}. For every \(k\in V\), \((E+R)k=\mathsf Bk=0\), by the zero extension in \eqref{eq:B}. The restriction of one real linear functional \(L\) to \(V\) has a kernel of codimension at most one. Hence \(V\cap\ker L\) is infinite-dimensional, and \cref{lem:endpoint} gives \((Qk)(T)=0\) for each of its members. Such \(k\) also vanishes near zero with all derivatives, so it lies in \(\mathcal K_{\rm adm}\). This proves the theorem.
+\end{proof}

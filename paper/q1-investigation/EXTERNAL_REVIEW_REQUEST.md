@@ -1,0 +1,7 @@
+# Request for an independent adversarial reviewer
+
+No independent agent or human reviewer was available in the current session. This is a request, not a completed review or invented findings. Ask a separate mathematician or separate agent/session that has not seen the derivation to examine the frozen manuscript and, separately, `MEMORY_IMAGE_CONDITIONAL_ANALYSIS.md`. Ask the reviewer to produce their own written report, with exact equations and counterexamples if any. Preserve their unedited report alongside the response and distinguish independently confirmed points from same-agent responses.
+
+Questions: (1) Check the old infinite-dimensional theorem, especially the biorthogonal estimate, actual Fredholm range, smooth representative and endpoint functional. (2) Check whether Fattorini–Russell (1974) Theorem 1.2/1.5 actually covers the manuscript's general sequence without an upper square-root gap. (3) Verify that the memory operator is bounded and injective on X, and whether finite support, nonclosed image and factorial approximation-number claims follow under stated assumptions. (4) Test whether the extension to rough X implies a physical terminal state; insist on a separate admissibility proof. (5) Seek equivalent results in Ivanov–Pandolfi, the user-provided references, and other original literature. (6) Challenge any claims about exact range, density, lower asymptotic bounds, control cost, or nonlinear physical preparation.
+
+Independent reviewer: **not yet appointed**. Findings: **not available**.

@@ -1,0 +1,36 @@
+\section{Compact tail and Fredholm intersection}\label{sec:fredholm}
+\begin{lemma}\label{lem:tail}
+Define \(R:X\to Y\) by
+\begin{equation}\label{eq:R}
+(Rx)_n=\int_T^\infty te^{-b_nt}(\mathsf TQx)(t)dt.
+\end{equation}
+This map is Hilbert--Schmidt. Hence \(SR:X\to X\) is compact.
+\end{lemma}
+\begin{proof}
+For \(z\ge0\), \(\sum_{j\ge0}z^j/(j!)^2\le e^{2\sqrt z}\), since the sum is dominated by the square of \(\sum_j(\sqrt z)^j/j!\). Thus, for \(t\ge T\),
+\begin{equation}\label{eq:tailgrowth}
+|(\mathsf TQx)(t)|\le d\|Qx\|_H\left(\int_0^T s|H_d(t,s)|^2ds\right)^{1/2}
+\le C e^{2\sqrt{dTt}}\|x\|_X.
+\end{equation}
+Writing \(t=T+u\), and using \(b_n\ge b_1>0\),
+\[
+\int_T^\infty te^{-b_nt}e^{2\sqrt{dTt}}dt
+\le e^{-Tb_n}\int_0^\infty(T+u)e^{-b_1u+2\sqrt{dT(T+u)}}du
+\le C e^{-Tb_n}.
+\]
+The final integral is finite because its exponent is \(-b_1u+O(\sqrt u)\). The weighted coordinate functionals of \(R\) therefore have squared norms bounded by \(C^2e^{-2\eta b_n}\), whose sum is finite. For a map from a Hilbert space into a weighted \(\ell^2\) space this is exactly the Hilbert--Schmidt criterion. Composition with bounded \(S\) is compact.
+\end{proof}
+\begin{proposition}\label{prop:fredholm}
+There is an infinite-dimensional subspace of \(C_c^\infty(I)\) on which \(E+R=0\) coordinatewise.
+\end{proposition}
+\begin{proof}
+Let \(A=I_X+SR\). The Fredholm alternative \cite{Howard2020} gives closed range of finite codimension; neither invertibility of \(A\) nor smallness of \(SR\) is needed. We first show that
+\[
+N=\{h\in C_c^\infty(I):Eh=0\}
+\]
+is infinite-dimensional. Choose a closed interval \(J\) in the interior of \(I\). By \(b_n\asymp n^2\), \(\sum_n b_n^{-1}<\infty\). The full M\"untz theorem away from zero, \cite[Theorem~29]{Almira2007}, applied after \(z=e^{-t}\), shows that the fast exponentials are not dense in \(C(J)\). Hahn--Banach and the Riesz representation theorem \cite{RieszNotes} provide a nonzero finite signed measure \(\nu\) on \(J\) annihilating all of them.
+
+Choose a nonzero compactly supported smooth bump \(\rho\) so small that \(J+\operatorname{supp}\rho\Subset I\). The function \(w=\nu*\rho\) is smooth and compactly supported, and its Laplace moments factor into those of \(\nu\) and \(\rho\), hence vanish. It is nonzero: the Fourier transforms of both compactly supported factors are nonzero entire functions, and their product is not identically zero. Then \(h=w/t\) is smooth, compactly supported and belongs to \(N\). Repeating the construction in pairwise disjoint subintervals of \(I\) gives linearly independent \(h\)'s.
+
+The quotient \(X/\operatorname{ran}A\) is finite-dimensional. Therefore the kernel of the quotient map restricted to \(N\), namely \(N\cap\operatorname{ran}A\), is infinite-dimensional. Choose linearly independent \(h_i\) there and solve \(Ax_i=h_i\) in \(X\). Since \(x_i=h_i-SRx_i\) as an \(X\)-identity, \(x_i\) has a \(C_c^\infty(I)\) representative. Moreover, \(Ex_i=Eh_i-ESRx_i=-Rx_i\), because \(Rx_i\in Y\) and \(ES=I_Y\). The \(x_i\) are independent: applying \(A\) sends any linear dependence to the corresponding dependence among the \(h_i\). Their span gives the proposition. No finite-mode approximation is used.
+\end{proof}

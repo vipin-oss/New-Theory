@@ -1,0 +1,43 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,bm}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype,booktabs,array}
+\usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\allowdisplaybreaks[1]
+\title{Non-injectivity of a Terminal-Temperature Map in a Coupled Heat--Memory Model}
+\author{Vipin Gupta\thanks{Affiliation to be confirmed.}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+For a frozen linear heat--memory system with zero initial data and antisymmetric boundary control, zero input trivially gives zero terminal temperature. We study instead non-injectivity: an infinite-dimensional space of smooth compatible controls has zero terminal temperature, including all its nonzero members. The argument uses a classical Fattorini--Russell biorthogonal estimate, M\"untz incompleteness, and a Fredholm range intersection for an exact coupled moment operator. The terminal memory values obey an entire-function trace constraint; we give necessary asymptotic conditions and control-norm lower bounds, but do not determine the exact memory range or its closure. Simultaneous vanishing of temperature and memory forces zero input by the accumulating-zero mechanism of Ivanov and Pandolfi. This is not a nonlinear preparation theorem or a controllability theorem for arbitrary initial states. Independent review and a complete novelty comparison remain outstanding.
+\end{abstract}
+\noindent\textbf{Keywords:} exponential moments; biorthogonal families; M\"untz theorem; compact operators; heat equations with memory.\\
+\textbf{MSC 2020:} 44A10, 30E05, 93B05, 35R09.
+\input{sections/introduction}
+\input{sections/governing_model}
+\input{sections/modal_moments}
+\input{sections/functional_setting}
+\input{sections/main_theorem}
+\input{sections/biorthogonal_construction}
+\input{sections/fredholm_argument}
+\input{sections/endpoint_condition}
+\input{sections/physical_interpretation}
+\input{sections/memory_trace}
+\input{sections/discussion}
+\input{sections/conclusion}
+\bibliographystyle{unsrt}
+\bibliography{references}
+\end{document}

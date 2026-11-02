@@ -1,0 +1,12 @@
+\section{Governing model and preliminaries}\label{sec:model}
+For the interpretation, consider real fields on \(0<x<L\), \(-T<s<0\), satisfying the frozen equations
+\begin{equation}\label{eq:pde}
+M Y_s=\kappa Y_{xx}+B_0Y+SP,\qquad P_s=-\mu P+\gamma Y,
+\end{equation}
+with \(M,\kappa,L,\mu>0\), \(d=\gamma S/M>0\), and real constant \(B_0,S,\gamma\). Initially \(Y(\cdot,-T)=P(\cdot,-T)=0\); the prescribed boundary values are \(Y(0,s)=a(s)\), \(Y(L,s)=-a(s)\). We work in the antisymmetric subspace about \(x=L/2\). This is a linear frozen model, not an assertion about nonlinear reachability or prescribed physical parameter values.
+
+For the interpretation below take a smooth control with \(a(-T)=a(0)=0\), and use a smooth compatible boundary lift \(Y=Z+a(s)(1-2x/L)\). The homogeneous-Dirichlet heat generator on \(L^2(0,L)\), coupled to the bounded memory ODE, has a bounded off-diagonal perturbation. The lift supplies continuous \(L^2\)-valued forcing, so standard semigroup variation of constants gives a continuous \(L^2\)-valued pair. The basis for the odd subspace is
+\begin{equation}\label{eq:basis}
+\phi_n(x)=\sqrt{2/L}\sin(q_nx),\qquad q_n=2\pi n/L,\quad n\ge1.
+\end{equation}
+All terminal identities below are understood in this solution class, not as a general endpoint trace theorem for arbitrary \(L^2\) boundary data. The physical relation \(\mu B_0+\gamma S=0\), when imposed, is an additional condition; it is not assumed for the abstract theorem.

@@ -1,0 +1,32 @@
+\section{Modal decomposition and exact moments}\label{sec:modal}
+Set \(Y_n=\langle Y,\phi_n\rangle\), \(P_n=\langle P,\phi_n\rangle\). Integration by parts and \(\phi_n'(0)=\phi_n'(L)=\sqrt{2/L}q_n\) yield
+\begin{equation}\label{eq:ibp}
+\int_0^L Y_{xx}\phi_n\,dx=-q_n^2Y_n+2a(s)\sqrt{2/L}\,q_n.
+\end{equation}
+Consequently, with \(A_n=(\kappa q_n^2-B_0)/M\) and \(C_n=2\kappa\sqrt{2/L}\,q_n/M\),
+\begin{equation}\label{eq:modalode}
+\frac d{ds}\binom{Y_n}{P_n}=D_n\binom{Y_n}{P_n}+\binom{C_na}{0},\qquad
+D_n=\begin{pmatrix}-A_n&S/M\\\gamma&-\mu\end{pmatrix}.
+\end{equation}
+The characteristic equation is \((\lambda+A_n)(\lambda+\mu)-d=0\). Define
+\begin{equation}\label{eq:roots}
+b_n=\frac{A_n-\mu+\sqrt{(A_n-\mu)^2+4d}}2>0,\qquad \delta_n=\frac d{b_n}>0.
+\end{equation}
+Then the roots are \(-\mu-b_n\), \(-\mu+\delta_n\), and \(b_n-\delta_n=A_n-\mu\). The root \(b_n\) increases strictly with \(A_n\). Writing \(\alpha=\kappa(2\pi/L)^2/M>0\), \(\beta=-B_0/M-\mu\), gives \(b_n=\alpha n^2+\beta+O(n^{-2})\); its square-root gaps tend to \(\sqrt\alpha\). Strict increase and this limit give a positive global gap. If \(\mu B_0+\gamma S=0\), the determinant \(\mu A_n-d=\mu\kappa q_n^2/M\) and the trace are positive and negative respectively, so both roots are negative.
+
+For \(f(t)=a(-t)\) and \(F(z)=\int_0^T e^{zt}f(t)dt\), variation of constants gives \(\binom{Y_n(0)}{P_n(0)}=C_n\int_0^T e^{tD_n}\binom10 f(t)dt\). The two spectral projectors give
+\begin{equation}\label{eq:projector}
+e^{tD_n}\binom10=\frac1{b_n+\delta_n}
+\binom{\delta_ne^{(-\mu+\delta_n)t}+b_ne^{(-\mu-b_n)t}}
+{\gamma(e^{(-\mu+\delta_n)t}-e^{(-\mu-b_n)t})}.
+\end{equation}
+Thus
+\begin{align}
+Y_n(0)&=\frac{C_n}{b_n+\delta_n}\left[\delta_nF(-\mu+\delta_n)+b_nF(-\mu-b_n)\right],\label{eq:Ymodal}\\
+P_n(0)&=\frac{C_n\gamma}{b_n+\delta_n}\left[F(-\mu+\delta_n)-F(-\mu-b_n)\right].\label{eq:Pmodal}
+\end{align}
+If \(f(t)=e^{\mu t}t v(t)\), the zero-temperature condition is precisely
+\begin{equation}\label{eq:paired}
+\int_0^T t v(t)\left(e^{-b_nt}+\frac d{b_n^2}e^{\delta_nt}\right)dt=0,\qquad n\ge1.
+\end{equation}
+The coefficient of the slow term has a plus sign and is \(d/b_n^2\). Its values are tied to the same \(v\) as the fast values.

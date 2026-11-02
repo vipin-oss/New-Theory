@@ -1,0 +1,7 @@
+# Build, testing and remaining work
+
+- New project is source-only. `pdflatex`, `xelatex`, `lualatex`, `tectonic` and `latexmk` were not available. `sudo apt-get update` failed to reach Debian repositories, and install of TeX Live packages consequently failed. The npm BusyTeX frontend was inspected, but downloading its required release assets failed with `unable to verify the first certificate`. Therefore no LaTeX build, page count, warning audit, visual inspection, or PDF is claimed.
+- Static project check: all 12 `\input` paths exist; labels and cited BibTeX keys resolve, with no duplicate labels detected by a simple regex check. This is not compilation.
+- The existing three high-precision algebra/structure tests in `code/exact-kernel-injectivity/test_structure.py` passed after installing `mpmath` into a temporary cache; an initial run failed due to missing `mpmath`. These tests are manufactured diagnostics, not theorem proof or review. No new numerical claim is made.
+- `git diff --check` is required for the staged project. All original manuscripts and the original Overleaf ZIP remain unchanged.
+- Remaining: complete independent line-by-line source and manuscript audit; secure a human reviewer; obtain intrinsic exact-range/density or concede failure; verify comparison to the remaining relevant literature; install full TeX in a network-enabled environment and run BibTeX plus repeated LaTeX passes, inspect warnings and resulting pages. Verify the author's affiliation. No Q1 readiness or independent-review claim follows from source generation.

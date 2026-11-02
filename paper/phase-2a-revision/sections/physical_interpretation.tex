@@ -1,0 +1,15 @@
+\section{Conditional terminal-state interpretation}\label{sec:interpretation}
+Take \(b_n\) from \eqref{eq:roots}, and a nonzero \(k\) in \eqref{eq:kernelspace}. Put \(v=Qk\), \(f(t)=e^{\mu t}tv(t)\), \(a(s)=f(-s)\). Then \(v\) is smooth, \(f(0)=0\), and \(f(T)=0\) by the endpoint condition. Under the smooth-lift solution framework in \cref{sec:model}, \eqref{eq:exactidentity} and \eqref{eq:Ymodal} imply
+\begin{equation}\label{eq:temperature}
+Y_n(0)=\frac{C_nb_n}{b_n+\delta_n}(\mathsf Bk)_n=0.
+\end{equation}
+All coefficients in the odd basis vanish, so the odd terminal temperature is zero in \(L^2(0,L)\). The zero-temperature relation in \eqref{eq:Ymodal} gives \(F(-\mu-b_n)=-d b_n^{-2}F(-\mu+\delta_n)\). Substitution in \eqref{eq:Pmodal} yields
+\begin{equation}\label{eq:memory}
+P_n(0)=\frac{C_n\gamma}{b_n}F(-\mu+\delta_n)
+=\frac{C_n\gamma}{b_n}\int_0^T te^{\delta_nt}v(t)dt.
+\end{equation}
+No terminal condition \(P(0)=0\) is imposed.
+
+Because \(Q\) is injective, \(v\ne0\). Each weight in \eqref{eq:paired} is positive on \((0,T)\), so the real continuous functions \(v\) and \(f\) must change sign. Since \(k\) vanishes near both endpoints, \(v=-\mathsf Tv\) there, and \(f\) is analytic near each endpoint. If \(f\) vanished on \((0,\epsilon)\), then \(\mathsf Tv\) would vanish there and hence everywhere by analyticity. By \eqref{eq:positivity}, all weighted moments of \(v\) would vanish; polynomial density in \(H\) would imply \(v=0\), a contradiction. Thus, in physical time, the control has no terminal switch-off gap.
+
+The entire function \(G(z)=\int_0^T te^{zt}v(t)dt\) is nonzero: otherwise all weighted polynomial moments vanish and \(v=0\). Since \(\delta_n\to0\), its zeros cannot contain infinitely many \(\delta_n\) unless \(G\equiv0\). From \eqref{eq:memory}, \(C_n\ne0\) and \(\gamma\ne0\), so all but finitely many terminal memory coefficients are nonzero. Finally, \(f\) cannot be real analytic on a connected neighborhood of \([0,T]\): the quotient \(e^{-\mu t}f(t)/t\) has an analytic removable singularity at zero, making \(k=v+\mathsf Tv\) analytic and identically zero because it vanishes near zero. These are assertions about this linear odd solution class only.

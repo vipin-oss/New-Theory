@@ -1,0 +1,34 @@
+\section{Bessel-kernel operator and functional setting}\label{sec:setting}
+From here the theorem is abstract: fix \(T,d,\mu>0\) and an increasing positive sequence satisfying
+\begin{equation}\label{eq:growth}
+b_n\asymp n^2,\qquad \inf_n(\sqrt{b_{n+1}}-\sqrt{b_n})>0.
+\end{equation}
+The gap is a separate hypothesis: growth order alone permits clustered pairs. All spaces are real. Put \(H=L^2((0,T),t\,dt)\) and
+\begin{equation}\label{eq:kernel}
+H_d(t,s)=\sum_{j=0}^\infty\frac{(dts)^j}{j!(j+1)!},\qquad
+(\mathsf Tv)(t)=d\int_0^T H_d(t,s)v(s)s\,ds.
+\end{equation}
+\begin{lemma}\label{lem:positive}
+The operator \(\mathsf T\) is compact, self-adjoint and nonnegative on \(H\). Its quadratic form is
+\begin{equation}\label{eq:positivity}
+\langle\mathsf Tv,v\rangle_H=d\sum_{j=0}^\infty\frac{d^j}{j!(j+1)!}\left(\int_0^T s^{j+1}v(s)ds\right)^2.
+\end{equation}
+The inverse \(Q=(I+\mathsf T)^{-1}\) exists with \(\|Q\|\le1\). For \(v\in H\), \(\mathsf Tv\) extends to an entire function of \(t\); consequently \(Qk\) is smooth on \([0,T]\) for smooth \(k\).
+\end{lemma}
+\begin{proof}
+The series converges uniformly on compact sets in \((t,s)\), since \(j!(j+1)!\ge(j!)^2\). Thus the symmetric kernel is bounded on \([0,T]^2\) and belongs to \(L^2((0,T)^2,ts\,dt\,ds)\), proving Hilbert--Schmidt compactness and self-adjointness. Uniform convergence and Cauchy--Schwarz justify integration termwise, giving \eqref{eq:positivity}. Since \(I+\mathsf T\) is bounded below by one and self-adjoint, its range is closed and has zero orthogonal complement; it is onto and \(\|Q\|\le1\). Uniform convergence of the integral series on complex compact sets proves the entire extension. Finally \(Qk=k-\mathsf TQk\) almost everywhere, giving the asserted smooth representative.
+\end{proof}
+For \(k\in H\) define the correction moments
+\begin{equation}\label{eq:B}
+(\mathsf Bk)_n=\int_0^T te^{-b_nt}k(t)dt+
+\int_T^\infty te^{-b_nt}(\mathsf TQk)(t)dt.
+\end{equation}
+The second integral is finite by the growth bound proved in \cref{lem:tail}. The identity
+\begin{equation}\label{eq:laplacekernel}
+\int_0^\infty te^{-bt}H_d(t,s)dt=b^{-2}e^{ds/b},\qquad b>0,\quad 0\le s\le T,
+\end{equation}
+follows by termwise integration: the integral of \(t^{j+1}e^{-bt}\) is \((j+1)!b^{-j-2}\). Nonnegative terms and then Cauchy--Schwarz justify the interchange. If \(v=Qk\), then \(k=v+\mathsf Tv\), and \eqref{eq:laplacekernel} gives
+\begin{equation}\label{eq:exactidentity}
+(\mathsf Bk)_n=\int_0^T t v(t)\left(e^{-b_nt}+d b_n^{-2}e^{dt/b_n}\right)dt.
+\end{equation}
+Thus the tail is not an independent unknown: it is determined by \(k\) through \(Q\).

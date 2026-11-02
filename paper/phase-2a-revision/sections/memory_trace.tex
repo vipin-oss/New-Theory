@@ -1,0 +1,50 @@
+\section{Terminal memory: necessary trace conditions}\label{sec:trace}
+For a compatible smooth boundary input, let \(f(t)=a(-t)\), and suppose \(Y(\cdot,0)=0\). Put \(c_n=C_n\gamma/b_n\ne0\), \(\delta_n=d/b_n\), \(p_n=P_n(0)\), and
+\[
+G(z)=\int_0^T e^{zt}e^{-\mu t}f(t)\,dt.
+\]
+For the constructed controls this agrees with the function in \cref{sec:interpretation}; the modal identity \eqref{eq:memory} gives \(p_n=c_nG(\delta_n)\). The function \(G\) is entire of exponential type at most \(T\). Set \(r_n=p_n/c_n\).
+
+\begin{proposition}[Implicit exact characterization]\label{prop:implicit}
+In the smooth compatible class specified in \cref{sec:model}, a sequence \(p\in\ell^2\) is a terminal memory sequence of a zero-start control with zero terminal temperature if and only if there exists \(h\in C^\infty([0,T])\), \(h(0)=h(T)=0\), such that, with \(G(z)=\int_0^T e^{zt}h(t)dt\),
+\[
+G(-b_n)+\frac{d}{b_n^2}G(\delta_n)=0,\qquad
+p_n=c_nG(\delta_n),\quad n\ge1.
+\]
+This is an exact implicit moment description, not an intrinsic sequence-space characterization or a statement about closure.
+\end{proposition}
+\begin{proof}
+For any such control take \(h=e^{-\mu t}f(t)\). The temperature identity \eqref{eq:Ymodal} gives the first equation and \eqref{eq:memory} gives the second. Conversely set \(f=e^{\mu t}h\) and \(a(s)=f(-s)\). It is smooth and endpoint-compatible. The two projector identities \eqref{eq:Ymodal}--\eqref{eq:Pmodal} imply that every temperature coefficient vanishes and every memory coefficient is \(p_n\). Completeness of the odd basis and the smooth-lift solution framework give the terminal fields in \(L^2\).
+\end{proof}
+
+\begin{proposition}[Accumulating-zero mechanism]\label{prop:fullzero}
+For the frozen zero-start model with the stated smooth compatible boundary input, if \(Y(\cdot,0)=P(\cdot,0)=0\), then \(a=0\). In particular, the memory of any nonzero constructed temperature-null input is nonzero. The use of zeros accumulating at a finite point is the mechanism of \cite[Obstruction 1, p.~6]{IvanovPandolfi2009}, not a novelty claim.
+\end{proposition}
+\begin{proof}
+The terminal identities give \(G(\delta_n)=0\) for all \(n\). As the distinct \(\delta_n\) converge to zero, the identity theorem gives \(G\equiv0\). Hence all polynomial moments of \(e^{-\mu t}f(t)\) vanish. Polynomial density in \(L^2(0,T)\) yields \(f=0\), and therefore \(a=0\).
+\end{proof}
+\begin{proposition}[Necessary asymptotics and a norm lower bound]\label{prop:asymptotic}
+For every integer \(m\ge0\), put \(g_j=\int_0^T t^j e^{-\mu t} f(t)dt\). Then
+\[
+r_n=\sum_{j=0}^{m}\frac{g_j}{j!}\delta_n^j+O(\delta_n^{m+1}),\qquad
+|g_j|\le\left(\int_0^T t^{2j}e^{-2\mu t}dt\right)^{1/2}\|a\|_{L^2(-T,0)}.
+\]
+In particular \(r_n\to g_0\) and every smooth compatible input producing a prescribed zero-temperature memory sequence satisfies
+\[
+\|a\|_{L^2(-T,0)}\ge \frac{|\lim_n p_n/c_n|}{\left(\int_0^T e^{-2\mu t}dt\right)^{1/2}}.
+\]
+The normalized sequences determine \(G\) and hence the input uniquely whenever a solution exists.
+\end{proposition}
+\begin{proof}
+Taylor expansion of the entire integral and boundedness of \(t\in[0,T]\) give the expansion, with remainder controlled by \(\|f\|_2\). Cauchy--Schwarz gives the coefficient bounds. If two functions agree at all \(\delta_n\), their difference vanishes identically by the identity theorem, so polynomial density proves equality of the inputs. The time reversal preserves the \(L^2\) norm.
+\end{proof}
+Since \(b_n\asymp n^2\) and \(C_n\asymp n\), the sequence \((c_n)\in\ell^2\). Thus \(p_n=c_n(-1)^n\) is an \(\ell^2\) memory sequence violating the necessary convergence condition and is not exactly reachable with zero temperature in this class. This gives no conclusion about its membership in the \emph{closure} of the range. An intrinsic description of the exact range, its density in a specified weighted space and sharp control costs remain open; the trace conditions alone are not sufficient. The coefficient bounds are elementary and no novelty is asserted.
+
+\begin{corollary}[Elementary instability, conditional on the kernel theorem]
+There are smooth compatible real boundary controls of unit \(L^2(-T,0)\) norm, each giving zero terminal temperature, whose terminal memory norms tend to zero in \(L^2(0,L)\). This is not a nonzero control with exactly zero terminal full state and is not a control-cost bound for prescribed states.
+\end{corollary}
+\begin{proof}
+Fix \(I\Subset(0,T)\), put \(X=L^2(I,t\,dt)\), and let \(V\subset C_c^\infty(I)\) be the infinite-dimensional correction space furnished by \cref{thm:main}. For \(x\in V\), set \(v=Qx\), \(f(t)=e^{\mu t}tv(t)\). The memory map \(x\mapsto(c_n\int_0^T te^{\delta_nt}(Qx)(t)dt)_n\) is compact from \(X\) to \(\ell^2\): its Taylor truncations in \(\delta_n\) have finite rank, and converge in operator norm since \((c_n)\in\ell^2\), \(0<\delta_n\le d/b_1\), and \(Q\) is bounded on \(H\).
+
+On the other hand, with \(\alpha=\inf I>0\), \(\|v\|_{X}\le\alpha^{-1/2}\|f\|_2\). The Bessel kernel is bounded on \([0,T]^2\), and \(sv(s)=e^{-\mu s}f(s)\), so \(\|\mathsf Tv\|_X\le C\|f\|_2\). Since \(x=v+\mathsf Tv\) on \(I\), \(\|x\|_X\le C_I\|f\|_2\). Apply Gram--Schmidt to independent elements of \(V\), obtaining an \(X\)-orthonormal sequence \(x_j\in V\). Compactness makes the corresponding memory coefficients tend to zero, while \(\|f_j\|_2\ge C_I^{-1}\). Normalize by \(\|f_j\|_2\), reverse time and use the modal reconstruction. Constants depend on the fixed model and interval.
+\end{proof}

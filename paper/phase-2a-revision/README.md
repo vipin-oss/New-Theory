@@ -1,0 +1,7 @@
+# Phase 2a research manuscript — NOT READY FOR SUBMISSION
+
+New working copy, separate from the frozen `paper/final-manuscript/` project and original Overleaf bundle. The abstract now addresses non-injectivity, not the trivial zero-control statement; the biorthogonal proof uses Fattorini–Russell 1974 directly. The memory section gives an implicit exact moment characterization, necessary analytic constraints, an explicit l² obstruction, and a simple lower bound in the physical boundary-input L² norm. These results are same-agent work, not independent certification or proof of novelty. The new memory constraints are necessary, not a solved intrinsic range or closure characterization; the FR source bound is not a cost bound for prescribed memory states.
+
+The next-stage independent human review is requested in `REFEREE_DOSSIER.md`. It is not complete. The full Ivanov–Pandolfi and FR papers were accessed as original user-supplied PDFs; the key relevant statements and proof sections were inspected, but a complete independent verification of every line of their long proofs is not claimed. The authorized author name is included; the affiliation remains unverified and is explicitly marked for confirmation.
+
+Compilation is not verified: system TeX binaries are absent and the attempt to install Debian TeX Live failed because Debian repositories cannot be reached. No page count or warning-free claim. Manuscript has not been submitted.

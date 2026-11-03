@@ -1,0 +1,65 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{cite}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+% Theorem environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+% Custom mathematical macros
+\newcommand{\Lcal}{\mathcal{L}}
+\newcommand{\Kcal}{\mathcal{K}}
+\newcommand{\Ical}{\mathcal{I}}
+\newcommand{\Dcal}{\mathcal{D}}
+\newcommand{\Rbb}{\mathbb{R}}
+\newcommand{\dd}{\,\mathrm{d}}
+
+\title{\textbf{Thermodynamic Consistency of Two-Phase Integral Nonlocal Thermoelasticity: Reciprocity, Boundary Closure, and Kernel Normalization}}
+
+\author{Vipin Gupta}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+When Eringen's integral nonlocal thermoelasticity is converted into differential form via a Helmholtz kernel, care is required to preserve three properties of the underlying integral theory: (i)~Maxwell reciprocity between the thermal-stress operator and the dilational-entropy operator implied by the Second Law, (ii)~the Constitutive Boundary Conditions (CBCs) required for equivalence between the integral Fredholm operator and its differential inverse on bounded or semi-infinite domains, and (iii)~partition-of-unity kernel normalization near boundaries so that uniform temperature changes produce uniform free thermal expansion. Motivated by a convenience sample of $N=29$ nonlocal thermoelasticity papers published between 2016 and 2026 (drawn from a working collection of 152 mechanics PDFs, and including earlier papers co-authored by the present author), this clarification note consolidates the governing structure of two-phase ($\gamma \in (0,1)$) integral nonlocal thermoelasticity. First, specializing Eringen's (1974) integral kernel-duality theorem and the global nonlocality-residual framework to the two-phase operator $\Lcal_{\gamma,\ell}$, we state the two thermodynamically consistent realizations---Variant~V1 (thermo-mechanically nonlocal) and Variant~V2 (mechanically nonlocal)---and prove (\textbf{Theorem~1}) that the widely used differential shortcut pairing $(1-\ell^2\partial_x^2)\sigma = E\varepsilon - \beta\theta$ with the local constant-strain entropy $\rho\eta = \beta\varepsilon + (\rho c_E/T_0)\theta$ admits no twice-differentiable Helmholtz free energy in $(\varepsilon,\theta)$ and no stress-gradient Gibbs potential in $(\sigma,\theta)$ (where Gibbs reciprocity requires the additional stress-Laplacian term $(\beta\ell^2/E)\sigma_{,xx}$), producing negative internal dissipation on closed harmonic cycles. Second, we prove (\textbf{Theorem~2}) that Variant~V1 is eighth-order in space (quartic in $q=k^2$, $N=4$ wave-mode pairs) whereas Variant~V2 and the mismatched differential model are sixth-order (cubic in $q=k^2$, $N=3$ wave-mode pairs), and show that applying an identical single-phase ($\gamma=0$) nonlocal operator to stress, entropy, and heat flux cancels the nonlocal operator from the bulk heat equation via a singular perturbation limit in which the fourth root escapes as $q_4 \sim -1/(\gamma\ell^2)$. Third, extending isothermal nonlocal boundary closure results to thermoelasticity (\textbf{Theorem~3}), we derive the CBCs under unnormalized, Borino--Failla--Parrinello additive-defect normalized, and reflecting Neumann kernels, and show that a static $1/\sqrt{\gamma}$ surface thermal-expansion boundary layer under uniform heating is an artifact of unnormalized kernel truncation that vanishes identically ($\varepsilon^{\mathrm{V1}} \equiv \varepsilon^{\mathrm{V2}} \equiv \beta\theta_0/E$) under any partition-of-unity normalized symmetric kernel. Finally, an order-of-magnitude calibration for face-centered cubic Aluminum using published atomistic characteristic lengths ($\bar{\ell}_1 = 0.1203\;\mathrm{nm}$) shows that within the frequency band where Fourier heat conduction is physically defensible ($\omega\tau_q \le 0.1$), bulk thermoelastic damping differences between the formulations are $O((k\ell)^2) \lesssim 10^{-4}$. The value of this note is therefore mathematical and foundational rather than a prediction of a large measurable nanoscale bulk damping effect in monolithic crystals.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Nonlocal thermoelasticity; Two-phase integral kernel; Clausius--Duhem inequality; Maxwell reciprocity; Constitutive boundary conditions; Kernel normalization.
+
+\input{sections/sec1_introduction}
+\input{sections/sec2_model}
+\input{sections/sec3_theorem1}
+\input{sections/sec4_mode_count}
+\input{sections/sec5_boundary_closure}
+\input{sections/sec6_calibration}
+\input{sections/sec7_limitations}
+
+\appendix
+\input{sections/appendix_proofs}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

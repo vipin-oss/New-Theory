@@ -1,0 +1,95 @@
+\section{Complete Mathematical Proofs}\label{app:proofs}
+
+\subsection{Proof of Proposition \ref{prop:reciprocity} (Master Free Energy and Reciprocity on $L^2(\Omega)$)}\label{app:proof_prop1}
+
+\begin{proof}
+Let $\mathcal{H} := L^2(\Omega) \times L^2(\Omega)$ equipped with the standard inner product $\langle(\varepsilon_1,\theta_1),(\varepsilon_2,\theta_2)\rangle_{\mathcal{H}} = \langle\varepsilon_1,\varepsilon_2\rangle_{L^2(\Omega)} + \langle\theta_1,\theta_2\rangle_{L^2(\Omega)}$. Suppose $\Psi : \mathcal{H} \to \Rbb$ is a twice Fr{\'e}chet-differentiable functional generating the linear state laws \eqref{eq:general_state_laws} via \eqref{eq:frechet_state_laws}:
+\begin{equation}\label{eq:app_first_variation}
+  \mathrm{D}\Psi(\varepsilon,\theta)[(\delta\varepsilon,\delta\theta)] = \langle\sigma,\delta\varepsilon\rangle_{L^2(\Omega)} - \langle\rho\eta,\delta\theta\rangle_{L^2(\Omega)} = \langle E\Lcal_{\mathrm{el}}\varepsilon - \beta\Lcal_{\mathrm{th}}\theta,\,\delta\varepsilon\rangle_{L^2(\Omega)} - \langle\beta\Lcal_\eta\varepsilon + \frac{\rho c_E}{T_0}\Lcal_c\theta,\,\delta\theta\rangle_{L^2(\Omega)}.
+\end{equation}
+Taking the second Fr{\'e}chet derivative $\mathrm{D}^2\Psi(\varepsilon,\theta)[(\delta\varepsilon_1,\delta\theta_1),(\delta\varepsilon_2,\delta\theta_2)]$ along mixed variations $(\delta\varepsilon_1,0)$ and $(0,\delta\theta_2)$ gives
+\begin{align}
+  \mathrm{D}^2\Psi(\varepsilon,\theta)[(\delta\varepsilon,0),(0,\delta\theta)] &= -\beta\,\langle\Lcal_{\mathrm{th}}\delta\theta,\,\delta\varepsilon\rangle_{L^2(\Omega)} = -\beta\,\langle\delta\theta,\,\Lcal_{\mathrm{th}}^*\delta\varepsilon\rangle_{L^2(\Omega)}, \label{eq:app_d2_1}\\
+  \mathrm{D}^2\Psi(\varepsilon,\theta)[(0,\delta\theta),(\delta\varepsilon,0)] &= -\beta\,\langle\Lcal_\eta\delta\varepsilon,\,\delta\theta\rangle_{L^2(\Omega)} = -\beta\,\langle\delta\theta,\,\Lcal_\eta\delta\varepsilon\rangle_{L^2(\Omega)}. \label{eq:app_d2_2}
+\end{align}
+By Schwarz's theorem on the symmetry of the second Fr{\'e}chet derivative of a $C^2$ functional on a Banach space, \eqref{eq:app_d2_1} and \eqref{eq:app_d2_2} must be equal for all $\delta\varepsilon,\delta\theta \in L^2(\Omega)$. Since $\beta > 0$, this holds if and only if $\langle\delta\theta, (\Lcal_\eta - \Lcal_{\mathrm{th}}^*)\delta\varepsilon\rangle_{L^2(\Omega)} = 0$ for all $\delta\varepsilon,\delta\theta \in L^2(\Omega)$, which is equivalent to $\Lcal_\eta = \Lcal_{\mathrm{th}}^*$. Similarly, symmetry under pure strain variations $((\delta\varepsilon_1,0),(\delta\varepsilon_2,0))$ and pure thermal variations $((0,\delta\theta_1),(0,\delta\theta_2))$ holds because $\Lcal_{\mathrm{el}}^* = \Lcal_{\mathrm{el}}$ and $\Lcal_c^* = \Lcal_c$.
+
+Conversely, when $\Lcal_{\mathrm{el}} = \Lcal_{\mathrm{el}}^*$, $\Lcal_c = \Lcal_c^*$, and $\Lcal_\eta = \Lcal_{\mathrm{th}}^* = \Lcal_{\mathrm{th}}$, differentiating the quadratic functional $\Psi[\varepsilon,\theta]$ in \eqref{eq:master_psi} along any smooth trajectory $(\varepsilon(\cdot,t),\theta(\cdot,t)) \in C^1([0,T];\mathcal{H})$ and using the self-adjointness identities $\langle\varepsilon,\Lcal_{\mathrm{el}}\dot{\varepsilon}\rangle = \langle\Lcal_{\mathrm{el}}\varepsilon,\dot{\varepsilon}\rangle$, $\langle\theta,\Lcal_c\dot{\theta}\rangle = \langle\Lcal_c\theta,\dot{\theta}\rangle$, and $\langle\varepsilon,\Lcal_{\mathrm{th}}\dot{\theta}\rangle = \langle\Lcal_{\mathrm{th}}\varepsilon,\dot{\theta}\rangle$ yields
+\begin{align}
+  \frac{\dd}{\dd t}\Psi[\varepsilon,\theta] &= \langle E\Lcal_{\mathrm{el}}\varepsilon - \beta\Lcal_{\mathrm{th}}\theta,\,\dot{\varepsilon}\rangle_{L^2(\Omega)} - \langle\beta\Lcal_{\mathrm{th}}\varepsilon + \frac{\rho c_E}{T_0}\Lcal_c\theta,\,\dot{\theta}\rangle_{L^2(\Omega)} \nonumber\\
+  &= \int_\Omega \left[\sigma(x,t)\dot{\varepsilon}(x,t) - \rho\eta(x,t)\dot{\theta}(x,t)\right]\dd x. \label{eq:app_psi_dot}
+\end{align}
+Substituting \eqref{eq:app_psi_dot} into the global Clausius--Duhem inequality \eqref{eq:global_cd} cancels the conservative power identically, leaving $\Dcal_{\mathrm{global}}(t) = -\int_\Omega \frac{q}{T_0}\partial_x\theta\dd x = \int_\Omega \frac{\kappa}{T_0}(\partial_x\theta)^2\dd x \ge 0$.
+\end{proof}
+
+\subsection{Proof of Theorem \ref{thm:no_free_energy} (Incompatibility of Class I in Helmholtz and Gibbs Representations)}\label{app:proof_thm1}
+
+\begin{proof}
+\textbf{Part (a):} For the constitutive pairing \eqref{eq:thm1_stress}--\eqref{eq:thm1_entropy}, the thermal stress operator is $\Lcal_{\mathrm{th}} = \Lcal_{\gamma,\ell}$ ($\gamma \in [0,1)$), whereas the dilational entropy operator in $\rho\eta^{\mathrm{loc}} = \beta\varepsilon + \frac{\rho c_E}{T_0}\theta$ is the identity operator $\Lcal_\eta = \Ical$. By Proposition~\ref{prop:reciprocity}, a twice Fr{\'e}chet-differentiable Helmholtz free energy $\Psi[\varepsilon,\theta]$ exists on $L^2(\Omega) \times L^2(\Omega)$ if and only if $\Lcal_\eta = \Lcal_{\mathrm{th}}^* = \Lcal_{\gamma,\ell}$, i.e.,
+\begin{equation}\label{eq:app_defect_op}
+  \Ical - \Lcal_{\gamma,\ell} = (1-\gamma)\left(\Ical - \Kcal_\ell\right) = 0 \quad \text{on } L^2(\Omega).
+\end{equation}
+Since $\gamma < 1$ and $\Kcal_\ell$ is an integral operator with smooth kernel (or Green's function of $1-\ell^2\partial_x^2$ with $\ell > 0$), $\Kcal_\ell$ is a compact operator on $L^2(\Omega)$ when $\Omega = [0,L]$ (and has Fourier symbol $(1+\ell^2 k^2)^{-1} \neq 1$ for $k \neq 0$ on $\Rbb$), so $\Ical - \Kcal_\ell \neq 0$. Specifically, for any non-constant eigenmode $\phi_n(x) = \cos(n\pi x/L)$ ($n \ge 1$) of the Neumann Laplacian on $[0,L]$, $((1-\gamma)(\Ical - \Kcal_\ell^{\mathrm{Neu}})\phi_n)(x) = \frac{(1-\gamma)k_n^2\ell^2}{1+k_n^2\ell^2}\phi_n(x) \neq 0$. Thus no Helmholtz free energy functional exists.
+
+\medskip\noindent\textbf{Part (b):} In the complementary $(\sigma,\theta)$ representation on $\Omega = [0,L]$, suppose there exists a functional $G[\sigma,\theta] = \int_0^L g(\sigma,\partial_x\sigma,\theta)\dd x$ generating $\varepsilon = \delta G/\delta\sigma = \frac{1}{E}(\sigma - \ell^2\partial_x^2\sigma) + \frac{\beta}{E}\theta$ (which is equivalent to the $\gamma=0$ Class~I stress law $(1-\ell^2\partial_x^2)\sigma = E\varepsilon - \beta\theta$) and $\rho\eta = \delta G/\delta\theta$. The Euler--Lagrange equations of $G[\sigma,\theta]$ require
+\begin{equation}\label{eq:app_gibbs_el}
+  \frac{\partial g}{\partial\sigma} - \partial_x\!\left(\frac{\partial g}{\partial(\partial_x\sigma)}\right) = \frac{1}{E}\sigma - \frac{\ell^2}{E}\partial_x^2\sigma + \frac{\beta}{E}\theta, \qquad \frac{\partial g}{\partial\theta} - \partial_x\!\left(\frac{\partial g}{\partial(\partial_x\theta)}\right) = \rho\eta.
+\end{equation}
+Integrating the first equation of \eqref{eq:app_gibbs_el} with respect to $(\sigma,\partial_x\sigma)$ determines $g$ up to a purely thermal potential $h(\theta)$:
+\begin{equation}\label{eq:app_gibbs_g}
+  g(\sigma,\partial_x\sigma,\theta) = \frac{1}{2E}\sigma^2 + \frac{\ell^2}{2E}(\partial_x\sigma)^2 + \frac{\beta}{E}\sigma\theta + h(\theta).
+\end{equation}
+Matching the local limit $\ell \to 0$ ($\sigma = E\varepsilon - \beta\theta$, $\rho\eta = \beta\varepsilon + \frac{\rho c_E}{T_0}\theta$) fixes $h'(\theta) = \left(\frac{\rho c_E}{T_0} + \frac{\beta^2}{E}\right)\theta = \frac{\rho c_\sigma}{T_0}\theta$. Differentiating \eqref{eq:app_gibbs_g} with respect to $\theta$ and substituting $\sigma = E\varepsilon - \beta\theta + \ell^2\partial_x^2\sigma$ yields
+\begin{equation}\label{eq:app_gibbs_eta}
+  \rho\eta^{\mathrm{Gibbs}} = \frac{\partial g}{\partial\theta} = \frac{\beta}{E}\sigma + \frac{\rho c_\sigma}{T_0}\theta = \beta\varepsilon + \frac{\rho c_E}{T_0}\theta + \frac{\beta\ell^2}{E}\partial_x^2\sigma = \rho\eta^{\mathrm{loc}} + \frac{\beta\ell^2}{E}\partial_x^2\sigma,
+\end{equation}
+proving \eqref{eq:gibbs_entropy}.
+
+\medskip\noindent\textbf{Part (c):} The explicit evaluation of the closed-cycle integral \eqref{eq:hc_cycle_work}--\eqref{eq:hc_cycle_total} in Section~\ref{subsec:hand_check} for the smooth periodic fields $\varepsilon(x,t) = \varepsilon_0\cos(kx)\cos(\omega t)$ and $\theta(x,t) = \theta_0\cos(kx)\sin(\omega t)$ ($k = n\pi/L$, $n \ge 1$) holds verbatim under Fourier, Cattaneo, Moore--Gibson--Thompson, or phase-lag heat conduction (since $\partial_x\theta$ depends only on $\theta_0$, whereas the negative mechanical--thermal cross-work term in \eqref{eq:hc_cycle_total} is linear in $\varepsilon_0$ and can be made arbitrarily negative by choosing $\varepsilon_0$ large for any fixed $\theta_0 > 0$).
+\end{proof}
+
+\subsection{Proof of Theorem \ref{thm:mode_count} (Spatial Mode Counts and $\gamma \to 0^+$ Singular Limit)}\label{app:proof_thm2}
+
+\begin{proof}
+\textbf{Part (a):} Expanding \eqref{eq:P_V1} for Variant~V1 in powers of $q = k^2$ gives $P_{\mathrm{V1}}(q,\omega;\gamma) = \sum_{m=0}^4 a_m^{\mathrm{V1}}(\omega;\gamma)q^m$, where the coefficients of $q^4$ and $q^3$ are
+\begin{align}
+  a_4^{\mathrm{V1}}(\omega;\gamma) &= \gamma\ell^4 E\kappa, \label{eq:app_a4_V1}\\
+  a_3^{\mathrm{V1}}(\omega;\gamma) &= \ell^2 E\kappa(1+\gamma) - \rho\omega^2\ell^4\kappa - \mathrm{i}\omega\rho c_E\gamma\ell^4 E - \mathrm{i}\omega T_0\beta^2\gamma^2\ell^4. \label{eq:app_a3_V1}
+\end{align}
+Since $\gamma, \ell, E, \kappa > 0$, $a_4^{\mathrm{V1}}(\omega;\gamma) > 0$ for all $\omega > 0$ and $\gamma \in (0,1)$, so $\deg_q P_{\mathrm{V1}} = 4$. Moreover, at $q = -\ell^{-2}$ (the pole of $\hat{\Lcal}_{\gamma,\ell}(q)$ cleared in \eqref{eq:P_V1}), evaluating \eqref{eq:P_V1} gives
+\begin{equation}\label{eq:app_no_cancellation}
+  P_{\mathrm{V1}}(-\ell^{-2},\omega;\gamma) = -\mathrm{i}\omega T_0\beta^2(-\ell^{-2})(1-\gamma)^2 = \mathrm{i}\omega T_0\beta^2\ell^{-2}(1-\gamma)^2 \neq 0,
+\end{equation}
+which proves that $(1+\ell^2 q)$ does not divide $P_{\mathrm{V1}}(q,\omega;\gamma)$, so all four roots $q_1,q_2,q_3,q_4$ are genuine roots of the rational dispersion equation \eqref{eq:master_dispersion}. For Variant~V2, expanding \eqref{eq:P_V2} gives $\deg_q P_{\mathrm{V2}} = 3$ with leading coefficient $a_3^{\mathrm{V2}} = \gamma\ell^2 E\kappa > 0$ and $P_{\mathrm{V2}}(-\ell^{-2},\omega;\gamma) = -E\ell^{-2}(1-\gamma)(-\kappa\ell^{-2} - \mathrm{i}\omega\rho c_E) \neq 0$. For Class~I, expanding \eqref{eq:P_ClassI} gives $\deg_q P_{\mathrm{Class\,I}} = 3$ with leading coefficient $a_3^{\mathrm{Class\,I}} = \kappa(E - \rho\omega^2\ell^2) \neq 0$ for $\omega \neq c_0/\ell$.
+
+\medskip\noindent\textbf{Part (b):} As $\gamma \to 0^+$, the coefficient $a_4^{\mathrm{V1}} = \gamma\ell^4 E\kappa$ of $q^4$ in \eqref{eq:P_V1} tends to zero, while $a_3^{\mathrm{V1}}(\omega;0) = \ell^2\kappa(E - \rho\omega^2\ell^2) \neq 0$ (for $\omega \neq c_0/\ell$). By standard singular perturbation of algebraic equations, introducing the rescaled variable $Q := \gamma\ell^2 q$ into $P_{\mathrm{V1}}(Q/(\gamma\ell^2),\omega;\gamma) = 0$ and multiplying by $\gamma^3\ell^6$ yields
+\begin{equation}\label{eq:app_rescaled_Q}
+  \left[E Q(1+Q) - \gamma\rho\omega^2\ell^2(\gamma+Q)\right]\left(\kappa Q - \mathrm{i}\gamma\omega\rho c_E\ell^2\right)(\gamma+Q) - \mathrm{i}\gamma^2\omega T_0\beta^2\ell^2 Q(1+Q)^2 = 0.
+\end{equation}
+At $\gamma = 0$, \eqref{eq:app_rescaled_Q} reduces to $E\kappa Q^3(1+Q) = 0$, which has the triple root $Q = 0$ (corresponding to the three finite roots $q_1,q_2,q_3$ of the $\gamma = 0$ cubic) and the simple root $Q_4(0) = -1$. Applying the implicit function theorem at $Q_4(0) = -1$ gives the Taylor expansion $Q_4(\gamma) = -1 + \frac{\rho\omega^2\ell^2}{E}\gamma - \frac{\mathrm{i}\omega T_0\beta^2\ell^2}{\kappa E}\gamma^2 + O(\gamma^3)$, which divides by $\gamma\ell^2$ to yield \eqref{eq:q4_asymptotic}.
+
+\medskip\noindent\textbf{Part (c):} Writing \eqref{eq:P_V1} and \eqref{eq:P_V2} in terms of the dimensionless variables $\Omega = \omega/\omega^*$, $K = k\ell^*$, $\bar{Q} = K^2 = q(\ell^*)^2$, and $\chi_{\mathrm{nl}} = \ell/\ell^*$, and expanding the quasi-elastic root $\bar{Q}_1(\Omega) = \frac{\Omega^2}{\gamma}\left[1 + \frac{c_1}{\Omega} + \frac{c_2}{\Omega^2} + O(\Omega^{-3})\right]$ as $\Omega \to \infty$ (where $\hat{\Lcal}_{\gamma,\ell}(\bar{Q}_1) = \gamma + O(\Omega^{-2})$) yields $K_1^{\mathrm{V1}}(\Omega) = \frac{\Omega}{\sqrt{\gamma}} + \mathrm{i}\frac{\epsilon}{2}\gamma^{3/2} + O(\Omega^{-1})$ for Variant~V1 and $K_1^{\mathrm{V2}}(\Omega) = \frac{\Omega}{\sqrt{\gamma}} + \mathrm{i}\frac{\epsilon}{2}\gamma^{-1/2} + O(\Omega^{-1})$ for Variant~V2, establishing \eqref{eq:high_freq_plateau}. Expanding for $\chi_{\mathrm{nl}}\Omega \ll 1$ and $\epsilon \ll 1$ similarly gives \eqref{eq:low_k_damping_expansion}.
+\end{proof}
+
+\subsection{Proof of Theorem \ref{thm:cbc} and Corollary \ref{cor:artifact} (Boundary Closure and Truncation Artifact)}\label{app:proof_thm3}
+
+\begin{proof}
+Let $f \in H^2(0,L)$ and define the auxiliary nonlocal convolution $w(x) := \int_0^L \Kcal_\ell^{\mathrm{base}}(x,\xi)f(\xi)\dd\xi$, where $\Kcal_\ell^{\mathrm{base}} = K_\ell^{\mathrm{unnorm}}$ for Kernels~(i) and~(ii), and $\Kcal_\ell^{\mathrm{base}} = K_\ell^{\mathrm{Neu}}$ for Kernel~(iii).
+\begin{enumerate}[label=(\alph*),leftmargin=*]
+  \item For $\Kcal_\ell^{\mathrm{base}} = K_\ell^{\mathrm{unnorm}}(x,\xi) = \frac{1}{2\ell}\mathrm{e}^{-|x-\xi|/\ell}$, splitting the integral at $\xi = x$ gives
+  \begin{equation}\label{eq:app_w_split}
+    w(x) = \frac{1}{2\ell}\mathrm{e}^{-x/\ell}\int_0^x \mathrm{e}^{\xi/\ell}f(\xi)\dd\xi + \frac{1}{2\ell}\mathrm{e}^{x/\ell}\int_x^L \mathrm{e}^{-\xi/\ell}f(\xi)\dd\xi.
+  \end{equation}
+  Differentiating \eqref{eq:app_w_split} once and twice with respect to $x \in (0,L)$ yields
+  \begin{equation}\label{eq:app_w_ode}
+    w'(x) = -\frac{1}{2\ell^2}\mathrm{e}^{-x/\ell}\int_0^x \mathrm{e}^{\xi/\ell}f(\xi)\dd\xi + \frac{1}{2\ell^2}\mathrm{e}^{x/\ell}\int_x^L \mathrm{e}^{-\xi/\ell}f(\xi)\dd\xi, \qquad w(x) - \ell^2 w''(x) = f(x).
+  \end{equation}
+  Evaluating $w(x)$ and $w'(x)$ at $x = 0$ and $x = L$ eliminates the remaining integrals and gives the exact endpoint Robin conditions $w'(0) - \ell^{-1}w(0) = 0$ and $w'(L) + \ell^{-1}w(L) = 0$ \cite{FernandezSaez2016,Romano2017}.
+  For Kernel~(i), $g = \gamma f + (1-\gamma)w \iff w = \frac{g - \gamma f}{1-\gamma}$; substituting $w$ into \eqref{eq:app_w_ode} and the Robin conditions yields \eqref{eq:ode_unnorm}--\eqref{eq:cbc_unnorm}.
+  \item For Kernel~(ii) ($W_\ell^{\mathrm{BFP}}$), \eqref{eq:L_BFP} gives $g = \gamma_{\mathrm{eff}}(x)f + (1-\gamma)w \iff w = \frac{g - \gamma_{\mathrm{eff}}(x)f}{1-\gamma}$ with the same $w = K_\ell^{\mathrm{unnorm}} * f$. Substituting $w = \frac{g - \gamma_{\mathrm{eff}}f}{1-\gamma}$ into $(1-\ell^2\partial_x^2)w = f$ and $(\partial_x \mp \ell^{-1})w\big|_{0,L} = 0$ yields \eqref{eq:ode_bfp}--\eqref{eq:cbc_bfp}.
+  \item For Kernel~(iii) ($K_\ell^{\mathrm{Neu}}$), splitting the integral of \eqref{eq:K_Neu} at $\xi = x$ and differentiating twice gives $(1-\ell^2\partial_x^2)w = f$ on $(0,L)$, while $\partial_x K_\ell^{\mathrm{Neu}}(0,\xi) = \partial_x K_\ell^{\mathrm{Neu}}(L,\xi) = 0$ implies $w'(0) = w'(L) = 0$. Substituting $w = \frac{g - \gamma f}{1-\gamma}$ yields \eqref{eq:ode_neu}--\eqref{eq:cbc_neu}.
+\end{enumerate}
+Conversely, because $(1-\ell^2\partial_x^2)$ is strictly positive-definite under both the Robin boundary conditions $(\partial_x \mp \ell^{-1})w\big|_{0,L} = 0$ ($\langle(1-\ell^2\partial_x^2)w,w\rangle_{L^2} = \|w\|_{L^2}^2 + \ell^2\|w'\|_{L^2}^2 + \ell[w(0)^2 + w(L)^2] > 0$) and the Neumann boundary conditions $w'(0) = w'(L) = 0$ ($\langle(1-\ell^2\partial_x^2)w,w\rangle_{L^2} = \|w\|_{L^2}^2 + \ell^2\|w'\|_{L^2}^2 > 0$), the homogeneous boundary-value problem has only the trivial solution $w \equiv 0$, so the ODE + CBC system uniquely recovers the integral convolution.
+
+Finally, for Corollary~\ref{cor:artifact}, when $\theta(x) \equiv \theta_0$ is constant and $\Kcal_\ell^{\mathrm{norm}}$ satisfies $\int_\Omega \Kcal_\ell^{\mathrm{norm}}(x,\xi)\dd\xi \equiv 1$, the constant strain field $\varepsilon^{\mathrm{V2}}(x) \equiv \frac{\beta\theta_0}{E}$ satisfies $\Lcal_{\gamma,\ell}^{\mathrm{norm}}[E\varepsilon^{\mathrm{V2}}](x) = \beta\theta_0\left[\gamma + (1-\gamma)\int_\Omega \Kcal_\ell^{\mathrm{norm}}(x,\xi)\dd\xi\right] \equiv \beta\theta_0$. By the $L^2(\Omega)$ coercivity \eqref{eq:self_adjoint_coercive} ($\langle\Lcal_{\gamma,\ell}^{\mathrm{norm}}h,h\rangle \ge \gamma\|h\|_{L^2}^2$), the solution of $\Lcal_{\gamma,\ell}^{\mathrm{norm}}[E\varepsilon^{\mathrm{V2}}] = \beta\theta_0$ in $L^2(\Omega)$ is unique, proving \eqref{eq:normalized_uniform_strain}.
+\end{proof}

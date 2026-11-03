@@ -1,0 +1,73 @@
+\section{Model and the Two Consistent Realizations V1 and V2}\label{sec:model}
+
+\subsection{Two-Phase Integral Operator on $L^2(\Omega)$}\label{subsec:operators}
+
+Let $\Omega \subseteq \Rbb$ be either the unbounded line $\Rbb$, the half-line $[0,\infty)$, or a bounded rod $[0,L]$ ($0 < L < \infty$). For a symmetric non-negative attenuation kernel $\Kcal_\ell : \Omega \times \Omega \to [0,\infty)$ satisfying $\Kcal_\ell(x,\xi) = \Kcal_\ell(\xi,x)$ with characteristic length $\ell > 0$, define the integral operator $\Kcal_\ell[f](x) := \int_\Omega \Kcal_\ell(x,\xi)f(\xi)\dd\xi$ and the \emph{two-phase local/nonlocal operator} \cite{BazantJirasek2002,MikhasevNobili2020,NobiliPramanik2025b} with local fraction $\gamma \in (0,1)$:
+\begin{equation}\label{eq:L_gamma_def}
+  \Lcal_{\gamma,\ell}[f](x) := \gamma f(x) + (1-\gamma)\int_\Omega \Kcal_\ell(x,\xi)f(\xi)\dd\xi = \big(\gamma\Ical + (1-\gamma)\Kcal_\ell\big)[f](x).
+\end{equation}
+Since $\Kcal_\ell(x,\xi) = \Kcal_\ell(\xi,x)$ and $\Kcal_\ell$ is positive-semidefinite on $L^2(\Omega)$, $\Lcal_{\gamma,\ell}$ is self-adjoint and strictly coercive on $L^2(\Omega)$ for every $\gamma \in (0,1)$:
+\begin{equation}\label{eq:self_adjoint_coercive}
+  \langle \Lcal_{\gamma,\ell}[f],\, g \rangle_{L^2(\Omega)} = \langle f,\, \Lcal_{\gamma,\ell}[g] \rangle_{L^2(\Omega)}, \qquad \langle \Lcal_{\gamma,\ell}[f],\, f \rangle_{L^2(\Omega)} \ge \gamma \lVert f \rVert_{L^2(\Omega)}^2 \qquad \forall\, f,g \in L^2(\Omega).
+\end{equation}
+On $\Omega = \Rbb$ with the bi-exponential Helmholtz kernel $K_\ell^{\mathrm{unnorm}}(x,\xi) := \frac{1}{2\ell}\mathrm{e}^{-|x-\xi|/\ell}$, where $(1-\ell^2\partial_x^2)K_\ell^{\mathrm{unnorm}}(x,\xi) = \delta(x-\xi)$, applying $1-\ell^2\partial_x^2$ to $g = \Lcal_{\gamma,\ell}[f]$ yields the differential form \cite{FernandezSaez2016,Romano2017,MikhasevNobili2020}:
+\begin{equation}\label{eq:two_phase_diff}
+  (1 - \ell^2\partial_x^2)g(x) = (1 - \gamma\ell^2\partial_x^2)f(x).
+\end{equation}
+On bounded domains $\Omega = [0,L]$, equivalence between the integral relation \eqref{eq:L_gamma_def} and the differential relation \eqref{eq:two_phase_diff} holds if and only if \eqref{eq:two_phase_diff} is supplemented by two endpoint Constitutive Boundary Conditions (derived for three kernel choices in Section~\ref{sec:boundary}).
+
+\subsection{Nonlocal Clausius--Duhem Inequality and Operator Reciprocity}\label{subsec:reciprocity}
+
+Following Eringen \cite{Eringen1974} (Section~2, Eqs.~(2.4)--(2.14)) and Polizzotto \cite{DiLuzio2005,MarottiDeSciarra2009}, let $\psi(x,t)$ be the specific Helmholtz free energy density and $\hat{e}(x,t)$, $\hat{h}(x,t)$ be the energy and entropy nonlocality residuals satisfying the global zero-production constraints $\int_\Omega \hat{e}\dd x = 0$ and $\int_\Omega \hat{h}\dd x = 0$. Integrating the pointwise dissipation density over $\Omega$ eliminates $\hat{e}$ and $\hat{h}$, yielding the global linearized Clausius--Duhem inequality \cite{Eringen1974,GiorgiMorro2025}:
+\begin{equation}\label{eq:global_cd}
+  \Dcal_{\mathrm{global}}(t) := -\frac{\dd}{\dd t}\Psi[\varepsilon,\theta] + \int_\Omega \left[\sigma(x,t)\dot{\varepsilon}(x,t) - \rho\eta(x,t)\dot{\theta}(x,t) - \frac{q(x,t)}{T_0}\partial_x\theta(x,t)\right]\dd x \ge 0,
+\end{equation}
+where $\Psi[\varepsilon,\theta] := \int_\Omega \rho\psi(x,t)\dd x$ is the total Helmholtz free energy functional. Consider the general linear nonlocal state laws on $L^2(\Omega)$:
+\begin{equation}\label{eq:general_state_laws}
+  \sigma = E\,\Lcal_{\mathrm{el}}[\varepsilon] - \beta\,\Lcal_{\mathrm{th}}[\theta], \qquad \rho\eta = \beta\,\Lcal_\eta[\varepsilon] + \frac{\rho c_E}{T_0}\,\Lcal_c[\theta],
+\end{equation}
+where $\Lcal_{\mathrm{el}}$, $\Lcal_{\mathrm{th}}$, $\Lcal_\eta$, and $\Lcal_c$ are bounded linear operators on $L^2(\Omega)$ with $\Lcal_{\mathrm{el}}^* = \Lcal_{\mathrm{el}}$ and $\Lcal_c^* = \Lcal_c$.
+
+\begin{proposition}[Master Helmholtz Free Energy and Operator Reciprocity \cite{Eringen1974,GiorgiMorro2025}]\label{prop:reciprocity}
+The linear state laws \eqref{eq:general_state_laws} are derivable as the Fr{\'e}chet derivatives
+\begin{equation}\label{eq:frechet_state_laws}
+  \sigma(x,t) = \frac{\delta\Psi[\varepsilon,\theta]}{\delta\varepsilon(x,t)}, \qquad \rho\eta(x,t) = -\frac{\delta\Psi[\varepsilon,\theta]}{\delta\theta(x,t)}
+\end{equation}
+of a twice Fr{\'e}chet-differentiable Helmholtz free energy functional $\Psi : L^2(\Omega)\times L^2(\Omega) \to \Rbb$ if and only if the thermal-stress and dilational-entropy operators are Hilbert-space adjoints of one another:
+\begin{equation}\label{eq:reciprocity_condition}
+  \Lcal_\eta = \Lcal_{\mathrm{th}}^* \qquad \text{on } L^2(\Omega).
+\end{equation}
+When $\Lcal_{\mathrm{th}}$ is self-adjoint ($\Lcal_{\mathrm{th}}^* = \Lcal_{\mathrm{th}}$), \eqref{eq:reciprocity_condition} reduces to $\Lcal_\eta = \Lcal_{\mathrm{th}}$, and the unique quadratic Helmholtz free energy functional (up to an additive constant) is
+\begin{equation}\label{eq:master_psi}
+  \Psi[\varepsilon,\theta] = \int_\Omega \left(\frac{1}{2}E\,\varepsilon\,\Lcal_{\mathrm{el}}[\varepsilon] - \beta\,\varepsilon\,\Lcal_{\mathrm{th}}[\theta] - \frac{\rho c_E}{2T_0}\,\theta\,\Lcal_c[\theta]\right)\dd x,
+\end{equation}
+for which the conservative mechanical--thermal power cancels identically in \eqref{eq:global_cd}, reducing $\Dcal_{\mathrm{global}}(t)$ to the purely conductive dissipation $\Dcal_{\mathrm{global}}(t) = -\int_\Omega \frac{q}{T_0}\partial_x\theta\dd x = \int_\Omega \frac{\kappa}{T_0}(\partial_x\theta)^2\dd x \ge 0$ under Fourier's law $q = -\kappa\partial_x\theta$.
+\end{proposition}
+
+\subsection{The Two Minimal Consistent Two-Phase Realizations: Variant V1 and Variant V2}\label{subsec:V1_V2}
+
+In standard two-phase nonlocal thermoelasticity with elastic operator $\Lcal_{\mathrm{el}} = \Lcal_{\gamma,\ell}$, local thermal capacity $\Lcal_c = \Ical$, and Fourier heat conduction $q = -\kappa\partial_x\theta$ (with $r=0$), Proposition~\ref{prop:reciprocity} yields two distinct minimal consistent realizations depending on whether $\Lcal_{\mathrm{th}}$ is chosen equal to $\Lcal_{\gamma,\ell}$ or $\Ical$:
+
+\paragraph{1. Variant V1 (Full Stress-Nonlocal and Entropy-Nonlocal Coupling: $\Lcal_{\mathrm{el}} = \Lcal_{\mathrm{th}} = \Lcal_\eta = \Lcal_{\gamma,\ell}$, $\Lcal_c = \Ical$).}
+Applying the two-phase nonlocal operator $\Lcal_{\gamma,\ell}$ to the total local thermoelastic stress $\sigma^{\mathrm{loc}} = E\varepsilon - \beta\theta$ requires $\Lcal_{\mathrm{th}} = \Lcal_{\gamma,\ell}$, so reciprocity \eqref{eq:reciprocity_condition} mandates $\Lcal_\eta = \Lcal_{\gamma,\ell}$ \cite{Eringen1974}:
+\begin{equation}\label{eq:V1_integral}
+  \sigma^{\mathrm{V1}} = \Lcal_{\gamma,\ell}[E\varepsilon - \beta\theta], \qquad \rho\eta^{\mathrm{V1}} = \beta\,\Lcal_{\gamma,\ell}[\varepsilon] + \frac{\rho c_E}{T_0}\theta, \qquad q = -\kappa\partial_x\theta.
+\end{equation}
+Applying $(1-\ell^2\partial_x^2)$ via \eqref{eq:two_phase_diff} to both the stress law and the linearized entropy balance $\kappa\partial_x^2\theta = \rho c_E\dot{\theta} + T_0\beta\,\Lcal_{\gamma,\ell}[\dot{\varepsilon}]$ yields the coupled differential system of \textbf{Variant~V1}:
+\begin{align}
+  (1 - \ell^2\partial_x^2)\sigma^{\mathrm{V1}} &= (1 - \gamma\ell^2\partial_x^2)(E\partial_x u - \beta\theta), \qquad \partial_x\sigma^{\mathrm{V1}} + b = \rho\ddot{u}, \label{eq:V1_diff_stress}\\
+  (1 - \ell^2\partial_x^2)(\kappa\partial_x^2\theta - \rho c_E\dot{\theta}) &= T_0\beta(1 - \gamma\ell^2\partial_x^2)\partial_x\dot{u}. \label{eq:V1_diff_heat}
+\end{align}
+Notice that $(1-\ell^2\partial_x^2)$ acts on $(\kappa\partial_x^2\theta - \rho c_E\dot{\theta})$ on the left-hand side of \eqref{eq:V1_diff_heat}, whereas $(1-\gamma\ell^2\partial_x^2)$ acts on $T_0\beta\partial_x\dot{u}$ on the right-hand side; for every $\gamma \in [0,1)$, these operators are distinct and do not cancel.
+
+\paragraph{2. Variant V2 (Elastic-Only Nonlocal Coupling: $\Lcal_{\mathrm{el}} = \Lcal_{\gamma,\ell}$, $\Lcal_{\mathrm{th}} = \Lcal_\eta = \Lcal_c = \Ical$).}
+If nonlocality is attributed strictly to interatomic elastic interactions while thermal pressure $-\beta\theta$ remains local ($\Lcal_{\mathrm{th}} = \Ical$), then reciprocity \eqref{eq:reciprocity_condition} mandates $\Lcal_\eta = \Ical$ \cite{PhamVu2024}:
+\begin{equation}\label{eq:V2_integral}
+  \sigma^{\mathrm{V2}} = \Lcal_{\gamma,\ell}[E\varepsilon] - \beta\theta, \qquad \rho\eta^{\mathrm{V2}} = \beta\varepsilon + \frac{\rho c_E}{T_0}\theta, \qquad q = -\kappa\partial_x\theta.
+\end{equation}
+Applying $(1-\ell^2\partial_x^2)$ to $\sigma^{\mathrm{V2}} + \beta\theta = \Lcal_{\gamma,\ell}[E\varepsilon]$ yields the coupled differential system of \textbf{Variant~V2}:
+\begin{align}
+  (1 - \ell^2\partial_x^2)\sigma^{\mathrm{V2}} &= E(1 - \gamma\ell^2\partial_x^2)\partial_x u - \beta(1 - \ell^2\partial_x^2)\theta, \qquad \partial_x\sigma^{\mathrm{V2}} + b = \rho\ddot{u}, \label{eq:V2_diff_stress}\\
+  \kappa\partial_x^2\theta &= \rho c_E\dot{\theta} + T_0\beta\partial_x\dot{u}. \label{eq:V2_diff_heat}
+\end{align}
+Here the energy equation \eqref{eq:V2_diff_heat} retains its classical local form, while in \eqref{eq:V2_diff_stress} the operator $(1-\ell^2\partial_x^2)$ acts on $\beta\theta$ so that $\Lcal_{\gamma,\ell}^{-1}(1-\gamma\ell^2\partial_x^2)\theta = \theta$ remains local.

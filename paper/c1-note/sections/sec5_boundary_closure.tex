@@ -9,50 +9,54 @@ We compare three symmetric ($\Kcal_\ell(x,\xi) = \Kcal_\ell(\xi,x)$), positive-s
 \begin{enumerate}[leftmargin=*,align=left]
   \item \textbf{Unnormalized bi-exponential kernel ($K_\ell^{\mathrm{unnorm}}$) \cite{FernandezSaez2016,Romano2017,MikhasevNobili2020}:}
   \begin{equation}\label{eq:K_unnorm}
-    K_\ell^{\mathrm{unnorm}}(x,\xi) := \frac{1}{2\ell}\mathrm{e}^{-|x-\xi|/\ell}, \qquad \int_0^L K_\ell^{\mathrm{unnorm}}(x,\xi)\dd\xi = 1 - \vartheta_\ell(x) < 1,
+    K_\ell^{\mathrm{unnorm}}(x,\xi) := \frac{1}{2\ell}\mathrm{e}^{-|x-\xi|/\ell}, \qquad
+    \int_0^L K_\ell^{\mathrm{unnorm}}(x,\xi)\dd\xi = 1 - \vartheta_\ell(x) < 1,
   \end{equation}
   where $\vartheta_\ell(x) := \frac{1}{2}\big(\mathrm{e}^{-x/\ell} + \mathrm{e}^{-(L-x)/\ell}\big) > 0$ is the boundary weight defect lost to $\Rbb \setminus [0,L]$. Because $\vartheta_\ell(x) > 0$, $K_\ell^{\mathrm{unnorm}}$ does not preserve constant fields ($\Lcal_{\gamma,\ell}^{\mathrm{unnorm}}[1](x) = 1 - (1-\gamma)\vartheta_\ell(x) \neq 1$).
 
   \item \textbf{Borino--Failla--Parrinello (BFP) additive-defect symmetric normalized kernel ($W_\ell^{\mathrm{BFP}}$) \cite{DiLuzio2005,MarottiDeSciarra2009,BazantLeHoover2010}:}
   \begin{equation}\label{eq:W_BFP}
-    W_\ell^{\mathrm{BFP}}(x,\xi) := \vartheta_\ell(x)\delta(x-\xi) + K_\ell^{\mathrm{unnorm}}(x,\xi), \qquad \int_0^L W_\ell^{\mathrm{BFP}}(x,\xi)\dd\xi \equiv 1.
+    W_\ell^{\mathrm{BFP}}(x,\xi) := \vartheta_\ell(x)\delta(x-\xi) + K_\ell^{\mathrm{unnorm}}(x,\xi), \qquad
+    \int_0^L W_\ell^{\mathrm{BFP}}(x,\xi)\dd\xi \equiv 1.
   \end{equation}
   The corresponding two-phase operator has a spatially varying effective local fraction $\gamma_{\mathrm{eff}}(x) := \gamma + (1-\gamma)\vartheta_\ell(x)$:
   \begin{equation}\label{eq:L_BFP}
-    \Lcal_{\gamma,\ell}^{\mathrm{BFP}}[f](x) = \gamma_{\mathrm{eff}}(x)f(x) + (1-\gamma)\int_0^L K_\ell^{\mathrm{unnorm}}(x,\xi)f(\xi)\dd\xi, \qquad \Lcal_{\gamma,\ell}^{\mathrm{BFP}}[1](x) \equiv 1.
+    \Lcal_{\gamma,\ell}^{\mathrm{BFP}}[f](x) = \gamma_{\mathrm{eff}}(x)f(x) + (1-\gamma)\int_0^L K_\ell^{\mathrm{unnorm}}(x,\xi)f(\xi)\dd\xi, \qquad
+    \Lcal_{\gamma,\ell}^{\mathrm{BFP}}[1](x) \equiv 1.
   \end{equation}
 
   \item \textbf{Neumann (cos-reflective) Green's function kernel ($K_\ell^{\mathrm{Neu}}$) \cite{MarottiDeSciarra2009,BazantLeHoover2010}:} Let $K_\ell^{\mathrm{Neu}}(x,\xi)$ be the Green's function of $(1-\ell^2\partial_x^2)$ on $[0,L]$ with homogeneous Neumann boundary conditions $\partial_x K_\ell^{\mathrm{Neu}}(0,\xi) = \partial_x K_\ell^{\mathrm{Neu}}(L,\xi) = 0$:
   \begin{equation}\label{eq:K_Neu}
-    K_\ell^{\mathrm{Neu}}(x,\xi) := \frac{\cosh\!\big((L - |x-\xi|)/\ell\big) + \cosh\!\big((L - (x+\xi))/\ell\big)}{2\ell\sinh(L/\ell)}, \qquad \int_0^L K_\ell^{\mathrm{Neu}}(x,\xi)\dd\xi \equiv 1,
+    K_\ell^{\mathrm{Neu}}(x,\xi) := \frac{\cosh\!\big((L - |x-\xi|)/\ell\big) + \cosh\!\big((L - (x+\xi))/\ell\big)}{2\ell\sinh(L/\ell)}, \qquad
+    \int_0^L K_\ell^{\mathrm{Neu}}(x,\xi)\dd\xi \equiv 1,
   \end{equation}
   so that $\Lcal_{\gamma,\ell}^{\mathrm{Neu}}[1](x) \equiv 1$ and $K_\ell^{\mathrm{Neu}}(x,\xi) = K_\ell^{\mathrm{unnorm}}(x,\xi) + \frac{1}{2\ell}\mathrm{e}^{-(x+\xi)/\ell} + O(\mathrm{e}^{-L/\ell})$ via specular reflection across $x=0,L$.
 \end{enumerate}
 
 \subsection{Theorem 3: Differential Equivalence and Endpoint CBCs}\label{subsec:thm3_cbc}
 
-\begin{theorem}[Exact Differential Equivalence and Constitutive Boundary Conditions on $[0,L]$]\label{thm:cbc}
+\begin{theorem}[Exact Differential Equivalence and Constitutive Boundary Conditions on ${[0,L]}$]\label{thm:cbc}
 Let $\gamma \in (0,1)$, $\ell > 0$, and $f \in H^2(0,L)$. A function $g \in H^2(0,L)$ satisfies the two-phase integral relation $g = \Lcal_{\gamma,\ell}[f]$ on $[0,L]$ if and only if $g$ satisfies the following interior differential equation on $(0,L)$ and two endpoint Constitutive Boundary Conditions (CBCs) at $x \in \{0,L\}$:
 \begin{enumerate}[label=(\alph*),leftmargin=*]
   \item \textbf{Under the unnormalized kernel $K_\ell^{\mathrm{unnorm}}$ \eqref{eq:K_unnorm} \cite{FernandezSaez2016,Romano2017,MikhasevNobili2020}:}
   \begin{align}
     (1 - \ell^2\partial_x^2)g(x) &= (1 - \gamma\ell^2\partial_x^2)f(x), && x \in (0,L), \label{eq:ode_unnorm}\\
-    \left(\partial_x - \frac{1}{\ell}\right)\big(g(x) - \gamma f(x)\big)\Big|_{x=0} &= 0, \qquad
-    \left(\partial_x + \frac{1}{\ell}\right)\big(g(x) - \gamma f(x)\big)\Big|_{x=L} = 0. \label{eq:cbc_unnorm}
+    \left(\partial_x - \frac{1}{\ell}\right)\big(g - \gamma f\big)\Big|_{x=0} &= 0, \qquad
+    \left(\partial_x + \frac{1}{\ell}\right)\big(g - \gamma f\big)\Big|_{x=L} = 0. \label{eq:cbc_unnorm}
   \end{align}
 
   \item \textbf{Under the BFP-normalized kernel $W_\ell^{\mathrm{BFP}}$ \eqref{eq:W_BFP}:} With $\gamma_{\mathrm{eff}}(x) = \gamma + (1-\gamma)\vartheta_\ell(x)$,
   \begin{align}
     (1 - \ell^2\partial_x^2)\big(g(x) - \gamma_{\mathrm{eff}}(x)f(x)\big) &= (1 - \gamma)f(x), && x \in (0,L), \label{eq:ode_bfp}\\
-    \left(\partial_x - \frac{1}{\ell}\right)\big(g(x) - \gamma_{\mathrm{eff}}(x)f(x)\big)\Big|_{x=0} &= 0, \qquad
-    \left(\partial_x + \frac{1}{\ell}\right)\big(g(x) - \gamma_{\mathrm{eff}}(x)f(x)\big)\Big|_{x=L} = 0. \label{eq:cbc_bfp}
+    \left(\partial_x - \frac{1}{\ell}\right)\big(g - \gamma_{\mathrm{eff}}f\big)\Big|_{x=0} &= 0, \qquad
+    \left(\partial_x + \frac{1}{\ell}\right)\big(g - \gamma_{\mathrm{eff}}f\big)\Big|_{x=L} = 0. \label{eq:cbc_bfp}
   \end{align}
 
   \item \textbf{Under the Neumann Green's function kernel $K_\ell^{\mathrm{Neu}}$ \eqref{eq:K_Neu}:}
   \begin{align}
     (1 - \ell^2\partial_x^2)g(x) &= (1 - \gamma\ell^2\partial_x^2)f(x), && x \in (0,L), \label{eq:ode_neu}\\
-    \partial_x\big(g(x) - \gamma f(x)\big)\Big|_{x=0} &= 0, \qquad
-    \partial_x\big(g(x) - \gamma f(x)\big)\Big|_{x=L} = 0. \label{eq:cbc_neu}
+    \partial_x\big(g - \gamma f\big)\Big|_{x=0} &= 0, \qquad
+    \partial_x\big(g - \gamma f\big)\Big|_{x=L} = 0. \label{eq:cbc_neu}
   \end{align}
 \end{enumerate}
 \end{theorem}
@@ -61,18 +65,18 @@ Let $\gamma \in (0,1)$, $\ell > 0$, and $f \in H^2(0,L)$. A function $g \in H^2(
 On $\Omega = [0,L]$, a well-posed boundary-value problem combines four classical physical boundary conditions at $x \in \{0,L\}$ (two mechanical conditions on $u$ or the nonlocal Cauchy traction $\sigma$, never on $\sigma^{\mathrm{loc}} = E\varepsilon - \beta\theta$, plus two thermal conditions on $\theta$ or $q = -\kappa\partial_x\theta$) with the CBCs of Theorem~\ref{thm:cbc}:
 \begin{itemize}[leftmargin=*]
   \item \textbf{Variant V2 ($N=3$, sixth-order in $x$):} Requires $2N = 6$ boundary conditions, provided by the 4 physical BCs together with the 2 stress CBCs of Theorem~\ref{thm:cbc} evaluated for $g = \sigma^{\mathrm{V2}} + \beta\theta$ and $f = E\varepsilon$.
-  \item \textbf{Variant V1 ($N=4$, eighth-order in $x$):} Requires $2N = 8$ boundary conditions, provided by the 4 physical BCs together with 4 CBCs: the 2 stress CBCs ($g = \sigma^{\mathrm{V1}}$, $f = E\varepsilon - \beta\theta$) and the 2 entropy CBCs ($g = \rho\eta^{\mathrm{V1}} - \frac{\rho c_E}{T_0}\theta = \frac{\kappa}{T_0}\int^t \partial_x^2\theta\dd t' - \frac{\rho c_E}{T_0}\theta$, $f = \beta\varepsilon$).
+  \item \textbf{Variant V1 ($N=4$, eighth-order in $x$):} Requires $2N = 8$ boundary conditions, provided by the 4 physical BCs together with 4 CBCs: the 2 stress CBCs ($g = \sigma^{\mathrm{V1}}$, $f = E\varepsilon - \beta\theta$) and the 2 entropy CBCs ($g = \rho\eta^{\mathrm{V1}} - \frac{\rho c_E}{T_0}\theta$, $f = \beta\varepsilon$).
 \end{itemize}
 
 \subsection{The Static $1/\sqrt{\gamma}$ Surface Thermal-Strain Spike Is a Truncation Artifact}\label{subsec:truncation_artifact}
 
-Consider a traction-free rod ($\sigma(0) = \sigma(L) = 0$, $b \equiv 0$, $\implies \sigma(x) \equiv 0$ on $[0,L]$) held at a uniform static temperature rise $\theta(x) \equiv \theta_0 \neq 0$. Under Variant~V1 ($\sigma^{\mathrm{V1}} = \Lcal_{\gamma,\ell}[E\varepsilon^{\mathrm{V1}} - \beta\theta_0] = 0$), positive-definiteness of $\Lcal_{\gamma,\ell}$ on $L^2(0,L)$ (Eq.~\eqref{eq:self_adjoint_coercive}) uniquely forces $E\varepsilon^{\mathrm{V1}}(x) - \beta\theta_0 \equiv 0$, so $\varepsilon^{\mathrm{V1}}(x) \equiv \frac{\beta\theta_0}{E}$ is spatially uniform for \emph{any} coercive kernel.
+Consider a traction-free rod ($\sigma(0) = \sigma(L) = 0$, $b \equiv 0 \implies \sigma(x) \equiv 0$ on $[0,L]$) held at a uniform static temperature rise $\theta(x) \equiv \theta_0 \neq 0$. Under Variant~V1 ($\sigma^{\mathrm{V1}} = \Lcal_{\gamma,\ell}[E\varepsilon^{\mathrm{V1}} - \beta\theta_0] = 0$), coercivity of $\Lcal_{\gamma,\ell}$ on $L^2(0,L)$ (Eq.~\eqref{eq:self_adjoint_coercive}) uniquely forces $E\varepsilon^{\mathrm{V1}}(x) - \beta\theta_0 \equiv 0$, so $\varepsilon^{\mathrm{V1}}(x) \equiv \frac{\beta\theta_0}{E}$ is spatially uniform for \emph{any} coercive kernel.
 
 Under Variant~V2 ($\sigma^{\mathrm{V2}} = \Lcal_{\gamma,\ell}[E\varepsilon^{\mathrm{V2}}] - \beta\theta_0 = 0$), the strain solves $\Lcal_{\gamma,\ell}[E\varepsilon^{\mathrm{V2}}](x) = \beta\theta_0$. When the unnormalized kernel $K_\ell^{\mathrm{unnorm}}$ is used, Theorem~\ref{thm:cbc}(a) with $g(x) \equiv \beta\theta_0$ and $f(x) = E\varepsilon^{\mathrm{V2}}(x)$ yields $(1-\gamma\ell^2\partial_x^2)(E\varepsilon^{\mathrm{V2}}) = \beta\theta_0$ with Robin CBCs $(\partial_x \mp \ell^{-1})(\beta\theta_0 - \gamma E\varepsilon^{\mathrm{V2}})\big|_{x=0,L} = 0$, whose exact solution on $[0,L]$ is
 \begin{equation}\label{eq:unnorm_uniform_strain}
-  \varepsilon^{\mathrm{V2,unnorm}}(x) = \frac{\beta\theta_0}{E}\left[1 + \frac{1-\gamma}{\sqrt{\gamma}}\,\frac{\cosh\!\left(\dfrac{x - L/2}{\ell\sqrt{\gamma}}\right)}{\sqrt{\gamma}\cosh\!\left(\dfrac{L}{2\ell\sqrt{\gamma}}\right) + \sinh\!\left(\dfrac{L}{2\ell\sqrt{\gamma}}\right)}\right] \xrightarrow{L/\ell \to \infty,\, x=0} \frac{1}{\sqrt{\gamma}}\,\frac{\beta\theta_0}{E},
+  \varepsilon^{\mathrm{V2,unnorm}}(x) = \frac{\beta\theta_0}{E}\left[1 + \frac{1-\gamma}{\sqrt{\gamma}}\,\frac{\cosh\!\left(\dfrac{x - L/2}{\ell\sqrt{\gamma}}\right)}{\sqrt{\gamma}\cosh\!\left(\dfrac{L}{2\ell\sqrt{\gamma}}\right) + \sinh\!\left(\dfrac{L}{2\ell\sqrt{\gamma}}\right)}\right],
 \end{equation}
-producing a boundary-layer amplification $\varepsilon^{\mathrm{V2,unnorm}}(0)/\varepsilon^{\mathrm{V1}}(0) \to 1/\sqrt{\gamma}$ at the free ends. Corollary~\ref{cor:artifact} shows that \eqref{eq:unnorm_uniform_strain} is an artifact of kernel truncation at $x=0,L$:
+which gives $\varepsilon^{\mathrm{V2,unnorm}}(0) \to \frac{1}{\sqrt{\gamma}}\frac{\beta\theta_0}{E}$ as $L/\ell \to \infty$, producing a boundary-layer amplification $\varepsilon^{\mathrm{V2,unnorm}}(0)/\varepsilon^{\mathrm{V1}}(0) \to 1/\sqrt{\gamma}$ at the free ends. Corollary~\ref{cor:artifact} shows that \eqref{eq:unnorm_uniform_strain} is an artifact of kernel truncation at $x=0,L$:
 
 \begin{corollary}[Elimination of the Static $1/\sqrt{\gamma}$ Boundary Layer Under Normalized Kernels]\label{cor:artifact}
 Let $\Kcal_\ell^{\mathrm{norm}}$ be any symmetric positive-semidefinite kernel on $[0,L]^2$ satisfying the partition-of-unity condition $\int_0^L \Kcal_\ell^{\mathrm{norm}}(x,\xi)\dd\xi \equiv 1$ (including $W_\ell^{\mathrm{BFP}}$ in \eqref{eq:W_BFP} and $K_\ell^{\mathrm{Neu}}$ in \eqref{eq:K_Neu}). Then under a uniform static temperature change $\theta(x) \equiv \theta_0$ on a traction-free rod $\sigma(x) \equiv 0$, both Variant~V1 and Variant~V2 yield the identical, spatially uniform free thermal expansion everywhere on $[0,L]$:
@@ -81,4 +85,4 @@ Let $\Kcal_\ell^{\mathrm{norm}}$ be any symmetric positive-semidefinite kernel o
 \end{equation}
 \end{corollary}
 
-In particular, substituting the constant field $f(x) = E\varepsilon^{\mathrm{V2}}(x) \equiv \beta\theta_0$ and $g(x) \equiv \beta\theta_0$ into the BFP CBC \eqref{eq:cbc_bfp} gives $g(x) - \gamma_{\mathrm{eff}}(x)f(x) = (1-\gamma)(1-\vartheta_\ell(x))\beta\theta_0$, which satisfies $(\partial_x \mp \ell^{-1})(1-\vartheta_\ell(x))\big|_{x=0,L} = 0$ identically; similarly, under the Neumann CBC \eqref{eq:cbc_neu}, $\partial_x\big((1-\gamma)\beta\theta_0\big)\big|_{x=0,L} = 0$ holds identically. Thus, \textbf{we state plainly that the static $1/\sqrt{\gamma}$ surface thermal-strain layer of \eqref{eq:unnorm_uniform_strain} is a kernel-truncation artifact of $K_\ell^{\mathrm{unnorm}}$, not a physical thermoelastic size effect.} Genuine physical differences between Variant~V1 and Variant~V2 on bounded domains occur only when $\partial_x\theta(x,t) \neq 0$, where $\Lcal_{\gamma,\ell}^{\mathrm{norm}}[\beta\theta] \neq \beta\theta$.
+In particular, substituting the constant field $f(x) = E\varepsilon^{\mathrm{V2}}(x) \equiv \beta\theta_0$ and $g(x) \equiv \beta\theta_0$ into the BFP CBC \eqref{eq:cbc_bfp} gives $g - \gamma_{\mathrm{eff}}f = (1-\gamma)(1-\vartheta_\ell(x))\beta\theta_0$, which satisfies $(\partial_x \mp \ell^{-1})(1-\vartheta_\ell(x))\big|_{x=0,L} = 0$ identically; similarly, under the Neumann CBC \eqref{eq:cbc_neu}, $\partial_x\big((1-\gamma)\beta\theta_0\big)\big|_{x=0,L} = 0$ holds identically. Thus, \textbf{we state plainly that the static $1/\sqrt{\gamma}$ surface thermal-strain layer of \eqref{eq:unnorm_uniform_strain} is a kernel-truncation artifact of $K_\ell^{\mathrm{unnorm}}$, not a physical thermoelastic size effect.} Genuine physical differences between Variant~V1 and Variant~V2 on bounded domains occur only when $\partial_x\theta(x,t) \neq 0$, where $\Lcal_{\gamma,\ell}^{\mathrm{norm}}[\beta\theta] \neq \beta\theta$.

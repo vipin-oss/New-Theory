@@ -5,6 +5,7 @@
 \usepackage[margin=0.7in]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{bm}
+\emergencystretch=1.5em
 \newcommand{\dd}{\,\mathrm{d}}
 \pagestyle{empty}
 
@@ -19,7 +20,7 @@
 \paragraph{Claim (Theorem 1).}
 For any $\ell > 0$ and $\gamma \in [0,1)$, the constitutive pairing that applies the nonlocal operator to the thermal stress,
 \begin{equation}
-  (1 - \ell^2\partial_x^2)\sigma = (1 - \gamma\ell^2\partial_x^2)(E\varepsilon - \beta\theta) \qquad \text{(at }\gamma = 0\text{: Class I, }(1-\ell^2\partial_x^2)\sigma = E\varepsilon - \beta\theta\text{)},\label{eq:1}
+  (1 - \ell^2\partial_x^2)\sigma = (1 - \gamma\ell^2\partial_x^2)(E\varepsilon - \beta\theta) \qquad \big(\text{at }\gamma = 0\text{: Class I, }(1-\ell^2\partial_x^2)\sigma = E\varepsilon - \beta\theta\big),\label{eq:1}
 \end{equation}
 while retaining the \emph{local} constant-strain entropy density
 \begin{equation}
@@ -37,9 +38,9 @@ Take a single spatial Fourier mode $\varepsilon(x,t) = \hat{\varepsilon}(t)\cos(
 \end{equation}
 If a twice-differentiable modal Helmholtz free energy $\hat{\psi}(\hat{\varepsilon},\hat{\theta})$ existed with $\hat{\sigma} = \partial\hat{\psi}/\partial\hat{\varepsilon}$ and $\rho\hat{\eta}^{\mathrm{loc}} = -\partial\hat{\psi}/\partial\hat{\theta}$, Schwarz's theorem ($\partial^2\hat{\psi}/\partial\hat{\theta}\partial\hat{\varepsilon} = \partial^2\hat{\psi}/\partial\hat{\varepsilon}\partial\hat{\theta}$) would require $\frac{\partial\hat{\sigma}}{\partial\hat{\theta}} + \frac{\partial(\rho\hat{\eta}^{\mathrm{loc}})}{\partial\hat{\varepsilon}} = 0$. Differentiating \eqref{eq:3} by hand gives:
 \begin{equation}
-  \frac{\partial\hat{\sigma}}{\partial\hat{\theta}} = -\beta\,\frac{1 + \gamma k^2\ell^2}{1 + k^2\ell^2}, \qquad
+  \frac{\partial\hat{\sigma}}{\partial\hat{\theta}} = -\beta\,\frac{1 + \gamma k^2\ell^2}{1 + k^2\ell^2}, \quad
   \frac{\partial(\rho\hat{\eta}^{\mathrm{loc}})}{\partial\hat{\varepsilon}} = +\beta
-  \quad\Longrightarrow\quad
+  \implies
   \Delta_{\mathrm{Maxwell}}^{\mathrm{Helm}}(k) = \frac{\partial\hat{\sigma}}{\partial\hat{\theta}} + \frac{\partial(\rho\hat{\eta}^{\mathrm{loc}})}{\partial\hat{\varepsilon}} = \frac{\beta(1 - \gamma)k^2\ell^2}{1 + k^2\ell^2} \neq 0.\label{eq:4}
 \end{equation}
 \emph{(By contrast, Variant~V1 uses $\rho\hat{\eta}^{\mathrm{V1}} = \beta\frac{1+\gamma k^2\ell^2}{1+k^2\ell^2}\hat{\varepsilon} + \frac{\rho c_E}{T_0}\hat{\theta} \implies \Delta_{\mathrm{Maxwell}}^{\mathrm{V1}} = 0$, and Variant~V2 uses $\hat{\sigma}^{\mathrm{V2}} = E\frac{1+\gamma k^2\ell^2}{1+k^2\ell^2}\hat{\varepsilon} - \beta\hat{\theta}$ with $\rho\hat{\eta}^{\mathrm{V2}} = \rho\hat{\eta}^{\mathrm{loc}} \implies \Delta_{\mathrm{Maxwell}}^{\mathrm{V2}} = 0$.)}
@@ -49,7 +50,8 @@ If a twice-differentiable modal Helmholtz free energy $\hat{\psi}(\hat{\varepsil
 \paragraph{Check 2: Complementary Gibbs $(\sigma,\theta)$ Stress-Gradient Check at $\gamma = 0$.}
 Suppose $(1 - \ell^2\partial_x^2)\sigma = E\varepsilon - \beta\theta$ is generated from the quadratic stress-gradient Gibbs functional $G[\sigma,\theta] = \int_0^L g(\sigma,\partial_x\sigma,\theta)\dd x$ with
 \begin{equation}
-  g(\sigma,\partial_x\sigma,\theta) = \frac{1}{2E}\sigma^2 + \frac{\ell^2}{2E}(\partial_x\sigma)^2 + \frac{\beta}{E}\sigma\theta + \frac{\rho c_\sigma}{2T_0}\theta^2, \qquad \frac{\rho c_\sigma}{T_0} := \frac{\rho c_E}{T_0} + \frac{\beta^2}{E}.\label{eq:5}
+  g(\sigma,\partial_x\sigma,\theta) = \frac{1}{2E}\sigma^2 + \frac{\ell^2}{2E}(\partial_x\sigma)^2 + \frac{\beta}{E}\sigma\theta + \frac{\rho c_\sigma}{2T_0}\theta^2, \qquad
+  \frac{\rho c_\sigma}{T_0} := \frac{\rho c_E}{T_0} + \frac{\beta^2}{E}.\label{eq:5}
 \end{equation}
 \textbf{Step 1 (Strain law):} With $\partial_x\sigma = 0$ at $x = 0,L$, Euler--Lagrange variation with respect to $\sigma$ gives
 \begin{equation}
@@ -71,6 +73,6 @@ Prescribe the $\mathcal{T} = 2\pi/\omega$-periodic history $\varepsilon(x,t) = \
 \end{align}
 Adding \eqref{eq:8}, \eqref{eq:9}, and the Fourier conduction dissipation $\oint\int_0^L \frac{\kappa}{T_0}(\partial_x\theta)^2\dd x\dd t = \frac{\pi L}{2\omega}\frac{\kappa k^2}{T_0}\theta_0^2$ yields
 \begin{equation}
-  \Delta\mathcal{D}_{\mathrm{cycle}} = \frac{\pi L\theta_0}{2\omega}\left[-\frac{\beta(1-\gamma)k^2\ell^2}{1 + k^2\ell^2}\,\omega\varepsilon_0 + \frac{\kappa k^2}{T_0}\,\theta_0\right] < 0 \quad \text{whenever}\quad \varepsilon_0 > \frac{\kappa(1 + k^2\ell^2)}{\beta T_0(1-\gamma)\omega\ell^2}\,\theta_0. \qquad \blacksquare\label{eq:10}
+  \Delta\mathcal{D}_{\mathrm{cycle}} = \frac{\pi L\theta_0}{2\omega}\left[-\frac{\beta(1-\gamma)k^2\ell^2}{1 + k^2\ell^2}\,\omega\varepsilon_0 + \frac{\kappa k^2}{T_0}\,\theta_0\right] < 0 \quad \text{for } \varepsilon_0 > \frac{\kappa(1 + k^2\ell^2)}{\beta T_0(1-\gamma)\omega\ell^2}\,\theta_0. \quad \blacksquare\label{eq:10}
 \end{equation}
 \end{document}

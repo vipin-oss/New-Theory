@@ -2,7 +2,8 @@
 
 In 12 of the 29 surveyed papers ($48.0\%$ of the 25 coupled thermoelastic papers), the stress equation of Variant~V1 ($\gamma=0$) is paired with the local entropy equation of Variant~V2:
 \begin{equation}\label{eq:class_I_pairing}
-  (1 - \ell^2\partial_x^2)\sigma = E\varepsilon - \beta\theta \quad \big(\text{or } \sigma = \Lcal_{\gamma,\ell}[E\varepsilon - \beta\theta]\big), \qquad \rho\eta^{\mathrm{loc}} = \beta\varepsilon + \frac{\rho c_E}{T_0}\theta.
+  (1 - \ell^2\partial_x^2)\sigma = E\varepsilon - \beta\theta \quad \big(\text{or } \sigma = \Lcal_{\gamma,\ell}[E\varepsilon - \beta\theta]\big), \qquad
+  \rho\eta^{\mathrm{loc}} = \beta\varepsilon + \frac{\rho c_E}{T_0}\theta.
 \end{equation}
 Theorem~\ref{thm:no_free_energy} proves that \eqref{eq:class_I_pairing} violates Maxwell reciprocity in both the strain--temperature (Helmholtz) and stress--temperature (Gibbs) representations.
 
@@ -13,19 +14,20 @@ Let $\ell > 0$, $\gamma \in [0,1)$, $E > 0$, $\beta \neq 0$, and let $\Kcal_\ell
 \end{equation}
 coupled with the local constant-strain entropy density and linearized energy balance
 \begin{equation}\label{eq:thm1_entropy}
-  \rho\eta^{\mathrm{loc}} = \beta\varepsilon + \frac{\rho c_E}{T_0}\theta \quad \Longrightarrow \quad -\partial_x q + r = T_0\rho\dot{\eta}^{\mathrm{loc}} = \rho c_E\dot{\theta} + T_0\beta\dot{\varepsilon}.
+  \rho\eta^{\mathrm{loc}} = \beta\varepsilon + \frac{\rho c_E}{T_0}\theta, \qquad
+  -\partial_x q + r = T_0\rho\dot{\eta}^{\mathrm{loc}} = \rho c_E\dot{\theta} + T_0\beta\dot{\varepsilon}.
 \end{equation}
 Then:
 \begin{enumerate}[label=(\alph*),leftmargin=*]
   \item \textbf{Non-existence of a Helmholtz free energy $\Psi[\varepsilon,\theta]$:} The mixed second Fr{\'e}chet derivatives of any candidate functional $\Psi[\varepsilon,\theta]$ on $L^2(\Omega)\times L^2(\Omega)$ have the non-vanishing Maxwell-symmetry defect operator
   \begin{equation}\label{eq:maxwell_defect_operator}
-    \Delta_{\mathrm{Maxwell}}^{\mathrm{Helm}} := \frac{\delta\sigma}{\delta\theta} + \frac{\delta(\rho\eta^{\mathrm{loc}})}{\delta\varepsilon} = \beta\left(\Ical - \Lcal_{\gamma,\ell}\right) = \beta(1-\gamma)\left(\Ical - \Kcal_\ell\right) \neq 0 \quad \text{on } L^2(\Omega).
+    \Delta_{\mathrm{Maxwell}}^{\mathrm{Helm}} := \frac{\delta\sigma}{\delta\theta} + \frac{\delta(\rho\eta^{\mathrm{loc}})}{\delta\varepsilon} = \beta\left(\Ical - \Lcal_{\gamma,\ell}\right) = \beta(1-\gamma)\left(\Ical - \Kcal_\ell\right) \neq 0.
   \end{equation}
   Hence no twice Fr{\'e}chet-differentiable Helmholtz free energy $\Psi[\varepsilon,\theta]$ exists on $L^2(\Omega)\times L^2(\Omega)$.
 
-  \item \textbf{Non-existence of a stress-gradient Gibbs potential $G[\sigma,\theta]$ ($\gamma=0$):} In the complementary stress-gradient $(\sigma,\theta)$ representation where $(1-\ell^2\partial_x^2)\sigma = E\varepsilon - \beta\theta$ is inverted as $\varepsilon = \frac{\delta G}{\delta\sigma} = \frac{1}{E}(\sigma - \ell^2\partial_x^2\sigma) + \frac{\beta}{E}\theta$ from the quadratic stress-gradient Gibbs functional
+  \item \textbf{Non-existence of a stress-gradient Gibbs potential $G[\sigma,\theta]$ ($\gamma=0$):} In the complementary stress-gradient $(\sigma,\theta)$ representation where $(1-\ell^2\partial_x^2)\sigma = E\varepsilon - \beta\theta$ is inverted as $\varepsilon = \frac{\delta G}{\delta\sigma} = \frac{1}{E}(\sigma - \ell^2\partial_x^2\sigma) + \frac{\beta}{E}\theta$ from the quadratic stress-gradient Gibbs functional (with $\frac{\rho c_\sigma}{T_0} := \frac{\rho c_E}{T_0} + \frac{\beta^2}{E}$)
   \begin{equation}\label{eq:gibbs_functional}
-    G[\sigma,\theta] = \int_\Omega \left[\frac{1}{2E}\sigma^2 + \frac{\ell^2}{2E}(\partial_x\sigma)^2 + \frac{\beta}{E}\sigma\theta + \frac{\rho c_\sigma}{2T_0}\theta^2\right]\dd x, \qquad \frac{\rho c_\sigma}{T_0} := \frac{\rho c_E}{T_0} + \frac{\beta^2}{E},
+    G[\sigma,\theta] = \int_\Omega \left[\frac{1}{2E}\sigma^2 + \frac{\ell^2}{2E}(\partial_x\sigma)^2 + \frac{\beta}{E}\sigma\theta + \frac{\rho c_\sigma}{2T_0}\theta^2\right]\dd x,
   \end{equation}
   the conjugate Gibbs entropy $\rho\eta^{\mathrm{Gibbs}} := \frac{\delta G}{\delta\theta}$ is uniquely determined to be
   \begin{equation}\label{eq:gibbs_entropy}
@@ -44,29 +46,34 @@ Every claim of Theorem~\ref{thm:no_free_energy} can be verified directly by hand
 \paragraph{Step 1: Modal Maxwell-symmetry defect in $(\varepsilon,\theta)$ variables.}
 Set $\varepsilon(x,t) = \hat{\varepsilon}(t)\cos(kx)$ and $\theta(x,t) = \hat{\theta}(t)\cos(kx)$. Substituting into \eqref{eq:thm1_stress} and \eqref{eq:thm1_entropy} gives the algebraic modal relations
 \begin{equation}\label{eq:hc_modal_laws}
-  \hat{\sigma}(\hat{\varepsilon},\hat{\theta}) = \hat{\Lcal}_{\gamma,\ell}(k^2)\left(E\hat{\varepsilon} - \beta\hat{\theta}\right), \qquad \rho\hat{\eta}^{\mathrm{loc}}(\hat{\varepsilon},\hat{\theta}) = \beta\hat{\varepsilon} + \frac{\rho c_E}{T_0}\hat{\theta}, \qquad \hat{\Lcal}_{\gamma,\ell}(k^2) := \frac{1 + \gamma k^2\ell^2}{1 + k^2\ell^2}.
+  \hat{\sigma}(\hat{\varepsilon},\hat{\theta}) = \hat{\Lcal}_{\gamma,\ell}(k^2)\left(E\hat{\varepsilon} - \beta\hat{\theta}\right), \qquad
+  \rho\hat{\eta}^{\mathrm{loc}}(\hat{\varepsilon},\hat{\theta}) = \beta\hat{\varepsilon} + \frac{\rho c_E}{T_0}\hat{\theta},
 \end{equation}
-If a twice-differentiable modal free energy $\hat{\psi}(\hat{\varepsilon},\hat{\theta})$ existed with $\hat{\sigma} = \partial\hat{\psi}/\partial\hat{\varepsilon}$ and $\rho\hat{\eta}^{\mathrm{loc}} = -\partial\hat{\psi}/\partial\hat{\theta}$, Schwarz's theorem ($\partial^2\hat{\psi}/\partial\hat{\theta}\partial\hat{\varepsilon} = \partial^2\hat{\psi}/\partial\hat{\varepsilon}\partial\hat{\theta}$) would require $\frac{\partial\hat{\sigma}}{\partial\hat{\theta}} + \frac{\partial(\rho\hat{\eta}^{\mathrm{loc}})}{\partial\hat{\varepsilon}} = 0$. Differentiating \eqref{eq:hc_modal_laws} gives
-\begin{equation}\label{eq:hc_maxwell_defect}
-  \frac{\partial\hat{\sigma}}{\partial\hat{\theta}} = -\beta\,\frac{1 + \gamma k^2\ell^2}{1 + k^2\ell^2}, \qquad \frac{\partial(\rho\hat{\eta}^{\mathrm{loc}})}{\partial\hat{\varepsilon}} = +\beta \quad\Longrightarrow\quad \frac{\partial\hat{\sigma}}{\partial\hat{\theta}} + \frac{\partial(\rho\hat{\eta}^{\mathrm{loc}})}{\partial\hat{\varepsilon}} = \frac{\beta(1-\gamma)k^2\ell^2}{1 + k^2\ell^2} \neq 0
-\end{equation}
+where $\hat{\Lcal}_{\gamma,\ell}(k^2) := (1 + \gamma k^2\ell^2)/(1 + k^2\ell^2)$. If a twice-differentiable modal free energy $\hat{\psi}(\hat{\varepsilon},\hat{\theta})$ existed with $\hat{\sigma} = \partial\hat{\psi}/\partial\hat{\varepsilon}$ and $\rho\hat{\eta}^{\mathrm{loc}} = -\partial\hat{\psi}/\partial\hat{\theta}$, Schwarz's theorem ($\partial^2\hat{\psi}/\partial\hat{\theta}\partial\hat{\varepsilon} = \partial^2\hat{\psi}/\partial\hat{\varepsilon}\partial\hat{\theta}$) would require $\frac{\partial\hat{\sigma}}{\partial\hat{\theta}} + \frac{\partial(\rho\hat{\eta}^{\mathrm{loc}})}{\partial\hat{\varepsilon}} = 0$. Differentiating \eqref{eq:hc_modal_laws} gives
+\begin{align}\label{eq:hc_maxwell_defect}
+  \frac{\partial\hat{\sigma}}{\partial\hat{\theta}} &= -\beta\,\frac{1 + \gamma k^2\ell^2}{1 + k^2\ell^2}, \qquad
+  \frac{\partial(\rho\hat{\eta}^{\mathrm{loc}})}{\partial\hat{\varepsilon}} = +\beta \nonumber\\
+  \Longrightarrow\quad \frac{\partial\hat{\sigma}}{\partial\hat{\theta}} + \frac{\partial(\rho\hat{\eta}^{\mathrm{loc}})}{\partial\hat{\varepsilon}} &= \frac{\beta(1-\gamma)k^2\ell^2}{1 + k^2\ell^2} \neq 0
+\end{align}
 for all $k > 0$, $\ell > 0$, and $\gamma \in [0,1)$. By contrast, Variant~V1 ($\rho\hat{\eta}^{\mathrm{V1}} = \beta\hat{\Lcal}_{\gamma,\ell}(k^2)\hat{\varepsilon} + \frac{\rho c_E}{T_0}\hat{\theta}$) and Variant~V2 ($\hat{\sigma}^{\mathrm{V2}} = E\hat{\Lcal}_{\gamma,\ell}(k^2)\hat{\varepsilon} - \beta\hat{\theta}$, $\rho\hat{\eta}^{\mathrm{V2}} = \rho\hat{\eta}^{\mathrm{loc}}$) both satisfy $\frac{\partial\hat{\sigma}}{\partial\hat{\theta}} + \frac{\partial(\rho\hat{\eta})}{\partial\hat{\varepsilon}} = 0$ identically.
 
 \paragraph{Step 2: Complementary Gibbs $(\sigma,\theta)$ check at $\gamma = 0$.}
 From \eqref{eq:gibbs_functional} with integrand $g(\sigma,\partial_x\sigma,\theta)$, the Euler--Lagrange derivative with respect to $\sigma$ (with $\partial_x\sigma = 0$ at $x=0,L$) gives $\varepsilon = \frac{\partial g}{\partial\sigma} - \partial_x\frac{\partial g}{\partial(\partial_x\sigma)} = \frac{1}{E}(\sigma - \ell^2\partial_x^2\sigma) + \frac{\beta}{E}\theta$, which rearranges to $(1-\ell^2\partial_x^2)\sigma = E\varepsilon - \beta\theta$, i.e., $\sigma = E\varepsilon - \beta\theta + \ell^2\partial_x^2\sigma$. Substituting this expression for $\sigma$ into $\rho\eta^{\mathrm{Gibbs}} = \frac{\partial g}{\partial\theta} = \frac{\beta}{E}\sigma + \frac{\rho c_\sigma}{T_0}\theta$ gives
 \begin{equation}\label{eq:hc_gibbs}
-  \rho\eta^{\mathrm{Gibbs}} = \frac{\beta}{E}\left(E\varepsilon - \beta\theta + \ell^2\partial_x^2\sigma\right) + \left(\frac{\rho c_E}{T_0} + \frac{\beta^2}{E}\right)\theta = \underbrace{\beta\varepsilon + \frac{\rho c_E}{T_0}\theta}_{\rho\eta^{\mathrm{loc}}} + \frac{\beta\ell^2}{E}\partial_x^2\sigma.
+  \rho\eta^{\mathrm{Gibbs}} = \frac{\beta}{E}\left(E\varepsilon - \beta\theta + \ell^2\partial_x^2\sigma\right) + \left(\frac{\rho c_E}{T_0} + \frac{\beta^2}{E}\right)\theta = \rho\eta^{\mathrm{loc}} + \frac{\beta\ell^2}{E}\partial_x^2\sigma.
 \end{equation}
 The terms $-\frac{\beta^2}{E}\theta$ and $+\frac{\beta^2}{E}\theta$ cancel identically, leaving the non-zero discrepancy $\rho\eta^{\mathrm{Gibbs}} - \rho\eta^{\mathrm{loc}} = \frac{\beta\ell^2}{E}\partial_x^2\sigma \neq 0$.
 
 \paragraph{Step 3: Closed harmonic cycle yielding negative internal dissipation $\Delta\Dcal_{\mathrm{cycle}} < 0$.}
 Prescribe the periodic history $\varepsilon(x,t) = \varepsilon_0\cos(kx)\cos(\omega t)$, $\theta(x,t) = \theta_0\cos(kx)\sin(\omega t)$ ($\varepsilon_0,\theta_0,\omega > 0$) over one period $\mathcal{T} = 2\pi/\omega$, where $\oint \dot{\Psi}\dd t = 0$ for any state function $\Psi$. Using $\int_0^L \cos^2(kx)\dd x = \frac{L}{2}$, $\int_0^{\mathcal{T}}\cos(\omega t)\sin(\omega t)\dd t = 0$, and $\int_0^{\mathcal{T}}\sin^2(\omega t)\dd t = \int_0^{\mathcal{T}}\cos^2(\omega t)\dd t = \frac{\pi}{\omega}$:
 \begin{align}
-  \oint_{0}^{\mathcal{T}}\!\!\int_0^L \sigma\dot{\varepsilon}\dd x\dd t &= \frac{L}{2}\int_0^{\mathcal{T}} \hat{\Lcal}_{\gamma,\ell}(k^2)\big(E\varepsilon_0\cos\omega t - \beta\theta_0\sin\omega t\big)(-\omega\varepsilon_0\sin\omega t)\dd t = +\frac{\pi L}{2}\beta\varepsilon_0\theta_0\,\hat{\Lcal}_{\gamma,\ell}(k^2), \label{eq:hc_cycle_work}\\
-  -\oint_{0}^{\mathcal{T}}\!\!\int_0^L \rho\eta^{\mathrm{loc}}\dot{\theta}\dd x\dd t &= -\frac{L}{2}\int_0^{\mathcal{T}} \Big(\beta\varepsilon_0\cos\omega t + \frac{\rho c_E}{T_0}\theta_0\sin\omega t\Big)(\omega\theta_0\cos\omega t)\dd t = -\frac{\pi L}{2}\beta\varepsilon_0\theta_0. \label{eq:hc_cycle_entropy}
+  \oint_{0}^{\mathcal{T}}\!\!\int_0^L \sigma\dot{\varepsilon}\dd x\dd t &= \frac{L}{2}\int_0^{\mathcal{T}} \hat{\Lcal}_{\gamma,\ell}(k^2)\big(E\varepsilon_0\cos\omega t - \beta\theta_0\sin\omega t\big)(-\omega\varepsilon_0\sin\omega t)\dd t \nonumber\\
+  &= +\frac{\pi L}{2}\beta\varepsilon_0\theta_0\,\hat{\Lcal}_{\gamma,\ell}(k^2), \label{eq:hc_cycle_work}\\
+  -\oint_{0}^{\mathcal{T}}\!\!\int_0^L \rho\eta^{\mathrm{loc}}\dot{\theta}\dd x\dd t &= -\frac{L}{2}\int_0^{\mathcal{T}} \Big(\beta\varepsilon_0\cos\omega t + \frac{\rho c_E}{T_0}\theta_0\sin\omega t\Big)(\omega\theta_0\cos\omega t)\dd t \nonumber\\
+  &= -\frac{\pi L}{2}\beta\varepsilon_0\theta_0. \label{eq:hc_cycle_entropy}
 \end{align}
 Adding the Fourier thermal conduction integral $\oint_0^{\mathcal{T}}\int_0^L \frac{\kappa}{T_0}(\partial_x\theta)^2\dd x\dd t = \frac{\pi L}{2\omega}\frac{\kappa k^2}{T_0}\theta_0^2$ to \eqref{eq:hc_cycle_work}--\eqref{eq:hc_cycle_entropy} yields
 \begin{equation}\label{eq:hc_cycle_total}
-  \Delta\Dcal_{\mathrm{cycle}} = \frac{\pi L\theta_0}{2\omega}\left[-\frac{\beta(1-\gamma)k^2\ell^2}{1 + k^2\ell^2}\,\omega\varepsilon_0 + \frac{\kappa k^2}{T_0}\,\theta_0\right] < 0 \quad \text{whenever}\quad \varepsilon_0 > \frac{\kappa(1 + k^2\ell^2)}{\beta T_0(1-\gamma)\omega\ell^2}\,\theta_0.
+  \Delta\Dcal_{\mathrm{cycle}} = \frac{\pi L\theta_0}{2\omega}\left[-\frac{\beta(1-\gamma)k^2\ell^2}{1 + k^2\ell^2}\,\omega\varepsilon_0 + \frac{\kappa k^2}{T_0}\,\theta_0\right] < 0
 \end{equation}
-Thus the mismatched pairing \eqref{eq:class_I_pairing} acts as an unphysical internal energy source during high-frequency thermomechanical cycles, whereas for both Variant~V1 and Variant~V2 the first bracketed term in \eqref{eq:hc_cycle_total} vanishes identically, leaving $\Delta\Dcal_{\mathrm{cycle}}^{\mathrm{V1}} = \Delta\Dcal_{\mathrm{cycle}}^{\mathrm{V2}} = \frac{\pi L}{2\omega}\frac{\kappa k^2}{T_0}\theta_0^2 > 0$.
+whenever $\varepsilon_0 > \frac{\kappa(1 + k^2\ell^2)}{\beta T_0(1-\gamma)\omega\ell^2}\,\theta_0$. Thus the mismatched pairing \eqref{eq:class_I_pairing} acts as an unphysical internal energy source during high-frequency thermomechanical cycles, whereas for both Variant~V1 and Variant~V2 the first bracketed term in \eqref{eq:hc_cycle_total} vanishes identically, leaving $\Delta\Dcal_{\mathrm{cycle}}^{\mathrm{V1}} = \Delta\Dcal_{\mathrm{cycle}}^{\mathrm{V2}} = \frac{\pi L}{2\omega}\frac{\kappa k^2}{T_0}\theta_0^2 > 0$.

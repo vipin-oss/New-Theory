@@ -1,6 +1,6 @@
 \section{Mode-Count Theorem ($N=3$ vs.\ $N=4$) and the $\gamma \to 0$ Singular Limit}\label{sec:mode_count}
 
-We now show that enforcing the nonlocal dilational entropy law in Variant~V1 changes the spatial differential order of the coupled thermoelastic system from sixth order ($N=3$ mode pairs $\pm k_j(\omega)$) to eighth order ($N=4$ mode pairs), and that the purely nonlocal limit $\gamma \to 0^+$ is a singular perturbation \cite{MikhasevNobili2020}.
+We now show that enforcing the nonlocal dilational entropy law in Variant~V1 changes the spatial differential order of the two-phase thermoelastic system from sixth order ($N=3$ mode pairs $\pm k_j(\omega)$) to eighth order ($N=4$ mode pairs), and that the purely nonlocal limit $\gamma \to 0^+$ is a singular perturbation \cite{MikhasevNobili2020}.
 
 \subsection{Master Dispersion Equation and Spatial Polynomial Degree}\label{subsec:master_dispersion}
 
@@ -30,25 +30,26 @@ Let $E,\rho,c_E,\kappa,T_0,\beta,\ell > 0$, $\gamma \in (0,1)$, and $\omega > 0$
   \item \textbf{Exact spatial mode counts:}
   \begin{itemize}[leftmargin=*]
     \item \textbf{Variant V1} ($\hat{\Lcal}_{\mathrm{el}} = \hat{\Lcal}_{\mathrm{th}} = \hat{\Lcal}_\eta = \hat{\Lcal}_{\gamma,\ell}$): Because $\hat{\Lcal}_{\mathrm{th}}\hat{\Lcal}_\eta = (1+\gamma\ell^2 q)^2/(1+\ell^2 q)^2$ carries a squared denominator $(1+\ell^2 q)^2$, multiplying \eqref{eq:master_dispersion} by $(1+\ell^2 q)^2$ yields a \textbf{quartic polynomial} in $q = k^2$ ($N=4$ wave-mode pairs $\pm k_1,\pm k_2,\pm k_3,\pm k_4$, eighth-order PDE in $x$):
-    \begin{equation}\label{eq:P_V1}
-      P_{\mathrm{V1}}(q,\omega;\gamma) := \big[E q(1+\gamma\ell^2 q) - \rho\omega^2(1+\ell^2 q)\big](\kappa q - \mathrm{i}\omega\rho c_E)(1+\ell^2 q) - \mathrm{i}\omega T_0\beta^2 q(1+\gamma\ell^2 q)^2 = 0,
-    \end{equation}
+    \begin{align}\label{eq:P_V1}
+      P_{\mathrm{V1}}(q,\omega;\gamma) :={}& \big[E q(1+\gamma\ell^2 q) - \rho\omega^2(1+\ell^2 q)\big](\kappa q - \mathrm{i}\omega\rho c_E)(1+\ell^2 q) \nonumber\\
+      &- \mathrm{i}\omega T_0\beta^2 q(1+\gamma\ell^2 q)^2 = 0,
+    \end{align}
     with non-vanishing leading coefficient $a_4^{\mathrm{V1}} = \gamma\ell^4 E\kappa > 0$ and no root at $q = -\ell^{-2}$ ($P_{\mathrm{V1}}(-\ell^{-2},\omega;\gamma) = \mathrm{i}\omega T_0\beta^2\ell^{-2}(1-\gamma)^2 \neq 0$).
     \item \textbf{Variant V2} ($\hat{\Lcal}_{\mathrm{el}} = \hat{\Lcal}_{\gamma,\ell}$, $\hat{\Lcal}_{\mathrm{th}} = \hat{\Lcal}_\eta = 1$): Multiplying \eqref{eq:master_dispersion} by $(1+\ell^2 q)$ yields a \textbf{cubic polynomial} in $q = k^2$ ($N=3$ wave-mode pairs $\pm k_1,\pm k_2,\pm k_3$, sixth-order PDE in $x$):
     \begin{equation}\label{eq:P_V2}
       P_{\mathrm{V2}}(q,\omega;\gamma) := \big[E q(1+\gamma\ell^2 q) - \rho\omega^2(1+\ell^2 q)\big](\kappa q - \mathrm{i}\omega\rho c_E) - \mathrm{i}\omega T_0\beta^2 q(1+\ell^2 q) = 0,
     \end{equation}
     with leading coefficient $a_3^{\mathrm{V2}} = \gamma\ell^2 E\kappa > 0$.
-    \item \textbf{Class I} ($\gamma = 0$ stress-nonlocal + local heating: $\hat{\Lcal}_{\mathrm{el}} = \hat{\Lcal}_{\mathrm{th}} = (1+\ell^2 q)^{-1}$, $\hat{\Lcal}_\eta = 1$): Multiplying \eqref{eq:master_dispersion} by $(1+\ell^2 q)$ yields a \textbf{cubic polynomial} in $q = k^2$ ($N=3$ wave-mode pairs):
+    \item \textbf{Class I and the bulk PDEs of Class II} ($\hat{\Lcal}_{\mathrm{el}} = \hat{\Lcal}_{\mathrm{th}} = \hat{\Lcal}_{\gamma,\ell}$, $\hat{\Lcal}_\eta = 1$): For $\gamma \in (0,1)$, multiplying \eqref{eq:master_dispersion} by $(1+\ell^2 q)$ yields a \textbf{cubic polynomial} in $q = k^2$ ($N=3$ mode pairs, $a_3^{\mathrm{Class\,I}} = \gamma\ell^2 E\kappa > 0$), which at the single-phase limit $\gamma = 0$ (where the bulk PDEs \eqref{eq:class_II_momentum}--\eqref{eq:class_II_heat} of Class~I and Class~II coincide) collapses to a \textbf{quadratic polynomial} in $q = k^2$ ($N=2$ wave-mode pairs):
     \begin{equation}\label{eq:P_ClassI}
-      P_{\mathrm{Class\,I}}(q,\omega) := \big[E q - \rho\omega^2(1+\ell^2 q)\big](\kappa q - \mathrm{i}\omega\rho c_E) - \mathrm{i}\omega T_0\beta^2 q = 0,
+      P_{\mathrm{Class\,I}}(q,\omega;0) := \big[(E - \rho\omega^2\ell^2)q - \rho\omega^2\big](\kappa q - \mathrm{i}\omega\rho c_E) - \mathrm{i}\omega T_0\beta^2 q = 0,
     \end{equation}
-    whose leading coefficient $a_3^{\mathrm{Class\,I}}(\omega) = \kappa(E - \rho\omega^2\ell^2)$ changes sign at the cut-off frequency $\omega_c = c_0/\ell$ ($c_0 := \sqrt{E/\rho}$).
+    whose leading quadratic coefficient $a_2^{\mathrm{Class\,I}}(\omega;0) = \kappa(E - \rho\omega^2\ell^2)$ changes sign at $\omega_c = c_0/\ell$ ($c_0 := \sqrt{E/\rho}$) and depends explicitly on $\ell$ through the inertia term $(1-\ell^2\partial_x^2)\rho\ddot{u}$.
   \end{itemize}
 
-  \item \textbf{Singular limit $\gamma \to 0^+$ of Variant V1:} As $\gamma \to 0^+$ (for $\omega \neq c_0/\ell$), three roots $q_1(\omega;\gamma), q_2(\omega;\gamma), q_3(\omega;\gamma)$ of \eqref{eq:P_V1} converge smoothly to the three roots of the $\gamma = 0$ Eringen cubic
+  \item \textbf{Singular limit $\gamma \to 0^+$ of Variant V1:} As $\gamma \to 0^+$ (for $\omega \neq c_0/\ell$), three roots $q_1(\omega;\gamma), q_2(\omega;\gamma), q_3(\omega;\gamma)$ of \eqref{eq:P_V1} converge smoothly to the three roots of Eringen's $\gamma = 0$ cubic
   \begin{equation}\label{eq:P_V1_gamma0}
-    P_{\mathrm{V1}}(q,\omega;0) = \big[E q - \rho\omega^2(1+\ell^2 q)\big](\kappa q - \mathrm{i}\omega\rho c_E)(1+\ell^2 q) - \mathrm{i}\omega T_0\beta^2 q = 0,
+    P_{\mathrm{V1}}(q,\omega;0) = \big[(E - \rho\omega^2\ell^2)q - \rho\omega^2\big](\kappa q - \mathrm{i}\omega\rho c_E)(1+\ell^2 q) - \mathrm{i}\omega T_0\beta^2 q = 0,
   \end{equation}
   while the fourth root $q_4(\omega;\gamma)$ diverges to infinity as $O(\gamma^{-1}\ell^{-2})$ with the asymptotic expansion
   \begin{equation}\label{eq:q4_asymptotic}
@@ -56,23 +57,21 @@ Let $E,\rho,c_E,\kappa,T_0,\beta,\ell > 0$, $\gamma \in (0,1)$, and $\omega > 0$
   \end{equation}
   generating an evanescent boundary-layer pair $k_4(\omega;\gamma) = \pm\frac{\mathrm{i}}{\ell\sqrt{\gamma}}\big[1 - \frac{\gamma\rho\omega^2\ell^2}{2E} + O(\gamma^2)\big]$ of decay length $\delta_{\mathrm{BL}}(\gamma) = \ell\sqrt{\gamma} \to 0$.
 
-  \item \textbf{Asymptotic bulk thermoelastic attenuation ($\alpha_1 := \mathrm{Im}\,k_1(\omega)$):} Define the dimensionless thermoelastic coupling $\epsilon := \frac{T_0\beta^2}{\rho c_E E}$, characteristic frequency $\omega^* := \frac{\rho c_E c_0^2}{\kappa}$, characteristic length $\ell^* := \frac{c_0}{\omega^*}$, and dimensionless frequency $\Omega := \omega/\omega^*$.
+  \item \textbf{Asymptotic bulk thermoelastic attenuation ($\alpha_1 := \mathrm{Im}\,k_1(\omega)$):} Define $\epsilon := \frac{T_0\beta^2}{\rho c_E E}$, $\omega^* := \frac{\rho c_E c_0^2}{\kappa}$, $\ell^* := \frac{c_0}{\omega^*}$, and $\Omega := \omega/\omega^*$.
   \begin{enumerate}[label=(\roman*)]
-    \item \emph{Long-wavelength regime ($k\ell \ll 1$, $\epsilon \ll 1$):} All three models agree to leading local order $\alpha_1^{\mathrm{loc}}(\Omega) = \frac{\epsilon}{2\ell^*}\frac{\Omega^2}{1+\Omega^2}$ and differ at $O((k\ell)^2) = O((\ell/\ell^*)^2\Omega^2)$ with distinct numerical prefactors:
+    \item \emph{Long-wavelength regime ($k\ell \ll 1$, $\epsilon \ll 1$):} All models agree to leading local order $\alpha_1^{\mathrm{loc}}(\Omega) = \frac{\epsilon}{2\ell^*}\frac{\Omega^2}{1+\Omega^2}$ and differ at $O((k_0\ell)^2)$ ($k_0 := \omega/c_0$):
     \begin{equation}\label{eq:low_k_damping_expansion}
       \frac{\alpha_1(\Omega)}{\alpha_1^{\mathrm{loc}}(\Omega)} = 1 + (1-\gamma)(k_0\ell)^2 \times \begin{cases}
         -\dfrac{1}{2}, & \text{Variant V1}, \\[6pt]
         +\dfrac{3}{2}, & \text{Variant V2}, \\[6pt]
-        +\dfrac{1}{2}\; (\text{at }\gamma=0), & \text{Class I},
+        +\dfrac{1}{2}\; (\text{at }\gamma=0), & \text{Class I / II},
       \end{cases}
-      \quad + O\big(\epsilon (k_0\ell)^2, (k_0\ell)^4\big),
+      \quad + O\big(\epsilon (k_0\ell)^2, (k_0\ell)^4\big).
     \end{equation}
-    where $k_0 := \omega/c_0$.
     \item \emph{Short-wavelength limit ($\Omega \to \infty$, $\gamma \in (0,1)$):} The high-frequency quasi-elastic attenuation plateaus of Variant~V1 and Variant~V2 differ by the exact factor $\gamma^2$:
     \begin{equation}\label{eq:high_freq_plateau}
       \lim_{\Omega\to\infty} \ell^*\alpha_1^{\mathrm{V1}}(\Omega) = \frac{\epsilon}{2}\gamma^{3/2} + O(\epsilon^2), \qquad
-      \lim_{\Omega\to\infty} \ell^*\alpha_1^{\mathrm{V2}}(\Omega) = \frac{\epsilon}{2}\gamma^{-1/2} + O(\epsilon^2), \qquad
-      \lim_{\Omega\to\infty}\frac{\alpha_1^{\mathrm{V1}}(\Omega)}{\alpha_1^{\mathrm{V2}}(\Omega)} = \gamma^2 + O(\epsilon).
+      \lim_{\Omega\to\infty} \ell^*\alpha_1^{\mathrm{V2}}(\Omega) = \frac{\epsilon}{2}\gamma^{-1/2} + O(\epsilon^2).
     \end{equation}
   \end{enumerate}
 \end{enumerate}

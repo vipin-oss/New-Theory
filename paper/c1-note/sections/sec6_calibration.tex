@@ -4,9 +4,10 @@
 
 To assess the physical magnitude of the bulk dispersion and attenuation differences derived in Section~\ref{sec:mode_count}, we evaluate them for face-centered cubic (fcc) Aluminum (Al) at $T_0 = 300\;\mathrm{K}$ using published, independently calibrated atomistic length scales:
 \begin{enumerate}[leftmargin=*,align=left]
-  \item \textbf{Atomistic 2NN MEAM calibration (Lazar, Agiasofitou, and B{\"o}hlke \cite{Lazar2022}):} Using the Second Nearest-Neighbor Modified Embedded Atom Method (2NN MEAM) interatomic potential for fcc Aluminum (lattice parameter $a = 4.04950\;\mathrm{\AA} = 0.404950\;\mathrm{nm}$), Lazar, Agiasofitou, and B{\"o}hlke \cite{Lazar2022} computed the sixth-order strain-gradient constitutive tensor and extracted the cubic longitudinal characteristic length $\ell_1 = 1.19303\;\mathrm{\AA} = 0.119303\;\mathrm{nm}$ (Table~3 of \cite{Lazar2022}) and the Voigt-averaged isotropic longitudinal characteristic length (Table~6 of \cite{Lazar2022}):
+  \item \textbf{Atomistic 2NN MEAM calibration (Lazar, Agiasofitou, and B{\"o}hlke \cite{Lazar2022}):} Using the Second Nearest-Neighbor Modified Embedded Atom Method (2NN MEAM) interatomic potential for fcc Aluminum (lattice parameter $a = 4.04950\;\text{\normalfont\AA} = 0.404950\;\mathrm{nm}$), Lazar, Agiasofitou, and B{\"o}hlke \cite{Lazar2022} computed the sixth-order strain-gradient constitutive tensor and extracted the cubic longitudinal characteristic length $\ell_1 = 1.19303\;\text{\normalfont\AA} = 0.119303\;\mathrm{nm}$ (Table~3 of \cite{Lazar2022}) and the Voigt-averaged isotropic longitudinal characteristic length (Table~6 of \cite{Lazar2022}):
   \begin{equation}\label{eq:lazar_ell}
-    \bar{\ell}_1(\mathrm{Al}) = 1.20272\;\mathrm{\AA} = 0.120272\;\mathrm{nm}, \qquad \frac{\bar{\ell}_1}{a} = 0.2970.
+    \bar{\ell}_1(\mathrm{Al}) = 1.20272\;\text{\normalfont\AA} = 0.120272\;\mathrm{nm}, \qquad
+    \frac{\bar{\ell}_1}{a} = 0.2970.
   \end{equation}
   \item \textbf{Brillouin zone-edge lattice dispersion match (Eringen \cite{Eringen1972Linear,Eringen2002}):} Matching the 1D Helmholtz dispersion relation $\omega^2(k) = c_0^2 k^2/(1+\ell^2 k^2)$ to the Born--von K{\'a}rm{\'a}n chain at $k = \pi/a$ gives $e_0 = \sqrt{\pi^2 - 4}/(2\pi) \approx 0.39$, or
   \begin{equation}\label{eq:eringen_ell}
@@ -25,7 +26,8 @@ As emphasized by Nobili and Pramanik \cite{NobiliPramanik2025b} (Section~2.1), t
 
 For fcc Aluminum at $T_0 = 300\;\mathrm{K}$ ($\rho = 2700\;\mathrm{kg/m^3}$, $c_0 = 6420\;\mathrm{m/s}$, $c_E = 900\;\mathrm{J/(kg\cdot K)}$, $\kappa = 237\;\mathrm{W/(m\cdot K)}$, dimensionless thermoelastic coupling $\epsilon = 0.0356$), the characteristic thermoelastic frequency $\omega^*$ and thermal length $\ell^*$ are
 \begin{equation}\label{eq:al_thermal_scales}
-  \omega^* = \frac{\rho c_E c_0^2}{\kappa} = 4.226 \times 10^{11}\;\mathrm{rad/s} \quad (f^* = \frac{\omega^*}{2\pi} = 67.26\;\mathrm{GHz}), \qquad \ell^* = \frac{c_0}{\omega^*} = 15.19\;\mathrm{nm}.
+  \omega^* = \frac{\rho c_E c_0^2}{\kappa} = 4.226 \times 10^{11}\;\mathrm{rad/s} \quad (f^* = 67.26\;\mathrm{GHz}), \qquad
+  \ell^* = \frac{c_0}{\omega^*} = 15.19\;\mathrm{nm}.
 \end{equation}
 Consequently, the dimensionless ratio $\chi_{\mathrm{nl}} := \ell/\ell^*$ between the atomistic nonlocal length and the characteristic thermoelastic length is two orders of magnitude smaller than unity:
 \begin{equation}\label{eq:chi_nl_values}
@@ -39,25 +41,26 @@ Furthermore, Fourier's heat conduction law $q = -\kappa\partial_x\theta$ is phys
 
 \subsection{Quantitative Comparison Across Frequency Regimes}\label{subsec:quantitative_table}
 
-Table~\ref{tab:al_damping} lists the exact dimensionless quasi-elastic attenuation $\mathrm{Im}(k\ell^*)$ and the relative discrepancies $|\alpha_1^{\mathrm{V1}} - \alpha_1^{\mathrm{V2}}|/\alpha_1^{\mathrm{V1}}$ and $|\alpha_1^{\mathrm{Class\,I}} - \alpha_1^{\mathrm{V1}}|/\alpha_1^{\mathrm{V1}}$ for fcc Aluminum at $300\;\mathrm{K}$ ($\gamma = 0.5$) using the atomistic characteristic length $\bar{\ell}_1 = 0.120272\;\mathrm{nm}$ \cite{Lazar2022}.
+Table~\ref{tab:al_damping} lists the relative quasi-elastic attenuation discrepancies $|\alpha_1^{\mathrm{V1}} - \alpha_1^{\mathrm{V2}}|/\alpha_1^{\mathrm{V1}}$ and $|\alpha_1^{\mathrm{Class\,I}} - \alpha_1^{\mathrm{V1}}|/\alpha_1^{\mathrm{V1}}$ for fcc Aluminum at $300\;\mathrm{K}$ ($\gamma = 0.5$) using the atomistic characteristic length $\bar{\ell}_1 = 0.120272\;\mathrm{nm}$ \cite{Lazar2022}.
 
 \begin{table}[htbp]
   \centering
-  \caption{Quasi-elastic wave attenuation comparison for fcc Aluminum at $T_0 = 300\;\mathrm{K}$ ($\epsilon = 0.0356$, $\omega^* = 4.226\times 10^{11}\;\mathrm{rad/s}$, $\ell^* = 15.19\;\mathrm{nm}$, $\bar{\ell}_1 = 0.1203\;\mathrm{nm}$ from Lazar et al.\ \cite{Lazar2022}, $\chi_{\mathrm{nl}} = 7.917\times 10^{-3}$, $\gamma = 0.5$).}\label{tab:al_damping}
+  \caption{Quasi-elastic wave attenuation comparison for fcc Aluminum at $T_0 = 300\;\mathrm{K}$ ($\epsilon = 0.0356$, $\omega^* = 4.226\times 10^{11}\;\mathrm{rad/s}$, $\ell^* = 15.19\;\mathrm{nm}$, $\bar{\ell}_1 = 0.1203\;\mathrm{nm}$ \cite{Lazar2022}, $\chi_{\mathrm{nl}} = 7.917\times 10^{-3}$, $\gamma = 0.5$).}\label{tab:al_damping}
   \vspace{4pt}
-  \begin{tabular}{ccccccp{4.6cm}}
+  {\footnotesize
+  \begin{tabular}{@{}ccccccp{3.9cm}@{}}
     \toprule
     $\Omega = \omega/\omega^*$ & $f$ (GHz) & $\lambda$ (nm) & $k\ell$ & $\dfrac{|\alpha_1^{\mathrm{V1}} - \alpha_1^{\mathrm{V2}}|}{\alpha_1^{\mathrm{V1}}}$ & $\dfrac{|\alpha_1^{\mathrm{Class\,I}} - \alpha_1^{\mathrm{V1}}|}{\alpha_1^{\mathrm{V1}}}$ & \textbf{Regime Assessment} \\
     \midrule
     $0.001$ & $0.067$ & $97,137$ & $7.78 \times 10^{-6}$ & $6.50 \times 10^{-11}$ & $1.25 \times 10^{-10}$ & Fourier valid ($\omega\tau_q = 6.3\times 10^{-4}$) \\
     $0.010$ & $0.673$ & $9,714$ & $7.78 \times 10^{-5}$ & $5.32 \times 10^{-9}$ & $1.02 \times 10^{-8}$ & Fourier valid ($\omega\tau_q = 6.3\times 10^{-3}$) \\
-    $0.100$ & $6.726$ & $971.2$ & $7.78 \times 10^{-4}$ & $\mathbf{5.34 \times 10^{-7}}$ & $\mathbf{1.02 \times 10^{-6}}$ & \textbf{Strict Fourier ceiling} ($\omega\tau_q = 0.063 \le 0.1$) \\
-    $0.500$ & $33.63$ & $193.7$ & $3.90 \times 10^{-3}$ & $\mathbf{1.40 \times 10^{-5}}$ & $\mathbf{2.35 \times 10^{-5}}$ & Pre-ballistic transition ($\omega\tau_q = 0.32$) \\
-    $1.000$ & $67.26$ & $96.32$ & $7.85 \times 10^{-3}$ & $\mathbf{5.98 \times 10^{-5}}$ & $\mathbf{7.80 \times 10^{-5}}$ & \textbf{Zener peak} ($\omega\tau_q = 0.63$, diff $< 10^{-4}$) \\
-    $10.00$ & $672.6$ & $9.53$ & $7.93 \times 10^{-2}$ & $6.28 \times 10^{-3}$ & $4.79 \times 10^{-3}$ & Fourier invalid ($\omega\tau_q = 6.3 \gg 1$, $\lambda < \Lambda_{\mathrm{th}}$) \\
-    $100.0$ & $6,726$ & $0.84$ & $8.98 \times 10^{-1}$ & $6.58 \times 10^{-1}$ & $1.01 \times 10^{0}$ & Continuum \& Fourier invalid ($\lambda \approx 2a$) \\
+    $0.100$ & $6.726$ & $971.2$ & $7.78 \times 10^{-4}$ & $\mathbf{5.34 \times 10^{-7}}$ & $\mathbf{1.02 \times 10^{-6}}$ & \textbf{Strict Fourier ceiling} ($\omega\tau_q \le 0.1$) \\
+    $0.500$ & $33.63$ & $193.7$ & $3.90 \times 10^{-3}$ & $\mathbf{1.40 \times 10^{-5}}$ & $\mathbf{2.35 \times 10^{-5}}$ & Pre-ballistic ($\omega\tau_q = 0.32$) \\
+    $1.000$ & $67.26$ & $96.32$ & $7.85 \times 10^{-3}$ & $\mathbf{5.98 \times 10^{-5}}$ & $\mathbf{7.80 \times 10^{-5}}$ & \textbf{Zener peak} ($\text{diff} < 10^{-4}$) \\
+    $10.00$ & $672.6$ & $9.53$ & $7.93 \times 10^{-2}$ & $6.28 \times 10^{-3}$ & $4.79 \times 10^{-3}$ & Fourier invalid ($\omega\tau_q = 6.3 \gg 1$) \\
+    $100.0$ & $6,726$ & $0.84$ & $8.98 \times 10^{-1}$ & $6.58 \times 10^{-1}$ & $1.01 \times 10^{0}$ & Continuum invalid ($\lambda \approx 2a$) \\
     \bottomrule
-  \end{tabular}
+  \end{tabular}}
 \end{table}
 
-Table~\ref{tab:al_damping} establishes a critical physical conclusion that must be stated plainly: \textbf{within the frequency regime where Fourier heat conduction is physically defensible ($\Omega \lesssim 0.16$--$1.0$), the relative difference in bulk thermoelastic attenuation between Variant~V1, Variant~V2, and Class~I in calibrated fcc Aluminum is of order $O(10^{-6}\text{--}10^{-4})$ ($0.0001\%$ to $0.01\%$), and is identical under Eringen's calibration \eqref{eq:eringen_ell} ($\le 1.35 \times 10^{-4}$ at $\Omega = 1$).} An $O(1)$ divergence between the models occurs only when $k\ell \sim 1$ ($\Omega \sim 100$, $f \sim 6.7\;\mathrm{THz}$, $\lambda \sim 0.84\;\mathrm{nm} \approx 2a$), where the wavelength is comparable to two atomic spacings and both Fourier heat conduction ($\omega\tau_q \approx 63$) and continuum elasticity break down. Accordingly, the importance of enforcing Variant~V1 or Variant~V2 in place of Class~I or Class~II is \emph{mathematical and foundational}---guaranteeing compliance with the Second Law of Thermodynamics, correct spatial differential order ($N=4$ vs.\ $N=3$), and well-posed boundary closure on bounded domains---rather than predicting a large measurable bulk ultrasonic damping split in monolithic crystals.
+Table~\ref{tab:al_damping} establishes a critical physical conclusion that must be stated plainly: \textbf{within the frequency regime where Fourier heat conduction is physically defensible ($\Omega \lesssim 0.16$--$1.0$), the relative difference in bulk thermoelastic attenuation between Variant~V1, Variant~V2, and Class~I/II in calibrated fcc Aluminum is of order $O(10^{-6}\text{--}10^{-4})$ ($0.0001\%$ to $0.01\%$), and is of the same order under Eringen's calibration \eqref{eq:eringen_ell} ($\le 1.35 \times 10^{-4}$ at $\Omega = 1$).} An $O(1)$ divergence between the models occurs only when $k\ell \sim 1$ ($\Omega \sim 100$, $f \sim 6.7\;\mathrm{THz}$, $\lambda \sim 0.84\;\mathrm{nm} \approx 2a$), where the wavelength is comparable to two atomic spacings and both Fourier heat conduction ($\omega\tau_q \approx 63$) and continuum elasticity break down. Accordingly, the importance of enforcing Variant~V1 or Variant~V2 is \emph{mathematical and foundational}---guaranteeing compliance with the Second Law of Thermodynamics, consistent spatial differential order ($N=4$ vs.\ $N=3$), and well-posed boundary closure on bounded domains---rather than predicting a large measurable bulk ultrasonic damping split in monolithic crystals.

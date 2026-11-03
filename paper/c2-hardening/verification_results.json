@@ -1,0 +1,176 @@
+{
+  "section1_passivity": {
+    "Re_G_111": "(K + K_star*tau_v + tau_q*(K*omega**2*tau_T - K_star))/(omega**2*tau_q**2 + 1)",
+    "Im_G_111": "(-K*omega**2*tau_T + K_star + omega**2*tau_q*(K + K_star*tau_v))/(omega*(omega**2*tau_q**2 + 1))",
+    "Laplace_decomposition_verified": true,
+    "Re_G_211_numerator": "K + K_star*(-tau_q + tau_v) + omega**2*tau_q*(K*tau_T - tau_q*(K + K_star*tau_v)/2)"
+  },
+  "section2_lyapunov": {
+    "filtered_dE_dt": "xi**2*(-K*tau_T*tau_q*Derivative(vartheta(t), (t, 2))**2 - K*Derivative(vartheta(t), t)**2 + K_star*tau_q*Derivative(vartheta(t), t)**2 - K_star*tau_v*Derivative(vartheta(t), t)**2)/T_0",
+    "filtered_identity_exact": true,
+    "unfiltered_coupling_residual": "beta*tau_q*xi*(C*tau_q*xi**2*u(t)*Derivative(vartheta(t), (t, 2)) + C*xi**2*u(t)*Derivative(vartheta(t), t) - beta*tau_q*xi*Derivative(vartheta(t), t)*Derivative(vartheta(t), (t, 2)) - beta*xi*Derivative(vartheta(t), t)**2 - rho*Derivative(u(t), t)*Derivative(vartheta(t), (t, 2)))/rho",
+    "unfiltered_residual_nonzero": true
+  },
+  "section3_routh_hurwitz": {
+    "H2_uncoupled": "xi2*(alpha*tau_T*xi2*(alpha + alpha_star*tau_v) + alpha + alpha_star*(-tau_q + tau_v))",
+    "counterexample_low_xi_roots": [
+      "(-0.742086225401372+0j)",
+      "(0.0585431127006854+0.5774606298354131j)",
+      "(0.0585431127006854-0.5774606298354131j)"
+    ],
+    "counterexample_high_xi_roots": [
+      "(-1.5734784938326944+0j)",
+      "(-0.4632607530836519+1.525623744776096j)",
+      "(-0.4632607530836519-1.525623744776096j)"
+    ],
+    "Re_P5": "alpha_star*c1_sq*xi2**2 + omega**4*(alpha*tau_T*xi2 + 1) + omega**2*(-alpha*c1_sq*tau_T*xi2**2 - alpha_star*xi2 - c1_sq*varepsilon*xi2 - c1_sq*xi2)",
+    "Im_P5_over_omega": "alpha*c1_sq*xi2**2 + alpha_star*c1_sq*tau_v*xi2**2 + omega**4*tau_q + omega**2*(-alpha*xi2 - alpha_star*tau_v*xi2 - c1_sq*tau_q*varepsilon*xi2 - c1_sq*tau_q*xi2)"
+  },
+  "section4_asymptotics": {
+    "CaseI_diffusive_d2": "alpha*tau_T/tau_q",
+    "CaseI_diffusive_d0": "(-alpha*tau_T + alpha*tau_q + tau_q*(alpha_star*tau_v + c_1**2*tau_q*varepsilon))/(alpha*tau_T*tau_q)",
+    "CaseI_elastic_damping_gamma_m": "c_1**2*tau_q*varepsilon/(2*alpha*tau_T)",
+    "CaseI_spatial_attenuation_kappa_inf": "c_1*tau_q*varepsilon/(2*alpha*tau_T)",
+    "CaseI_relaxation_polynomial": "c_1**2*(alpha*lambda**2*tau_T + alpha*lambda + alpha_star*lambda*tau_v + alpha_star)",
+    "CaseII_wave_biquadratic": "-c_1**2*v**2*varepsilon + (-c_1**2 + v**2)*(v**2 - (alpha + alpha_star*tau_v)/tau_q)",
+    "CaseII_wave_damping_gamma_h": "(-alpha_star*c_1**2 + alpha_star*v**2 + c_1**2*v**2*varepsilon + c_1**2*v**2 - v**4)/(-alpha*c_1**2 + 3*alpha*v**2 - alpha_star*c_1**2*tau_v + 3*alpha_star*tau_v*v**2 + 3*c_1**2*tau_q*v**2*varepsilon + 3*c_1**2*tau_q*v**2 - 5*tau_q*v**4)",
+    "CaseII_5th_root_limit": "-alpha_star/(alpha + alpha_star*tau_v)"
+  },
+  "section5_grounding": {
+    "materials": [
+      {
+        "name": "Copper (Cu) at 300 K",
+        "source": "Sinha & Elsibai (1996, 1997); Sherief et al. (2010)",
+        "c1_m_s": 4157.93,
+        "c2_m_s": 2076.28,
+        "alpha_th_m2_s": 0.00011253,
+        "omega_star_rad_s": 153640000000.0,
+        "varepsilon": 0.016801,
+        "chi_111_W_mK": 328.1,
+        "chi_111_normalized": 0.85,
+        "passive_111": true,
+        "kappa_211_Ws_mK": -1.93e-10,
+        "passive_211": false,
+        "c_T_m_s": 2430.57,
+        "v_plus_m_s": 4209.99,
+        "v_minus_m_s": 2400.51,
+        "kappa_inf_1_m": 620800.0
+      },
+      {
+        "name": "Silicon (Si) at 300 K",
+        "source": "Zenkour & El-Mekawy (2020); Cahill et al. (2003)",
+        "c1_m_s": 8435.57,
+        "c2_m_s": 4673.92,
+        "alpha_th_m2_s": 8.9464e-05,
+        "omega_star_rad_s": 795390000000.0,
+        "varepsilon": 0.00063822,
+        "chi_111_W_mK": 88.8,
+        "chi_111_normalized": 0.6,
+        "passive_111": true,
+        "kappa_211_Ws_mK": -7.4e-10,
+        "passive_211": false,
+        "c_T_m_s": 992.02,
+        "v_plus_m_s": 8438.3,
+        "v_minus_m_s": 991.7,
+        "kappa_inf_1_m": 60178.0
+      },
+      {
+        "name": "Sodium Fluoride (NaF) at 15 K (Second-Sound Regime)",
+        "source": "Jackson, Walker & McNelly (1970); Dreyer & Struchtrup (1993)",
+        "c1_m_s": 5650.65,
+        "c2_m_s": 3298.06,
+        "alpha_th_m2_s": 2.4366,
+        "omega_star_rad_s": 13104000.0,
+        "varepsilon": 0.00017834,
+        "chi_111_W_mK": 5000.0,
+        "chi_111_normalized": 0.4,
+        "passive_111": true,
+        "kappa_211_Ws_mK": -0.0053906,
+        "passive_211": false,
+        "c_T_m_s": 1932.92,
+        "v_plus_m_s": 5651.22,
+        "v_minus_m_s": 1932.73,
+        "kappa_inf_1_m": 0.0
+      },
+      {
+        "name": "Porous Biological Tissue at 310 K",
+        "source": "Mitra et al. (1995); Liu & Wang (2020, Sci. Rep. 10:16379)",
+        "c1_m_s": 114.92,
+        "c2_m_s": 43.44,
+        "alpha_th_m2_s": 1.3103e-07,
+        "omega_star_rad_s": 100800000000.0,
+        "varepsilon": 6.7078e-05,
+        "chi_111_W_mK": 0.15,
+        "chi_111_normalized": 0.3,
+        "passive_111": true,
+        "kappa_211_Ws_mK": -1.4,
+        "passive_211": false,
+        "c_T_m_s": 0.0,
+        "v_plus_m_s": 114.93,
+        "v_minus_m_s": 0.0,
+        "kappa_inf_1_m": 78446.0
+      }
+    ],
+    "literature_sets": [
+      {
+        "paper": "Quintanilla & Racke (2008, IJHMT 51:24-29) \u2014 Stable Regime",
+        "params": "k=1.0, k*=0.5, tau_q=1.0, tau_T=0.5, tau_v=0.2",
+        "chi_111": 0.6,
+        "passive_111": true,
+        "kappa_211": -0.05,
+        "passive_211": false
+      },
+      {
+        "paper": "Quintanilla & Racke (2008, IJHMT 51:24-29) \u2014 Unstable Regime",
+        "params": "k=1.0, k*=2.0, tau_q=1.0, tau_T=0.5, tau_v=0.2",
+        "chi_111": -0.6,
+        "passive_111": false,
+        "kappa_211": -0.2,
+        "passive_211": false
+      },
+      {
+        "paper": "Akbarzadeh & Pasini (2014, IJHMT 75:656-667) Fig. 2 TPL",
+        "params": "k=1.0, k*=1.0, tau_q=1.5, tau_T=1.0, tau_v=0.2",
+        "chi_111": -0.3,
+        "passive_111": false,
+        "kappa_211": 0.1,
+        "passive_211": false
+      },
+      {
+        "paper": "Zenkour & El-Mekawy (2020, ICHMT 116:104722) Section 3",
+        "params": "k=1.0, k*=0.2, tau_q=0.05, tau_T=0.03, tau_v=0.01",
+        "chi_111": 0.992,
+        "passive_111": true,
+        "kappa_211": 0.0049,
+        "passive_211": true
+      },
+      {
+        "paper": "Liu & Wang (2020, Sci. Rep. 10:16379) Bioheat TPL",
+        "params": "k=0.5, k*=0.025, tau_q=16.0, tau_T=6.0, tau_v=2.0",
+        "chi_111": 0.15,
+        "passive_111": true,
+        "kappa_211": -1.4,
+        "passive_211": false
+      },
+      {
+        "paper": "Ad-hoc High-k* Nondimensional Set (k*=k=1, tau_q=0.8, tau_T=0.4, tau_v=0.1)",
+        "params": "k=1.0, k*=2.0, tau_q=0.8, tau_T=0.4, tau_v=0.1",
+        "chi_111": -0.4,
+        "passive_111": false,
+        "kappa_211": -0.08,
+        "passive_211": false
+      }
+    ]
+  },
+  "section6_c3_interface": {
+    "S_left": 0.9889641387941686,
+    "S_0m": 0.6572221301914503,
+    "S_0p": 0.27647710530715225,
+    "S_right": -1.8371614784228678e-17,
+    "D_bulk_minus": 0.3317420086027174,
+    "D_bulk_plus": 0.2764771053071535,
+    "D_int": 0.3807450248843041,
+    "unitarity_error": 6.439293542825908e-15,
+    "interface_jump_error": 6.106226635438361e-15
+  }
+}

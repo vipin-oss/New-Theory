@@ -1,0 +1,3 @@
+# Existing local pilot, reused
+
+Copied without changing the numerical calculation from `paper/p4-pilot/`. Consult [earlier pilot report](https://github.com/vipin-oss/New-Theory/blob/arena/5b089bbe-new-theory/paper/p4-pilot/RESULTS.md) for the published MGT equations, exact geometry, coefficients, energy balance, results, non-converged finite-size linewidth, limitations and provenance. It is local elasticity only, not evidence for a nonlocal model or verified novelty. Rerun: `OPENBLAS_NUM_THREADS=1 python -m unittest discover -s . -v`; 4 tests passed during this checkpoint. Plots/data are prior results, not recomputed here.
